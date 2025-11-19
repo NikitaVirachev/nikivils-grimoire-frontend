@@ -1,5 +1,7 @@
 import { createGlobalStyle, css } from 'styled-components';
 
+// import '../assests/fonts/Coelacanth.otf';
+
 const styles = css`
   *,
   *::after,
@@ -18,6 +20,13 @@ const styles = css`
 
   body {
     box-sizing: border-box;
+  }
+
+  @font-face {
+    font-family: 'Coelacanth', serif;
+    font-style: normal;
+    font-weight: 400;
+    src: url(../assests/fonts/Coelacanth.otf);
   }
 `;
 
