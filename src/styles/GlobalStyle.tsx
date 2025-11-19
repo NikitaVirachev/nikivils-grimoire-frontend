@@ -1,5 +1,7 @@
 import { createGlobalStyle, css } from 'styled-components';
 
+import Metamorphous from '../assests/fonts/Metamorphous-Regular.ttf';
+
 const styles = css`
   *,
   *::after,
@@ -25,6 +27,13 @@ const styles = css`
     font-style: normal;
     font-weight: 400;
     src: url(../assests/fonts/Coelacanth.otf);
+  }
+
+  @font-face {
+    font-family: 'Metamorphous';
+    font-style: normal;
+    font-weight: 400;
+    src: url(${Metamorphous}) format('truetype');
   }
 `;
 
