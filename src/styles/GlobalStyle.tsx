@@ -1,7 +1,5 @@
 import { createGlobalStyle, css } from 'styled-components';
 
-// import '../assests/fonts/Coelacanth.otf';
-
 const styles = css`
   *,
   *::after,
