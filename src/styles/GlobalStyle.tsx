@@ -23,13 +23,6 @@ const styles = css`
   }
 
   @font-face {
-    font-family: 'Coelacanth', serif;
-    font-style: normal;
-    font-weight: 400;
-    src: url(../assests/fonts/Coelacanth.otf);
-  }
-
-  @font-face {
     font-family: 'Metamorphous';
     font-style: normal;
     font-weight: 400;
