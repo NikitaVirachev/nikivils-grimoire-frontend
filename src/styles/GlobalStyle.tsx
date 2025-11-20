@@ -2,6 +2,7 @@ import { createGlobalStyle, css } from 'styled-components';
 
 import Coelacanth from '../assets/fonts/Coelacanth.otf';
 import Metamorphous from '../assets/fonts/Metamorphous-Regular.ttf';
+import ElderFuthark from '../assets/fonts/Rune.ttf';
 
 const styles = css`
   *,
@@ -35,6 +36,13 @@ const styles = css`
     font-style: normal;
     font-weight: 400;
     src: url(${Metamorphous}) format('truetype');
+  }
+
+  @font-face {
+    font-family: 'Elder Futhark';
+    font-style: normal;
+    font-weight: 400;
+    src: url(${ElderFuthark});
   }
 `;
 
