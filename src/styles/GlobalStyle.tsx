@@ -1,6 +1,6 @@
 import { createGlobalStyle, css } from 'styled-components';
 
-import Metamorphous from '../assests/fonts/Metamorphous-Regular.ttf';
+import Metamorphous from '../assets/fonts/Metamorphous-Regular.ttf';
 
 const styles = css`
   *,
