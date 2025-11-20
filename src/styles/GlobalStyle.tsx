@@ -44,6 +44,26 @@ const styles = css`
     font-weight: 400;
     src: url(${ElderFuthark});
   }
+
+  // Variables
+
+  :root {
+    // Colors
+    --primarly-color: #c52f21;
+    --secondary-color: #f59d39;
+    --tertiary-color: #fae5b3;
+    --grass-color: #657c4a;
+    --silver-color: #c0c0c0;
+
+    // Background
+    --primarly-bg-color: #fbfbd4;
+    --secondary-bg-color: #211b1b;
+
+    // Typography
+    --primarly-tp-color: #ff1100;
+    --secondary-tp-color: #000000;
+    --tertiary-tp-color: #808080;
+  }
 `;
 
 const GlobalStyle = createGlobalStyle`
