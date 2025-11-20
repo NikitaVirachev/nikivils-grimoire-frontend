@@ -1,5 +1,6 @@
 import { createGlobalStyle, css } from 'styled-components';
 
+import Coelacanth from '../assets/fonts/Coelacanth.otf';
 import Metamorphous from '../assets/fonts/Metamorphous-Regular.ttf';
 
 const styles = css`
@@ -20,6 +21,13 @@ const styles = css`
 
   body {
     box-sizing: border-box;
+  }
+
+  @font-face {
+    font-family: 'Coelacanth', serif;
+    font-style: normal;
+    font-weight: 400;
+    src: url(${Coelacanth});
   }
 
   @font-face {
