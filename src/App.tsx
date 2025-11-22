@@ -1,10 +1,19 @@
+import styled from 'styled-components';
+
 import GlobalStyle from './styles/GlobalStyle';
+import Background from './components/Background/Background';
+
+const Header = styled.h1`
+  font-family: 'Elder Futhark';
+`;
 
 function App() {
   return (
     <>
       <GlobalStyle />
-      <h1>Hello World!</h1>
+      <Background>
+        <Header>Hello World!</Header>
+      </Background>
     </>
   );
 }

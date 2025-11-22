@@ -22,6 +22,7 @@ const styles = css`
 
   body {
     box-sizing: border-box;
+    overflow: hidden;
   }
 
   @font-face {
@@ -53,6 +54,9 @@ const styles = css`
     --secondary-color: #f59d39;
     --tertiary-color: #fae5b3;
     --grass-color: #657c4a;
+    --grass-bottom-ton: #354425;
+    --grass-middle-ton: #2a3b18;
+    --grass-top-ton: #253710;
     --silver-color: #c0c0c0;
 
     // Background
