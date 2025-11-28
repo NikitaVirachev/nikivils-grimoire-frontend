@@ -2,6 +2,7 @@ import type { PropsWithChildren } from 'react';
 import styled from 'styled-components';
 
 import PlanePerspective from './PlanePerspective';
+import Tower from './Tower';
 
 const TopPartHeight = '61.33%';
 
@@ -28,9 +29,24 @@ const StyledBackground = styled.div`
   height: 100vh;
 `;
 
+const Wrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  height: 100%;
+`;
+
+const Content = styled.div`
+  position: relative;
+`;
+
 const Background = ({ children }: PropsWithChildren) => (
   <StyledBackground>
-    {children}
+    <Wrapper>
+      <Content>
+        <Tower topPartHeight={TopPartHeight} />
+        {children}
+      </Content>
+    </Wrapper>
     <PlanePerspective height={TopPartHeight} />
   </StyledBackground>
 );
