@@ -1,18 +1,13 @@
-import styled from 'styled-components';
-
 import GlobalStyle from './styles/GlobalStyle';
 import Background from './components/Background/Background';
-
-const Header = styled.h1`
-  font-family: 'Elder Futhark';
-`;
+import PageFrame from './components/PageFrame/PageFrame';
 
 function App() {
   return (
     <>
       <GlobalStyle />
       <Background>
-        <Header>Hello World!</Header>
+        <PageFrame />
       </Background>
     </>
   );
