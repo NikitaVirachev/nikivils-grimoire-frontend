@@ -29,7 +29,7 @@ const TowerShape = styled.svg`
   display: block;
 `;
 
-const Eye = styled.div`
+const Eye = styled.svg`
   position: absolute;
   top: 0;
   left: 50%;
@@ -38,9 +38,6 @@ const Eye = styled.div`
 
   width: ${eyeWidthPct}%;
   height: ${eyeHeightPct}%;
-  background: var(--tertiary-color);
-
-  clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
 `;
 
 interface TowerProps {
@@ -60,7 +57,16 @@ const Tower = ({ topPartHeight }: TowerProps) => (
       />
     </TowerShape>
 
-    <Eye />
+    <Eye
+      viewBox='"0 0 4 87'
+      preserveAspectRatio='none'
+      aria-hidden
+    >
+      <path
+        d='M2 0L4 43.1067L2 86.2133L0 43.1067L2 0Z'
+        fill='var(--tertiary-color)'
+      />
+    </Eye>
   </TowerRoot>
 );
 
