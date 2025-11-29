@@ -38,6 +38,9 @@ const Eye = styled.svg`
 
   width: ${eyeWidthPct}%;
   height: ${eyeHeightPct}%;
+
+  filter: drop-shadow(0 0 1.4rem var(--tertiary-color))
+    drop-shadow(0 0 0.7rem var(--secondary-color));
 `;
 
 interface TowerProps {

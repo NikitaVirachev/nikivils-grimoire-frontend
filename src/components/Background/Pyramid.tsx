@@ -31,7 +31,6 @@ const PyramidShape = styled.svg`
 
 const CrossShape = styled.svg`
   position: absolute;
-  top: 0;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
@@ -39,6 +38,9 @@ const CrossShape = styled.svg`
 
   width: ${crossWidthPct}%;
   height: ${crossHeightPct}%;
+
+  filter: drop-shadow(0 0 1.4rem var(--tertiary-color))
+    drop-shadow(0 0 0.7rem var(--secondary-color));
 `;
 
 interface PyramidProps {
