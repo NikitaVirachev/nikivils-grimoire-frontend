@@ -1,19 +1,18 @@
 import styled from 'styled-components';
+import Header from '../Header/Header';
 
 const Layout = styled.div`
-  border: 1px solid var(--secondary-bg-color);
-  width: 86rem;
+  display: grid;
+  grid-template-columns: repeat(4, 20rem);
+  gap: 2rem;
+  align-content: start;
   height: 100%;
-`;
-
-const Header = styled.h1`
-  font-family: 'Elder Futhark';
 `;
 
 const PageFrame = () => {
   return (
     <Layout>
-      <Header>Hello World!</Header>
+      <Header />
     </Layout>
   );
 };
