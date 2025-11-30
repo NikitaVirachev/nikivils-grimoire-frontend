@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import blackSunPng from '../../assets/img/BlackSun.png';
+import blackSunPng from '../../assets/img/icons/BlackSun.png';
 
 const BlackSunImg = styled.img`
   width: 4rem;
