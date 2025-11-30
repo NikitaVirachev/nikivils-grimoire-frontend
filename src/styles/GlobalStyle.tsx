@@ -58,6 +58,7 @@ const styles = css`
     --grass-middle-ton: #2a3b18;
     --grass-top-ton: #253710;
     --silver-color: #c0c0c0;
+    --white-color: #fff;
 
     // Background
     --primarly-bg-color: #fbfbd4;
@@ -67,6 +68,14 @@ const styles = css`
     --primarly-tp-color: #ff1100;
     --secondary-tp-color: #000000;
     --tertiary-tp-color: #808080;
+
+    // Font sizes
+    --h1: 3.2rem;
+    --h2: 2rem;
+    --h3: 1.6rem;
+    --h4: 1.8rem;
+    --p: 1.6rem;
+    --small: 1.2rem;
   }
 `;
 
