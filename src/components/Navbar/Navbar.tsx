@@ -7,13 +7,10 @@ import marbleTexture from '../../assets/img/textures/marble.gif';
 const border = 0.5;
 
 const Wrapper = styled.nav`
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 0.5rem;
+  grid-column: -1 / 1;
 
   position: relative;
   padding: ${border + 0.2}rem;
-  grid-column: -1 / 1;
 
   background: var(--tertiary-color);
 
@@ -35,6 +32,13 @@ const Wrapper = styled.nav`
     -webkit-mask-composite: xor;
     mask-composite: exclude;
   }
+`;
+
+const List = styled.ul`
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.5rem;
+  list-style-type: none;
 `;
 
 const NavItem = styled(NavLink)`
@@ -61,10 +65,20 @@ const NavItem = styled(NavLink)`
 
 const Navbar = () => (
   <Wrapper>
-    <NavItem to='/'>Home</NavItem>
-    <NavItem to='/about'>About</NavItem>
-    <NavItem to='/blog'>Blog</NavItem>
-    <NavItem to='/gallery'>Gallery</NavItem>
+    <List>
+      <li>
+        <NavItem to='/'>Home</NavItem>
+      </li>
+      <li>
+        <NavItem to='/about'>About</NavItem>
+      </li>
+      <li>
+        <NavItem to='/blog'>Blog</NavItem>
+      </li>
+      <li>
+        <NavItem to='/gallery'>Gallery</NavItem>
+      </li>
+    </List>
   </Wrapper>
 );
 
