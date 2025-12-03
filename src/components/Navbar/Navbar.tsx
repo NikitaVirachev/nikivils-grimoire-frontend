@@ -47,7 +47,13 @@ const NavItem = styled(NavLink)`
   justify-content: center;
   align-items: center;
 
-  background: white;
+  background: linear-gradient(
+    to bottom,
+    var(--white-color),
+    var(--grey-color) 28%,
+    var(--grey-color) 68%,
+    var(--secondary-bg-color)
+  );
 `;
 
 const Navbar = () => (
