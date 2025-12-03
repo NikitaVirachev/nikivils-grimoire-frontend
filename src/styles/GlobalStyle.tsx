@@ -59,10 +59,12 @@ const styles = css`
     --grass-top-ton: #253710;
     --silver-color: #c0c0c0;
     --white-color: #fff;
+    --grey-color: #4f4f4f;
 
     // Background
     --primarly-bg-color: #fbfbd4;
     --secondary-bg-color: #211b1b;
+    --gold-bg-color: #98713a;
 
     // Typography
     --primarly-tp-color: #ff1100;
