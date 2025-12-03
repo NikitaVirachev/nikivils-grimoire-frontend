@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 
+import Frame from '../../styles/Frame';
 import marbleTexture from '../../assets/img/textures/marble.gif';
 
 const border = 0.5;
@@ -54,6 +55,8 @@ const NavItem = styled(NavLink)`
     var(--grey-color) 68%,
     var(--secondary-bg-color)
   );
+
+  ${Frame};
 `;
 
 const Navbar = () => (
