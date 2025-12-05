@@ -5,6 +5,7 @@ import type { ReactNode } from 'react';
 import { MarbleBackground } from '../styles/Backgrounds';
 import Scull from '../components/Icon/Scull';
 
+import chainLinkUrl from '../assets/img/icons/ChainLink.png';
 import mainBackgroundUrl from '../assets/img/backgrounds/main-background.jpg';
 
 const MainContentLayout = styled.main`
@@ -103,11 +104,22 @@ const ScrollTrack = styled.div`
 const ScrollThumb = styled.div<{ height: number }>`
   position: absolute;
   width: 100%;
-  background: rgba(255, 255, 255, 0.6);
   height: ${({ height }) => height}px;
   transition:
     height 80ms linear,
     top 80ms linear;
+
+  &::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: calc(100% - 2.4rem);
+    left: 0;
+    top: 0;
+    background-image: url(${chainLinkUrl});
+    background-repeat: repeat-y;
+    background-position: center;
+  }
 `;
 
 const BigChunk = styled.div`
