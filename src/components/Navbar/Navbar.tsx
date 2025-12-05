@@ -65,6 +65,10 @@ const NavItem = styled(NavLink)`
 
   ${SecondaryFrame};
 
+  &:hover:not(.active) {
+    filter: drop-shadow(0 0 0.7rem var(--secondary-color));
+  }
+
   &.active {
     background:
       linear-gradient(
