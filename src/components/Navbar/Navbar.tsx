@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 
 import { PrimarlyFrame, SecondaryFrame } from '../../styles/Frame';
-import marbleTexture from '../../assets/img/textures/marble.gif';
+import { MarbleBackground } from '../../styles/Backgrounds';
 
 const border = 0.5;
 
@@ -21,7 +21,7 @@ const Wrapper = styled.nav`
     padding: ${border}rem;
     pointer-events: none;
 
-    background: url(${marbleTexture}) 0 0 / 5rem 5rem repeat;
+    ${MarbleBackground};
 
     mask:
       linear-gradient(#000 0 0) content-box,
