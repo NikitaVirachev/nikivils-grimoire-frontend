@@ -226,7 +226,7 @@ const MainContent = ({ title, className, children }: MainContentProps) => {
       window.removeEventListener('pointercancel', onUp);
 
       const el = e.currentTarget as HTMLElement;
-      if (el.hasPointerCapture?.(ev.pointerId)) {
+      if (el?.hasPointerCapture?.(ev.pointerId)) {
         el.releasePointerCapture(ev.pointerId);
       }
     };
