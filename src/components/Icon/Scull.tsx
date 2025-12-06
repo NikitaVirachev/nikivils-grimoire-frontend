@@ -13,9 +13,10 @@ const Svg = styled(Icon)`
 interface ScullProps {
   title: string;
   className?: string;
+  onPointerDown?: React.PointerEventHandler<SVGSVGElement>;
 }
 
-const Scull = ({ title, className }: ScullProps) => {
+const Scull = ({ title, className, onPointerDown }: ScullProps) => {
   const titleId = React.useId();
   return (
     <Svg
@@ -23,6 +24,7 @@ const Scull = ({ title, className }: ScullProps) => {
       viewBox='0 0 24 24'
       aria-labelledby={titleId}
       className={className}
+      onPointerDown={onPointerDown}
     >
       <title id={titleId}>{title}</title>
       <path

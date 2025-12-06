@@ -143,6 +143,8 @@ const StyledSkull = styled(Scull)`
   position: absolute;
   bottom: 0;
   z-index: 4;
+  cursor: grab;
+  touch-action: none;
 `;
 
 interface MainContentProps {
@@ -154,6 +156,9 @@ interface MainContentProps {
 const MainContent = ({ title, className, children }: MainContentProps) => {
   const scrollRef = useRef<HTMLDivElement | null>(null);
   const trackRef = useRef<HTMLDivElement | null>(null);
+  const draggingRef = useRef(false);
+  const startYRef = useRef(0);
+  const startHRef = useRef(0);
 
   const [thumbHeight, setThumbHeight] = useState(8);
 
@@ -173,6 +178,62 @@ const MainContent = ({ title, className, children }: MainContentProps) => {
     const h = minPiecePx + progress * (trackHeight - minPiecePx);
 
     setThumbHeight(h);
+  };
+
+  const clamp = (v: number, a: number, b: number) => Math.max(a, Math.min(b, v));
+
+  const setScrollFromThumbHeight = (h: number) => {
+    const scroller = scrollRef.current;
+    const track = trackRef.current;
+    if (!scroller || !track) return;
+
+    const trackHeight = track.clientHeight;
+    const maxScroll = Math.max(1, scroller.scrollHeight - scroller.clientHeight);
+
+    const progress = clamp((h - minPiecePx) / (trackHeight - minPiecePx), 0, 1);
+
+    scroller.scrollTop = progress * maxScroll;
+  };
+
+  const onSkullPointerDown = (e: React.PointerEvent) => {
+    const track = trackRef.current;
+    if (!track) return;
+
+    draggingRef.current = true;
+    startYRef.current = e.clientY;
+    startHRef.current = thumbHeight;
+
+    (e.currentTarget as HTMLElement).setPointerCapture(e.pointerId);
+
+    const onMove = (ev: PointerEvent) => {
+      if (!draggingRef.current) return;
+
+      const dy = ev.clientY - startYRef.current; // вниз = +
+      const trackHeight = track.clientHeight;
+
+      // тянем вниз -> хотим увеличить высоту
+      const newH = clamp(startHRef.current + dy, minPiecePx, trackHeight);
+
+      setThumbHeight(newH);
+      setScrollFromThumbHeight(newH);
+    };
+
+    const onUp = (ev: PointerEvent) => {
+      draggingRef.current = false;
+
+      window.removeEventListener('pointermove', onMove);
+      window.removeEventListener('pointerup', onUp);
+      window.removeEventListener('pointercancel', onUp);
+
+      const el = e.currentTarget as HTMLElement;
+      if (el.hasPointerCapture?.(ev.pointerId)) {
+        el.releasePointerCapture(ev.pointerId);
+      }
+    };
+
+    window.addEventListener('pointermove', onMove);
+    window.addEventListener('pointerup', onUp);
+    window.addEventListener('pointercancel', onUp);
   };
 
   useEffect(() => {
@@ -209,7 +270,10 @@ const MainContent = ({ title, className, children }: MainContentProps) => {
         <RightChain>
           <ScrollTrack ref={trackRef}>
             <ScrollThumb height={thumbHeight}>
-              <StyledSkull title='Scull' />
+              <StyledSkull
+                title='Scull'
+                onPointerDown={onSkullPointerDown}
+              />
             </ScrollThumb>
           </ScrollTrack>
         </RightChain>
