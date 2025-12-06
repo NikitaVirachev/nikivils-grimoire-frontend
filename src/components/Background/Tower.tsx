@@ -61,7 +61,7 @@ const Tower = ({ topPartHeight }: TowerProps) => (
     </TowerShape>
 
     <Eye
-      viewBox='"0 0 4 87'
+      viewBox='0 0 4 87'
       preserveAspectRatio='none'
       aria-hidden
     >
