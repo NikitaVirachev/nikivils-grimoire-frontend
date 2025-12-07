@@ -63,6 +63,10 @@ const Column = styled.div`
   position: relative;
   overflow-y: auto;
 
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
   /* Скрыть нативный скроллбар */
   scrollbar-width: none; /* Firefox */
   -ms-overflow-style: none; /* IE/Edge legacy */
