@@ -10,13 +10,13 @@ const Svg = styled(Icon)`
   color: var(--secondary-bg-color);
 `;
 
-interface ScullProps {
+interface SkullProps {
   title: string;
   className?: string;
   onPointerDown?: React.PointerEventHandler<SVGSVGElement>;
 }
 
-const Scull = ({ title, className, onPointerDown }: ScullProps) => {
+const Skull = ({ title, className, onPointerDown }: SkullProps) => {
   const titleId = React.useId();
   return (
     <Svg
@@ -35,4 +35,4 @@ const Scull = ({ title, className, onPointerDown }: ScullProps) => {
   );
 };
 
-export default Scull;
+export default Skull;

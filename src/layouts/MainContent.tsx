@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import type { ReactNode } from 'react';
 
 import PictureFrame from '../styles/PictureFrame';
-import Scull from '../components/Icon/Scull';
+import Skull from '../components/Icon/Skull';
 import FrameTitle from '../components/FrameTitle/FrameTitle';
 
 import chainLinkUrl from '../assets/img/icons/ChainLink.png';
@@ -111,7 +111,7 @@ const BigChunk = styled.div`
   height: 100rem;
 `;
 
-const StyledSkull = styled(Scull)`
+const StyledSkull = styled(Skull)`
   position: absolute;
   bottom: 0;
   z-index: 4;
