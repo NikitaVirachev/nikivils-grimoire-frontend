@@ -2,49 +2,21 @@ import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
 import type { ReactNode } from 'react';
 
-import { MarbleBackground } from '../styles/Backgrounds';
+import PictureFrame from '../styles/PictureFrame';
 import Scull from '../components/Icon/Scull';
+import FrameTitle from '../components/FrameTitle/FrameTitle';
 
 import chainLinkUrl from '../assets/img/icons/ChainLink.png';
 import mainBackgroundUrl from '../assets/img/backgrounds/main-background.jpg';
 
 const MainContentLayout = styled.main`
   position: relative;
-  padding: 0 0.5rem 2rem 0.5rem;
 
   min-height: 0;
   display: flex;
   flex-direction: column;
 
-  background: var(--primarly-bg-color);
-
-  &::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    padding: 0 0.5rem 2rem 0.5rem;
-    pointer-events: none;
-
-    ${MarbleBackground};
-
-    mask:
-      linear-gradient(#000 0 0) content-box,
-      linear-gradient(#000 0 0);
-    -webkit-mask:
-      linear-gradient(#000 0 0) content-box,
-      linear-gradient(#000 0 0);
-    -webkit-mask-composite: xor;
-    mask-composite: exclude;
-  }
-`;
-
-const Title = styled.h2`
-  text-align: center;
-  color: var(--tertiary-color);
-  line-height: 4rem;
-  font-size: var(--h2);
-  font-family: 'Uncial Antiqua', serif;
-  ${MarbleBackground};
+  ${PictureFrame};
 `;
 
 const Content = styled.section`
@@ -65,7 +37,7 @@ const Content = styled.section`
     left: 0;
     width: 100%;
     height: 100%;
-    background: center / cover no-repeat url(${mainBackgroundUrl});
+    background: top center / cover no-repeat url(${mainBackgroundUrl});
     opacity: 0.1;
   }
 `;
@@ -260,7 +232,7 @@ const MainContent = ({ title, className, children }: MainContentProps) => {
 
   return (
     <MainContentLayout className={className}>
-      <Title>{title}</Title>
+      <FrameTitle>{title}</FrameTitle>
       <Content>
         <LeftChain />
         <Column ref={scrollRef}>
