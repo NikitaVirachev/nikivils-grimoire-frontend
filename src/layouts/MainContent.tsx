@@ -107,10 +107,6 @@ const ScrollThumb = styled.div<{ height: number }>`
   }
 `;
 
-const BigChunk = styled.div`
-  height: 100rem;
-`;
-
 const StyledSkull = styled(Skull)`
   position: absolute;
   bottom: 0;
@@ -235,10 +231,7 @@ const MainContent = ({ title, className, children }: MainContentProps) => {
       <FrameTitle>{title}</FrameTitle>
       <Content>
         <LeftChain />
-        <Column ref={scrollRef}>
-          <BigChunk />
-          {children}
-        </Column>
+        <Column ref={scrollRef}>{children}</Column>
         <RightChain>
           <ScrollTrack ref={trackRef}>
             <ScrollThumb height={thumbHeight}>
