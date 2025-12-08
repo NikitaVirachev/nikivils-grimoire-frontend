@@ -1,4 +1,4 @@
-import { useEffect, useLayoutEffect, useRef } from 'react';
+import { useEffect, useLayoutEffect, useRef, useCallback } from 'react';
 import styled from 'styled-components';
 import type { ReactNode } from 'react';
 
@@ -136,7 +136,7 @@ const MainContent = ({ title, className, children }: MainContentProps) => {
     thumb.style.setProperty('--thumb-h', `${h}px`);
   };
 
-  const recalc = () => {
+  const recalc = useCallback(() => {
     if (draggingRef.current) return;
 
     const scroller = scrollRef.current;
@@ -151,7 +151,7 @@ const MainContent = ({ title, className, children }: MainContentProps) => {
 
     const h = minPiecePx + progress * (trackHeight - minPiecePx);
     setThumbHeightPx(h);
-  };
+  }, []);
 
   const clamp = (v: number, a: number, b: number) => Math.max(a, Math.min(b, v));
 
@@ -241,7 +241,7 @@ const MainContent = ({ title, className, children }: MainContentProps) => {
     recalc();
     scroller.addEventListener('scroll', recalc, { passive: true });
     return () => scroller.removeEventListener('scroll', recalc);
-  }, []);
+  }, [recalc]);
 
   // чтобы реагировать на изменение высоты/контента/вьюпорта
   useLayoutEffect(() => {
@@ -254,7 +254,7 @@ const MainContent = ({ title, className, children }: MainContentProps) => {
     ro.observe(track);
 
     return () => ro.disconnect();
-  }, []);
+  }, [recalc]);
 
   return (
     <MainContentLayout className={className}>
