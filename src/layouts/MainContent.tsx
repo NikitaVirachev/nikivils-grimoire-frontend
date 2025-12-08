@@ -109,6 +109,7 @@ const StyledSkull = styled(Skull)`
   z-index: 4;
   cursor: grab;
   touch-action: none;
+  user-select: none;
 `;
 
 interface MainContentProps {
