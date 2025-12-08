@@ -12,6 +12,7 @@ const Layout = styled.div`
   row-gap: 1rem;
   align-content: start;
   height: 100%;
+  padding-bottom: 2rem;
 
   position: relative;
   z-index: 5;
