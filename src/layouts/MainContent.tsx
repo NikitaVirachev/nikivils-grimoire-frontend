@@ -1,4 +1,4 @@
-import { useEffect, useLayoutEffect, useRef, useState } from 'react';
+import { useEffect, useLayoutEffect, useRef } from 'react';
 import styled from 'styled-components';
 import type { ReactNode } from 'react';
 
@@ -82,10 +82,10 @@ const ScrollTrack = styled.div`
   background: transparent;
 `;
 
-const ScrollThumb = styled.div<{ height: number }>`
+const ScrollThumb = styled.div`
   position: absolute;
   width: 100%;
-  height: ${({ height }) => height}px;
+  height: var(--thumb-h, 8px);
   transition:
     height 80ms linear,
     top 80ms linear;
@@ -120,15 +120,22 @@ interface MainContentProps {
 const MainContent = ({ title, className, children }: MainContentProps) => {
   const scrollRef = useRef<HTMLDivElement | null>(null);
   const trackRef = useRef<HTMLDivElement | null>(null);
+  const thumbRef = useRef<HTMLDivElement | null>(null);
   const draggingRef = useRef(false);
   const startYRef = useRef(0);
   const startHRef = useRef(0);
 
-  const [thumbHeight, setThumbHeight] = useState(8);
-
   const minPiecePx = 24; // тот самый "небольшой кусочек" в начале
 
+  const setThumbHeightPx = (h: number) => {
+    const thumb = thumbRef.current;
+    if (!thumb) return;
+    thumb.style.setProperty('--thumb-h', `${h}px`);
+  };
+
   const recalc = () => {
+    if (draggingRef.current) return;
+
     const scroller = scrollRef.current;
     const track = trackRef.current;
     if (!scroller || !track) return;
@@ -140,8 +147,7 @@ const MainContent = ({ title, className, children }: MainContentProps) => {
     const progress = Math.min(1, Math.max(0, scrollTop / maxScroll));
 
     const h = minPiecePx + progress * (trackHeight - minPiecePx);
-
-    setThumbHeight(h);
+    setThumbHeightPx(h);
   };
 
   const clamp = (v: number, a: number, b: number) => Math.max(a, Math.min(b, v));
@@ -165,7 +171,9 @@ const MainContent = ({ title, className, children }: MainContentProps) => {
 
     draggingRef.current = true;
     startYRef.current = e.clientY;
-    startHRef.current = thumbHeight;
+    startHRef.current = thumbRef.current
+      ? parseFloat(getComputedStyle(thumbRef.current).getPropertyValue('--thumb-h')) || minPiecePx
+      : minPiecePx;
 
     (e.currentTarget as HTMLElement).setPointerCapture(e.pointerId);
 
@@ -178,7 +186,7 @@ const MainContent = ({ title, className, children }: MainContentProps) => {
       // тянем вниз -> хотим увеличить высоту
       const newH = clamp(startHRef.current + dy, minPiecePx, trackHeight);
 
-      setThumbHeight(newH);
+      setThumbHeightPx(newH);
       setScrollFromThumbHeight(newH);
     };
 
@@ -230,7 +238,7 @@ const MainContent = ({ title, className, children }: MainContentProps) => {
         <Column ref={scrollRef}>{children}</Column>
         <RightChain>
           <ScrollTrack ref={trackRef}>
-            <ScrollThumb height={thumbHeight}>
+            <ScrollThumb ref={thumbRef}>
               <StyledSkull
                 title='Scull'
                 onPointerDown={onSkullPointerDown}
