@@ -46,17 +46,9 @@ const LeftChain = styled.div`
   width: 2.4rem;
   position: relative;
 
-  &::after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    left: 0;
-    top: 0;
-    background-image: url(${chainLinkUrl});
-    background-repeat: repeat-y;
-    background-position: center;
-  }
+  background-image: url(${chainLinkUrl});
+  background-repeat: repeat-y;
+  background-position: center;
 `;
 
 const Column = styled.div`
