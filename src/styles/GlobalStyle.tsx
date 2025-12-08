@@ -29,13 +29,15 @@ const styles = css`
     font-family: 'Coelacanth', serif;
     font-style: normal;
     font-weight: 400;
-    src: url(${Coelacanth});
+    font-display: swap;
+    src: url(${Coelacanth}) format('opentype');
   }
 
   @font-face {
     font-family: 'Metamorphous';
     font-style: normal;
     font-weight: 400;
+    font-display: swap;
     src: url(${Metamorphous}) format('truetype');
   }
 
@@ -43,7 +45,8 @@ const styles = css`
     font-family: 'Elder Futhark';
     font-style: normal;
     font-weight: 400;
-    src: url(${ElderFuthark});
+    font-display: swap;
+    src: url(${ElderFuthark}) format('truetype');
   }
 
   // Variables
