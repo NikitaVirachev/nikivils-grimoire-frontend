@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 import Bat from '../Icon/Bat';
+import SwordLink from './SwordLink';
 
 const Post = styled.article`
   font-family: 'Coelacanth', serif;
@@ -49,6 +50,7 @@ const PostOverview = ({ title, overview }: PostOverviewProps) => (
       <Header>
         <Bat title='Bat' />
         <Title>{title}</Title>
+        <SwordLink to=''>Read</SwordLink>
       </Header>
       <PostBody>{overview}</PostBody>
     </Content>
