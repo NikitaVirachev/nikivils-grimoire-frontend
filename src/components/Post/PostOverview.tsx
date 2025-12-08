@@ -42,15 +42,16 @@ const Border = styled.footer`
 interface PostOverviewProps {
   title: string;
   overview: string;
+  linkToPost: string;
 }
 
-const PostOverview = ({ title, overview }: PostOverviewProps) => (
+const PostOverview = ({ title, overview, linkToPost }: PostOverviewProps) => (
   <Post>
     <Content>
       <Header>
         <Bat title='Bat' />
         <Title>{title}</Title>
-        <SwordLink to=''>Read</SwordLink>
+        <SwordLink to={linkToPost}>Read</SwordLink>
       </Header>
       <PostBody>{overview}</PostBody>
     </Content>
