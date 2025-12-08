@@ -124,6 +124,8 @@ const MainContent = ({ title, className, children }: MainContentProps) => {
   const draggingRef = useRef(false);
   const startYRef = useRef(0);
   const startHRef = useRef(0);
+  const rafDragRef = useRef<number | null>(null);
+  const lastClientYRef = useRef<number>(0);
 
   const minPiecePx = 24; // тот самый "небольшой кусочек" в начале
 
@@ -167,27 +169,41 @@ const MainContent = ({ title, className, children }: MainContentProps) => {
 
   const onSkullPointerDown = (e: React.PointerEvent) => {
     const track = trackRef.current;
-    if (!track) return;
+    const thumb = thumbRef.current;
+    if (!track || !thumb) return;
 
     draggingRef.current = true;
     startYRef.current = e.clientY;
-    startHRef.current = thumbRef.current
-      ? parseFloat(getComputedStyle(thumbRef.current).getPropertyValue('--thumb-h')) || minPiecePx
-      : minPiecePx;
+    startHRef.current =
+      parseFloat(getComputedStyle(thumb).getPropertyValue('--thumb-h')) || minPiecePx;
+
+    // отключаем анимацию на время drag
+    const prevTransition = thumb.style.transition;
+    thumb.style.transition = 'none';
 
     (e.currentTarget as HTMLElement).setPointerCapture(e.pointerId);
 
-    const onMove = (ev: PointerEvent) => {
+    const applyDrag = () => {
+      rafDragRef.current = null;
       if (!draggingRef.current) return;
 
-      const dy = ev.clientY - startYRef.current; // вниз = +
+      const dy = lastClientYRef.current - startYRef.current;
       const trackHeight = track.clientHeight;
 
-      // тянем вниз -> хотим увеличить высоту
       const newH = clamp(startHRef.current + dy, minPiecePx, trackHeight);
 
       setThumbHeightPx(newH);
       setScrollFromThumbHeight(newH);
+    };
+
+    const onMove = (ev: PointerEvent) => {
+      if (!draggingRef.current) return;
+
+      lastClientYRef.current = ev.clientY;
+
+      if (rafDragRef.current == null) {
+        rafDragRef.current = requestAnimationFrame(applyDrag);
+      }
     };
 
     const onUp = (ev: PointerEvent) => {
@@ -200,6 +216,15 @@ const MainContent = ({ title, className, children }: MainContentProps) => {
       const el = e.currentTarget as HTMLElement;
       if (el?.hasPointerCapture?.(ev.pointerId)) {
         el.releasePointerCapture(ev.pointerId);
+      }
+
+      // возвращаем transition
+      thumb.style.transition = prevTransition;
+
+      // если кадр ещё висел — отменим
+      if (rafDragRef.current != null) {
+        cancelAnimationFrame(rafDragRef.current);
+        rafDragRef.current = null;
       }
     };
 
