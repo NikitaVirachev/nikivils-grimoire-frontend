@@ -21,6 +21,10 @@ const Column = styled.div`
 
   position: relative;
 
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+
   &::before {
     content: '';
     position: absolute;
