@@ -3,12 +3,13 @@ import styled from 'styled-components';
 import MainContent from '../layouts/MainContent';
 import Sidebar from '../components/Sidebar/Sidebar';
 import PostOverview from '../components/Post/PostOverview';
+import Chat from '../components/Chat/Chat';
 
 const StyledMainContent = styled(MainContent)`
   grid-column: col-start 1 / col-end 3;
 `;
 
-const StyledSidebar = styled(Sidebar)``;
+const PositionedChat = styled(Chat)``;
 
 const posts = [
   {
@@ -67,7 +68,9 @@ const HomePage = () => (
         />
       ))}
     </StyledMainContent>
-    <StyledSidebar title='Explore'>Sidebar</StyledSidebar>
+    <Sidebar title='Explore'>
+      <PositionedChat />
+    </Sidebar>
   </>
 );
 
