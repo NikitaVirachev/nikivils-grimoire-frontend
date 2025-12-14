@@ -9,7 +9,9 @@ const StyledMainContent = styled(MainContent)`
   grid-column: col-start 1 / col-end 3;
 `;
 
-const PositionedChat = styled(Chat)``;
+const PositionedChat = styled(Chat)`
+  align-self: end;
+`;
 
 const posts = [
   {

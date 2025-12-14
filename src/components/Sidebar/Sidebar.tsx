@@ -21,8 +21,8 @@ const Column = styled.div`
 
   position: relative;
 
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr;
   gap: 0.5rem;
 
   &::before {
