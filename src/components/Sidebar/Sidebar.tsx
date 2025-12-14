@@ -17,7 +17,7 @@ const SidebarLayout = styled.aside`
 
 const Column = styled.div`
   flex-grow: 1;
-  padding: 0 0.2rem 0.2rem 0.2rem;
+  padding: 0.2rem 0.2rem 0.2rem 0.2rem;
 
   position: relative;
 
