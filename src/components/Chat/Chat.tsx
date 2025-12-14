@@ -68,7 +68,8 @@ const Messages = styled.div`
 
   overflow-y: auto;
 
-  padding-right: 0.5rem;
+  padding-right: 1.5rem;
+  scrollbar-color: var(--primarly-color) transparent;
 `;
 
 const Bubble = styled.div`
@@ -102,6 +103,11 @@ const messages = [
     id: 1,
     author: 'Anonymous#124',
     message: 'Lorem ipsum tortor tempus',
+  },
+  {
+    id: 2,
+    author: 'Anonymous#125',
+    message: 'Lorem ipsum nec ultricies vulputate tortor pretium pulvinar quis donec.',
   },
 ];
 
