@@ -63,6 +63,7 @@ const styles = css`
     --silver-color: #c0c0c0;
     --white-color: #fff;
     --grey-color: #4f4f4f;
+    --eye-color: #a18181;
 
     // Background
     --primarly-bg-color: #fbfbd4;
