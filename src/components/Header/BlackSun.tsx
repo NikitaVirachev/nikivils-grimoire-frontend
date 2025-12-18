@@ -9,6 +9,8 @@ const Wrapper = styled.div`
   height: 4rem;
   position: relative;
 
+  transition: filter 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+
   &:hover {
     filter: drop-shadow(0 0 0.6rem var(--tertiary-color));
   }
