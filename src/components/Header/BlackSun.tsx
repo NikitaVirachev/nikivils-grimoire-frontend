@@ -8,6 +8,10 @@ const Wrapper = styled.div`
   width: 4rem;
   height: 4rem;
   position: relative;
+
+  &:hover {
+    filter: drop-shadow(0 0 0.6rem var(--tertiary-color));
+  }
 `;
 
 const BlackSunImg = styled.img``;
