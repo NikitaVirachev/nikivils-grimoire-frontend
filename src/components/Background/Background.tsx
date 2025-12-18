@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import PlanePerspective from './PlanePerspective';
 import Tower from './Tower';
 import Pyramid from './Pyramid';
+import Horizon from './Horizon';
 
 const TopPartHeight = '61.33%';
 
@@ -28,6 +29,8 @@ const StyledBackground = styled.div`
     0 100%;
 
   height: 100vh;
+
+  position: relative;
 `;
 
 const Wrapper = styled.div`
@@ -49,6 +52,7 @@ const Background = ({ children }: PropsWithChildren) => (
         <Pyramid topPartHeight={TopPartHeight} />
       </Content>
     </Wrapper>
+    <Horizon topPartHeight={TopPartHeight} />
     <PlanePerspective height={TopPartHeight} />
   </StyledBackground>
 );
