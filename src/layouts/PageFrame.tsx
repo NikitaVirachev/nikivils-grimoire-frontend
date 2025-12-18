@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 import Header from '../components/Header/Header';
 import Navbar from '../components/Navbar/Navbar';
+import Footer from '../components/Footer/Footer';
 
 const Layout = styled.div`
   display: grid;
@@ -12,7 +13,7 @@ const Layout = styled.div`
   row-gap: 1rem;
   align-content: start;
   height: 100%;
-  padding-bottom: 2rem;
+  padding-bottom: 1rem;
 
   position: relative;
   z-index: 5;
@@ -24,6 +25,7 @@ const PageFrame = ({ children }: PropsWithChildren) => {
       <Header />
       <Navbar />
       {children}
+      <Footer />
     </Layout>
   );
 };
