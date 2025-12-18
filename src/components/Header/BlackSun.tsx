@@ -12,21 +12,11 @@ const Wrapper = styled.div`
 
 const BlackSunImg = styled.img``;
 
-const Eye = styled.div`
-  cursor: pointer;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-`;
-
 const Mask = styled.div`
   position: absolute;
   left: 0;
   right: 0;
   top: 50%;
-  transform: translateY(-50%);
   height: 50%;
 
   background: var(--eye-color);
@@ -37,6 +27,22 @@ const Mask = styled.div`
   clip-path: path(
     'M20.0479 0C28.3223 0.000113657 35.6268 3.95108 40 9.97949C35.638 16.0816 28.2873 20.0897 19.9531 20.0898C11.6783 20.0898 4.37326 16.1382 0 10.1094C4.36215 4.0074 11.7137 0 20.0479 0Z'
   );
+
+  transform: translateY(-50%) scaleY(0);
+  transition: transform 220ms cubic-bezier(0.2, 0.8, 0.2, 1);
+`;
+
+const Eye = styled.div`
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  &:hover ${Mask} {
+    transform: translateY(-50%) scaleY(1);
+  }
 `;
 
 const Iris = styled.div`
