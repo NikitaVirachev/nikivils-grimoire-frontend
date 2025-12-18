@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import styled from 'styled-components';
 
 import { VelvetBackground } from '../../styles/Backgrounds';
@@ -93,35 +93,41 @@ const MessageText = styled.p`
   color: var(--secondary-tp-color);
 `;
 
-const messages = [
-  {
-    id: 0,
-    author: 'Anonymous#123',
-    message: 'Lorem ipsum nec ultricies vulputate tortor pretium pulvinar quis donec.',
-  },
-  {
-    id: 1,
-    author: 'Anonymous#124',
-    message: 'Lorem ipsum tortor tempus',
-  },
-  {
-    id: 2,
-    author: 'Anonymous#125',
-    message: 'Lorem ipsum nec ultricies vulputate tortor pretium pulvinar quis donec.',
-  },
-];
-
 interface ChatProps {
   className?: string;
 }
 
 const Chat = ({ className }: ChatProps) => {
+  const [messages, setMessages] = useState([
+    {
+      id: 0,
+      author: 'Anonymous#123',
+      message: 'Lorem ipsum nec ultricies vulputate tortor pretium pulvinar quis donec.',
+    },
+    {
+      id: 1,
+      author: 'Anonymous#124',
+      message: 'Lorem ipsum tortor tempus',
+    },
+    {
+      id: 2,
+      author: 'Anonymous#125',
+      message: 'Lorem ipsum nec ultricies vulputate tortor pretium pulvinar quis donec.',
+    },
+  ]);
   const [message, setMessage] = useState('');
+  const bottomRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    bottomRef.current?.scrollIntoView({ behavior: 'smooth', block: 'end' });
+  }, [messages]);
 
   const sendMessageHandler: React.FormEventHandler<HTMLFormElement> = (event) => {
     event.preventDefault();
 
-    console.log(message);
+    setMessages((prev) => {
+      return [...prev, { id: prev.length + 1, author: 'Anonymous#124', message }];
+    });
 
     setMessage('');
   };
@@ -137,7 +143,9 @@ const Chat = ({ className }: ChatProps) => {
               <MessageText>{message.message}</MessageText>
             </Bubble>
           ))}
+          <div ref={bottomRef} />
         </Messages>
+
         <EnterInput
           name='chat'
           placeholder='say something?'
