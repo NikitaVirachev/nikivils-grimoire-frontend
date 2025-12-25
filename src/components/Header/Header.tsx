@@ -1,7 +1,8 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 import Crescent from './Crescent';
 import BlackSun from './BlackSun';
+import { respond } from '../../styles/Mixins';
 
 const Container = styled.header`
   display: flex;
@@ -12,6 +13,13 @@ const Container = styled.header`
   grid-column: -1 / 1;
 
   padding: 2rem 0;
+
+  ${respond(
+    'tab-portrait',
+    css`
+      padding: 1rem 0;
+    `
+  )}
 `;
 
 const Title = styled.span`

@@ -1,5 +1,5 @@
 import type { PropsWithChildren } from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 import Header from '../components/Header/Header';
 import Navbar from '../components/Navbar/Navbar';
@@ -14,11 +14,21 @@ const Layout = styled.div`
   column-gap: 2rem;
   row-gap: 1rem;
   align-content: start;
+
   height: 100%;
   padding-bottom: 1rem;
 
   position: relative;
   z-index: 5;
+
+  ${respond(
+    'tab-portrait',
+    css`
+      grid-template-columns: repeat(4, [col-start] 19rem [col-end]);
+      column-gap: 0.5rem;
+      row-gap: 0.5rem;
+    `
+  )}
 `;
 
 const PageFrame = ({ children }: PropsWithChildren) => {

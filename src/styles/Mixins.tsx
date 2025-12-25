@@ -1,17 +1,23 @@
 import { css } from 'styled-components';
 
-type Breakpoint = 'phone' | 'tab-landscape' | 'tab-portrait' | 'desktop';
+type Breakpoint = 'phone' | 'tab-landscape' | 'tab-square' | 'tab-portrait' | 'desktop';
 type CssBlock = ReturnType<typeof css>;
 
 export const respond = (breakpoint: Breakpoint, content: CssBlock) => {
   switch (breakpoint) {
     case 'phone':
       return css`
-        @media only screen and (width < 800px) {
+        @media only screen and (width < 805px) {
           ${content};
         }
       `;
     case 'tab-portrait':
+      return css`
+        @media only screen and (width < 900px) {
+          ${content};
+        }
+      `;
+    case 'tab-square':
       return css`
         @media only screen and (width < 1095px) {
           ${content};

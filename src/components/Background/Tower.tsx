@@ -39,7 +39,7 @@ const TowerRoot = styled.div<{ $topPartHeight: string }>`
   )}
 
   ${respond(
-    'tab-portrait',
+    'tab-square',
     css`
       display: none;
     `

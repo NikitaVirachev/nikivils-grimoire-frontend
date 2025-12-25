@@ -3,6 +3,7 @@ import { createGlobalStyle, css } from 'styled-components';
 import Coelacanth from '../assets/fonts/Coelacanth.otf';
 import Metamorphous from '../assets/fonts/Metamorphous-Regular.ttf';
 import ElderFuthark from '../assets/fonts/Rune.ttf';
+import { respond } from './Mixins';
 
 const styles = css`
   *,
@@ -82,6 +83,13 @@ const styles = css`
     --h4: 1.8rem;
     --p: 1.6rem;
     --small: 1.2rem;
+
+    ${respond(
+      'tab-portrait',
+      css`
+        --h1: 2.6rem;
+      `
+    )}
   }
 `;
 
