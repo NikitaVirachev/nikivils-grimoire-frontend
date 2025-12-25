@@ -5,6 +5,8 @@ import Header from '../components/Header/Header';
 import Navbar from '../components/Navbar/Navbar';
 import Footer from '../components/Footer/Footer';
 
+import { respond } from '../styles/Mixins';
+
 const Layout = styled.div`
   display: grid;
   grid-template-columns: repeat(4, [col-start] 20rem [col-end]);

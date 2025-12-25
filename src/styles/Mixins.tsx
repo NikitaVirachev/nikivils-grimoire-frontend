@@ -11,13 +11,13 @@ export const respond = (breakpoint: Breakpoint, content: CssBlock) => {
           ${content};
         }
       `;
-    case 'tab-landscape':
+    case 'tab-portrait':
       return css`
         @media only screen and (width < 1095px) {
           ${content};
         }
       `;
-    case 'tab-portrait':
+    case 'tab-landscape':
       return css`
         @media only screen and (width < 1440px) {
           ${content};

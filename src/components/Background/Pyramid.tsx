@@ -32,14 +32,14 @@ const PyramidRoot = styled.div<{ $topPartHeight: string }>`
   transform: translateX(-50%);
 
   ${respond(
-    'tab-portrait',
+    'tab-landscape',
     css`
       left: calc(100% + clamp(0rem, calc((100vw - 109.5rem) * ${slope}), ${maxOffsetRem}rem));
     `
   )}
 
   ${respond(
-    'tab-landscape',
+    'tab-portrait',
     css`
       display: none;
     `
