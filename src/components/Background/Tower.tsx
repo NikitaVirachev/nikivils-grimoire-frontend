@@ -1,4 +1,6 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
+
+import { respond } from '../../styles/Mixins';
 
 const heightOfTower = 488;
 const heightOfContent = 1024;
@@ -12,13 +14,36 @@ const widthOfEye = 4;
 
 const eyeWidthPct = (widthOfEye / widthOfTower) * 100;
 
+const realWidthOfTowerRem = 10;
+const maxOffsetRem = 9.5 + realWidthOfTowerRem / 2; // 14.5
+const rangeRem = 144 - 109.5; // 34.5
+const slope = maxOffsetRem / rangeRem;
+
 const TowerRoot = styled.div<{ $topPartHeight: string }>`
-  width: 10rem;
+  width: ${realWidthOfTowerRem}rem;
   height: ${towerHeightPct}%;
 
   position: absolute;
   bottom: calc(100% - ${(props) => props.$topPartHeight} - 1px);
-  right: calc(100% + 9.5rem);
+
+  /* 1) >=1440px */
+  right: calc(100% + ${maxOffsetRem}rem);
+
+  transform: translateX(50%);
+
+  ${respond(
+    'tab-portrait',
+    css`
+      right: calc(100% + clamp(0rem, calc((100vw - 109.5rem) * ${slope}), ${maxOffsetRem}rem));
+    `
+  )}
+
+  ${respond(
+    'tab-landscape',
+    css`
+      display: none;
+    `
+  )}
 `;
 
 const TowerShape = styled.svg`

@@ -1,4 +1,6 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
+
+import { respond } from '../../styles/Mixins';
 
 const heightOfPyramid = 488;
 const heightOfContent = 1024;
@@ -12,13 +14,36 @@ const widthOfCross = 46;
 
 const crossWidthPct = (widthOfCross / widthOfPyramid) * 100;
 
+const realWidthOfPyramidRem = 20;
+const maxOffsetRem = 4.5 + realWidthOfPyramidRem / 2; // 14.5
+const rangeRem = 144 - 109.5; // 34.5
+const slope = maxOffsetRem / rangeRem;
+
 const PyramidRoot = styled.div<{ $topPartHeight: string }>`
-  width: 20rem;
+  width: ${realWidthOfPyramidRem}rem;
   height: ${pyramidHeightPct}%;
 
   position: absolute;
   bottom: calc(100% - ${(props) => props.$topPartHeight} - 1px);
-  left: calc(100% + 4.5rem);
+
+  /* 1) >=1440px */
+  left: calc(100% + ${maxOffsetRem}rem);
+
+  transform: translateX(-50%);
+
+  ${respond(
+    'tab-portrait',
+    css`
+      left: calc(100% + clamp(0rem, calc((100vw - 109.5rem) * ${slope}), ${maxOffsetRem}rem));
+    `
+  )}
+
+  ${respond(
+    'tab-landscape',
+    css`
+      display: none;
+    `
+  )}
 `;
 
 const PyramidShape = styled.svg`
