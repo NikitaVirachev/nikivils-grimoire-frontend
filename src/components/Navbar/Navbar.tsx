@@ -7,8 +7,6 @@ import { MarbleBackground } from '../../styles/Backgrounds';
 const border = 0.5;
 
 const Wrapper = styled.nav`
-  grid-column: -1 / 1;
-
   position: relative;
   padding: ${border + 0.2}rem;
 
@@ -87,8 +85,12 @@ const NavItem = styled(NavLink)`
   }
 `;
 
-const Navbar = () => (
-  <Wrapper>
+type NavbarProps = {
+  className?: string;
+};
+
+const Navbar = ({ className }: NavbarProps) => (
+  <Wrapper className={className}>
     <List>
       <li>
         <NavItem to='/'>Home</NavItem>

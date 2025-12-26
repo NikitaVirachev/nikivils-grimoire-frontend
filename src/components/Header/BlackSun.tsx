@@ -79,8 +79,12 @@ const Pupil = styled.div`
   border-radius: 50%;
 `;
 
-const BlackSun = () => (
-  <Wrapper>
+type BlackSunProps = {
+  className?: string;
+};
+
+const BlackSun = ({ className }: BlackSunProps) => (
+  <Wrapper className={className}>
     <BlackSunImg
       src={blackSunPng}
       alt='Black Sun'

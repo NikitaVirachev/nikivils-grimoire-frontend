@@ -1,7 +1,8 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { Link } from 'react-router-dom';
 
 import Sword from '../Icon/Sword';
+import { respond } from '../../styles/Mixins';
 
 const StyledLink = styled(Link)`
   display: flex;
@@ -28,6 +29,15 @@ const StyledLink = styled(Link)`
   }
 `;
 
+const StyledSword = styled(Sword)`
+  ${respond(
+    'phone',
+    css`
+      display: none;
+    `
+  )}
+`;
+
 interface LinkProps {
   children: string;
   to: string;
@@ -35,7 +45,7 @@ interface LinkProps {
 
 const SwordLink = ({ children, to }: LinkProps) => (
   <StyledLink to={to}>
-    <Sword title='Indicate in the form of a sword' />
+    <StyledSword title='Indicate in the form of a sword' />
     {children}
   </StyledLink>
 );

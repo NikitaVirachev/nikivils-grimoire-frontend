@@ -1,12 +1,30 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 import MainContent from '../layouts/MainContent';
 import Sidebar from '../components/Sidebar/Sidebar';
 import PostOverview from '../components/Post/PostOverview';
 import Chat from '../components/Chat/Chat';
 
+import { respond } from '../styles/Mixins';
+
 const StyledMainContent = styled(MainContent)`
   grid-column: col-start 1 / col-end 3;
+
+  ${respond(
+    'phone',
+    css`
+      grid-column: -1 / 1;
+    `
+  )}
+`;
+
+const StyledSidebar = styled(Sidebar)`
+  ${respond(
+    'phone',
+    css`
+      display: none;
+    `
+  )}
 `;
 
 const PositionedChat = styled(Chat)`
@@ -70,9 +88,9 @@ const HomePage = () => (
         />
       ))}
     </StyledMainContent>
-    <Sidebar title='Explore'>
+    <StyledSidebar title='Explore'>
       <PositionedChat />
-    </Sidebar>
+    </StyledSidebar>
   </>
 );
 

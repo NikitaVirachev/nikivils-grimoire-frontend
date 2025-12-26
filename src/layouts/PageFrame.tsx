@@ -29,13 +29,39 @@ const Layout = styled.div`
       row-gap: 0.5rem;
     `
   )}
+
+  ${respond(
+    'phone',
+    css`
+      grid-template-columns: 1fr;
+      column-gap: 0.5rem;
+      row-gap: 0.5rem;
+
+      padding: 0 1.5rem 1rem 1.5rem;
+    `
+  )}
+`;
+
+const StyledHeader = styled(Header)`
+  grid-column: -1 / 1;
+`;
+
+const StyledNavbar = styled(Navbar)`
+  grid-column: -1 / 1;
+
+  ${respond(
+    'phone',
+    css`
+      display: none;
+    `
+  )}
 `;
 
 const PageFrame = ({ children }: PropsWithChildren) => {
   return (
     <Layout>
-      <Header />
-      <Navbar />
+      <StyledHeader />
+      <StyledNavbar />
       {children}
       <Footer />
     </Layout>

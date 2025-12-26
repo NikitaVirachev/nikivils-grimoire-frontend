@@ -11,13 +11,19 @@ const Svg = styled(Icon)`
   filter: drop-shadow(0 0 3.66rem var(--tertiary-color)) drop-shadow(0 0 5.04rem var(--white-color));
 `;
 
-const Crescent = ({ title = 'Crescent' }) => {
+type CrescentProps = {
+  title?: string;
+  className?: string;
+};
+
+const Crescent = ({ title = 'Crescent', className }: CrescentProps) => {
   const titleId = React.useId();
   return (
     <Svg
       role='img'
       viewBox='0 0 35 40'
       aria-labelledby={titleId}
+      className={className}
     >
       <title id={titleId}>{title}</title>
       <path

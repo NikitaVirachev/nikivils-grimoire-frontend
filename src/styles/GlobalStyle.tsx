@@ -90,6 +90,16 @@ const styles = css`
         --h1: 2.6rem;
       `
     )}
+
+    ${respond(
+      'phone',
+      css`
+        --h1: 2rem;
+        --h2: 1.8rem;
+        --h4: 1.4rem;
+        --p: 1.4rem;
+      `
+    )}
   }
 `;
 

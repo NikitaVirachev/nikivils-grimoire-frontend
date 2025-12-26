@@ -1,7 +1,9 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 import Bat from '../Icon/Bat';
 import SwordLink from './SwordLink';
+
+import { respond } from '../../styles/Mixins';
 
 const Post = styled.article`
   font-family: 'Coelacanth', serif;
@@ -14,12 +16,27 @@ const Content = styled.div`
   flex-direction: column;
   gap: 1rem;
   margin-bottom: 2rem;
+
+  ${respond(
+    'phone',
+    css`
+      margin-bottom: 1rem;
+    `
+  )}
 `;
 
 const Header = styled.header`
   display: flex;
   gap: 0.5rem;
+  align-items: center;
   padding-left: 2rem;
+
+  ${respond(
+    'phone',
+    css`
+      padding: 0 1rem;
+    `
+  )}
 `;
 
 const Title = styled.h4`
@@ -30,13 +47,31 @@ const Title = styled.h4`
 
 const PostBody = styled.p`
   font-size: var(--p);
+  line-height: 1.8rem;
   padding: 0 2rem;
+
+  ${respond(
+    'phone',
+    css`
+      padding: 0 1rem;
+    `
+  )}
 `;
 
 const Border = styled.footer`
   font-family: 'Elder Futhark';
   font-size: 0.8rem;
   color: var(--primarly-color);
+`;
+
+const StyledBat = styled(Bat)`
+  ${respond(
+    'phone',
+    css`
+      width: 3.6rem;
+      height: 1.8rem;
+    `
+  )}
 `;
 
 interface PostOverviewProps {
@@ -49,7 +84,7 @@ const PostOverview = ({ title, overview, linkToPost }: PostOverviewProps) => (
   <Post>
     <Content>
       <Header>
-        <Bat title='Bat' />
+        <StyledBat title='Bat' />
         <Title>{title}</Title>
         <SwordLink to={linkToPost}>Read</SwordLink>
       </Header>
@@ -57,7 +92,7 @@ const PostOverview = ({ title, overview, linkToPost }: PostOverviewProps) => (
     </Content>
 
     <Border>
-      LoremipsumdolorsitametconsecteturSedrisuseuismodmalesuadaelementum.MaecenasincommodoametlacusantecursusFringillafelissemperenimv.UHK
+      LoremipsumdolorsitametconsecteturSedrisuseuismodmalesuadaelementum.MaecenasincommodoametlacusantecursusFringillafelissemperenimv.UHKipsumdolorsitametconsecteturSedrisuseuismodmales
     </Border>
   </Post>
 );
