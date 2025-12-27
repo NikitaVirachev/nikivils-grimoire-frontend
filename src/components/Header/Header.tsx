@@ -11,14 +11,7 @@ const Container = styled.header`
   justify-content: center;
   align-items: center;
 
-  padding: 2rem 0;
-
-  ${respond(
-    'tab-portrait',
-    css`
-      padding: 1rem 0;
-    `
-  )}
+  padding: 1rem 0;
 
   ${respond(
     'phone',
