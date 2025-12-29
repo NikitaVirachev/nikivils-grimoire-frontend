@@ -8,6 +8,10 @@ const StyledLink = styled(Link)`
   display: flex;
   gap: 0.5rem;
   align-items: center;
+
+  height: 2.6rem;
+  padding: 0 1rem;
+
   font-size: var(--p);
   color: var(--secondary-tp-color);
   text-decoration: none;
@@ -30,6 +34,8 @@ const StyledLink = styled(Link)`
 `;
 
 const StyledSword = styled(Sword)`
+  width: 8.7rem;
+
   ${respond(
     'phone',
     css`

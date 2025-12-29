@@ -29,7 +29,14 @@ const Header = styled.header`
   display: flex;
   gap: 0.5rem;
   align-items: center;
-  padding-left: 2rem;
+  padding-left: 3rem;
+
+  ${respond(
+    'tab-portrait',
+    css`
+      padding-left: 0 1.5rem;
+    `
+  )}
 
   ${respond(
     'phone',
@@ -47,8 +54,15 @@ const Title = styled.h4`
 
 const PostBody = styled.p`
   font-size: var(--p);
-  line-height: 1.8rem;
-  padding: 0 2rem;
+  line-height: 2rem;
+  padding: 0 3rem;
+
+  ${respond(
+    'tab-portrait',
+    css`
+      padding: 0 1.5rem;
+    `
+  )}
 
   ${respond(
     'phone',
