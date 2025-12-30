@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import styled, { css } from 'styled-components';
 
 import MainContent from '../layouts/MainContent';
@@ -6,6 +7,7 @@ import PostOverview from '../components/Post/PostOverview';
 import Chat from '../components/Chat/Chat';
 import Pagination from '../components/Sidebar/Pagination';
 import Separator from '../components/Sidebar/Separator/Separator';
+import { SearchInput } from '../components/Form/Form';
 
 import { respond } from '../styles/Mixins';
 
@@ -30,6 +32,8 @@ const StyledSidebar = styled(Sidebar)`
 `;
 
 const PostsExplore = styled.section`
+  position: relative;
+
   align-self: start;
 
   display: flex;
@@ -86,26 +90,43 @@ const posts = [
   },
 ];
 
-const HomePage = () => (
-  <>
-    <StyledMainContent title='News'>
-      {posts.map((post) => (
-        <PostOverview
-          key={post.id}
-          title={post.title}
-          linkToPost={post.link}
-          overview={post.overview}
-        />
-      ))}
-    </StyledMainContent>
-    <StyledSidebar title='Explore'>
-      <PostsExplore>
-        <Pagination />
-        <Separator title='Separator icon' />
-      </PostsExplore>
-      <PositionedChat />
-    </StyledSidebar>
-  </>
-);
+const HomePage = () => {
+  const [newsFilter, setNewsFilter] = useState('');
+
+  const findNewsHandler: React.FormEventHandler<HTMLFormElement> = (event) => {
+    event.preventDefault();
+
+    setNewsFilter('');
+  };
+
+  return (
+    <>
+      <StyledMainContent title='News'>
+        {posts.map((post) => (
+          <PostOverview
+            key={post.id}
+            title={post.title}
+            linkToPost={post.link}
+            overview={post.overview}
+          />
+        ))}
+      </StyledMainContent>
+      <StyledSidebar title='Explore'>
+        <PostsExplore>
+          <Pagination />
+          <Separator title='Separator icon' />
+          <SearchInput
+            name='news-search'
+            placeholder='find something?'
+            value={newsFilter}
+            changeInputHandler={(e) => setNewsFilter(e.target.value)}
+            onSubmitHandler={findNewsHandler}
+          />
+        </PostsExplore>
+        <PositionedChat />
+      </StyledSidebar>
+    </>
+  );
+};
 
 export default HomePage;
