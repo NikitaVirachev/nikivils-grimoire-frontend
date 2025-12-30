@@ -5,6 +5,7 @@ import Sidebar from '../components/Sidebar/Sidebar';
 import PostOverview from '../components/Post/PostOverview';
 import Chat from '../components/Chat/Chat';
 import Pagination from '../components/Sidebar/Pagination';
+import Separator from '../components/Sidebar/Separator/Separator';
 
 import { respond } from '../styles/Mixins';
 
@@ -28,11 +29,12 @@ const StyledSidebar = styled(Sidebar)`
   )}
 `;
 
-const PostsExplore = styled.div`
+const PostsExplore = styled.section`
   align-self: start;
 
   display: flex;
   flex-direction: column;
+  gap: 1rem;
 `;
 
 const PositionedChat = styled(Chat)`
@@ -99,6 +101,7 @@ const HomePage = () => (
     <StyledSidebar title='Explore'>
       <PostsExplore>
         <Pagination />
+        <Separator title='Separator icon' />
       </PostsExplore>
       <PositionedChat />
     </StyledSidebar>
