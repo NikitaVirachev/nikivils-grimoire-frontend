@@ -4,6 +4,7 @@ import MainContent from '../layouts/MainContent';
 import Sidebar from '../components/Sidebar/Sidebar';
 import PostOverview from '../components/Post/PostOverview';
 import Chat from '../components/Chat/Chat';
+import Pagination from '../components/Sidebar/Pagination';
 
 import { respond } from '../styles/Mixins';
 
@@ -25,6 +26,13 @@ const StyledSidebar = styled(Sidebar)`
       display: none;
     `
   )}
+`;
+
+const PostsExplore = styled.div`
+  align-self: start;
+
+  display: flex;
+  flex-direction: column;
 `;
 
 const PositionedChat = styled(Chat)`
@@ -89,6 +97,9 @@ const HomePage = () => (
       ))}
     </StyledMainContent>
     <StyledSidebar title='Explore'>
+      <PostsExplore>
+        <Pagination />
+      </PostsExplore>
       <PositionedChat />
     </StyledSidebar>
   </>
