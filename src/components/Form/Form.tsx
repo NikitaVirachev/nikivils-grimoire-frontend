@@ -1,6 +1,7 @@
 import styled, { css } from 'styled-components';
 
 import Play from '../Icon/Play';
+import Loupe from '../Icon/Loupe';
 
 const Typography = css`
   background-color: inherit;
@@ -61,6 +62,11 @@ const StyledPlay = styled(Play)`
   height: inherit;
 `;
 
+const StyledLoupe = styled(Loupe)`
+  width: inherit;
+  height: inherit;
+`;
+
 interface InputProps {
   name: string;
   className?: string;
@@ -93,6 +99,33 @@ export const EnterInput = ({
       disabled={value === ''}
     >
       <StyledPlay title='Play button icon' />
+    </Button>
+  </InputForm>
+);
+
+export const SearchInput = ({
+  name,
+  className,
+  placeholder,
+  value,
+  changeInputHandler,
+  onSubmitHandler,
+}: InputProps) => (
+  <InputForm
+    name={name}
+    className={className}
+    onSubmit={onSubmitHandler}
+  >
+    <Input
+      placeholder={placeholder}
+      value={value}
+      onChange={changeInputHandler}
+    />
+    <Button
+      type='submit'
+      disabled={value === ''}
+    >
+      <StyledLoupe title='Magnifying glass icon' />
     </Button>
   </InputForm>
 );
