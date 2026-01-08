@@ -45,6 +45,18 @@ const PositionedChat = styled(Chat)`
   align-self: end;
 `;
 
+const PhoneSearchInput = styled(SearchInput)`
+  display: none;
+  margin: 0.5rem 0.5rem 0 0.5rem;
+
+  ${respond(
+    'phone',
+    css`
+      display: grid;
+    `
+  )}
+`;
+
 const posts = [
   {
     id: 1,
@@ -102,6 +114,13 @@ const HomePage = () => {
   return (
     <>
       <StyledMainContent title='News'>
+        <PhoneSearchInput
+          name='news-search'
+          placeholder='find something?'
+          value={newsFilter}
+          changeInputHandler={(e) => setNewsFilter(e.target.value)}
+          onSubmitHandler={findNewsHandler}
+        />
         {posts.map((post) => (
           <PostOverview
             key={post.id}
