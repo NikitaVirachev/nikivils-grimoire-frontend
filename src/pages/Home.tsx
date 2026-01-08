@@ -57,6 +57,17 @@ const PhoneSearchInput = styled(SearchInput)`
   )}
 `;
 
+const PhonePagination = styled(Pagination)`
+  display: none;
+
+  ${respond(
+    'phone',
+    css`
+      display: flex;
+    `
+  )}
+`;
+
 const posts = [
   {
     id: 1,
@@ -129,6 +140,7 @@ const HomePage = () => {
             overview={post.overview}
           />
         ))}
+        <PhonePagination />
       </StyledMainContent>
       <StyledSidebar title='Explore'>
         <PostsExplore>
