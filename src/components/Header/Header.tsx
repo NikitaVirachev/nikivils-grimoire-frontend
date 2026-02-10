@@ -1,3 +1,4 @@
+import type React from 'react';
 import styled, { css } from 'styled-components';
 
 import Crescent from './Crescent';
@@ -67,17 +68,25 @@ const StyledBurger = styled(Burger)`
 
 type HeaderProps = {
   className?: string;
+  toggleSidebar: () => void;
 };
 
-const Header = ({ className }: HeaderProps) => (
-  <Container className={className}>
-    <StyledCrescent />
-    <Title>The Grimoire of Nikivils</Title>
-    <StyledBlackSun />
-    <BurgerButton>
-      <StyledBurger title='Burger menu button icon' />
-    </BurgerButton>
-  </Container>
-);
+const Header = ({ className, toggleSidebar }: HeaderProps) => {
+  const clickBurgerHandler: React.MouseEventHandler<HTMLButtonElement> = (event) => {
+    event.preventDefault();
+    toggleSidebar();
+  };
+
+  return (
+    <Container className={className}>
+      <StyledCrescent />
+      <Title>The Grimoire of Nikivils</Title>
+      <StyledBlackSun />
+      <BurgerButton onClick={clickBurgerHandler}>
+        <StyledBurger title='Burger menu button icon' />
+      </BurgerButton>
+    </Container>
+  );
+};
 
 export default Header;

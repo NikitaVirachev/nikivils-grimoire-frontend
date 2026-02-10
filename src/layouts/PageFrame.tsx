@@ -1,9 +1,11 @@
 import type { PropsWithChildren } from 'react';
+import { useState } from 'react';
 import styled, { css } from 'styled-components';
 
 import Header from '../components/Header/Header';
 import Navbar from '../components/Navbar/Navbar';
 import Footer from '../components/Footer/Footer';
+import OffCanvas from '../components/OffCanvas/OffCanvas';
 
 import { respond } from '../styles/Mixins';
 
@@ -57,13 +59,34 @@ const StyledNavbar = styled(Navbar)`
   )}
 `;
 
+const StyledOffCanvas = styled(OffCanvas)`
+  display: none;
+
+  ${respond(
+    'phone',
+    css`
+      display: block;
+    `
+  )}
+`;
+
 const PageFrame = ({ children }: PropsWithChildren) => {
+  const [offcanvasvVisibility, setOffcanvasVisibility] = useState(false);
+
+  const toggleOffCanvas = () => {
+    setOffcanvasVisibility((prev) => !prev);
+  };
+
   return (
     <Layout>
-      <StyledHeader />
+      <StyledHeader toggleSidebar={toggleOffCanvas} />
       <StyledNavbar />
       {children}
       <Footer />
+      <StyledOffCanvas
+        toggle={toggleOffCanvas}
+        isOpen={offcanvasvVisibility}
+      />
     </Layout>
   );
 };
