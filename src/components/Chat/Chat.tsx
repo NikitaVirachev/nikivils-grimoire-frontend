@@ -15,6 +15,8 @@ const ChatSection = styled.section`
   flex-direction: column;
   gap: 0.2rem;
 
+  background: var(--primarly-bg-color);
+
   &::before {
     content: '';
     position: absolute;
