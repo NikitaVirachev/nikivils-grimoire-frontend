@@ -1,14 +1,17 @@
 import styled from 'styled-components';
+import { NavLink } from 'react-router-dom';
 
 import blackSunPng from '../../assets/img/icons/BlackSun.png';
 import concretePng from '../../assets/img/textures/concrete.png';
 import whiteCracks from '../../assets/img/textures/whiteCracks.png';
 
-const Wrapper = styled.div`
+const Wrapper = styled(NavLink)<{ $isOpen?: boolean }>`
   width: 4rem;
   height: 4rem;
   position: relative;
+  text-decoration: none;
 
+  filter: ${(props) => (props.$isOpen ? 'drop-shadow(0 0 0.6rem var(--tertiary-color))' : '')};
   transition: filter 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
 
   &:hover {
@@ -18,7 +21,7 @@ const Wrapper = styled.div`
 
 const BlackSunImg = styled.img``;
 
-const Mask = styled.div`
+const Mask = styled.div<{ $isOpen?: boolean }>`
   position: absolute;
   left: 0;
   right: 0;
@@ -34,7 +37,8 @@ const Mask = styled.div`
     'M20.0479 0C28.3223 0.000113657 35.6268 3.95108 40 9.97949C35.638 16.0816 28.2873 20.0897 19.9531 20.0898C11.6783 20.0898 4.37326 16.1382 0 10.1094C4.36215 4.0074 11.7137 0 20.0479 0Z'
   );
 
-  transform: translateY(-50%) scaleY(0);
+  transform: ${(props) =>
+    props.$isOpen ? 'translateY(-50%) scaleY(1)' : 'translateY(-50%) scaleY(0)'};
   transition: transform 220ms cubic-bezier(0.2, 0.8, 0.2, 1);
 `;
 
@@ -81,16 +85,21 @@ const Pupil = styled.div`
 
 type BlackSunProps = {
   className?: string;
+  isOpen?: boolean;
 };
 
-const BlackSun = ({ className }: BlackSunProps) => (
-  <Wrapper className={className}>
+const BlackSun = ({ className, isOpen }: BlackSunProps) => (
+  <Wrapper
+    className={className}
+    to='/login'
+    $isOpen={isOpen}
+  >
     <BlackSunImg
       src={blackSunPng}
       alt='Black Sun'
     />
     <Eye>
-      <Mask>
+      <Mask $isOpen={isOpen}>
         <Iris />
         <Pupil />
       </Mask>
