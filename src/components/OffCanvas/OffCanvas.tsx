@@ -52,9 +52,9 @@ const Header = styled.h2`
 
 const CrossButton = styled.button`
   position: absolute;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
+  right: 0.5rem;
+  top: 0;
+  z-index: 7;
 
   background: none;
   border: none;
@@ -82,13 +82,14 @@ const OffCanvas = ({ className, toggle, isOpen }: OffCanvas) => {
     >
       <Overlay $isOpen={isOpen} />
       <Sidebar $isOpen={isOpen}>
+        <CrossButton onClick={clickCrossButtonHandler}>
+          <Cross title='Cross button icon' />
+        </CrossButton>
+
         <List>
           <li>
             <Header>
               <BlackSun isOpen />
-              <CrossButton onClick={clickCrossButtonHandler}>
-                <Cross title='Cross button icon' />
-              </CrossButton>
             </Header>
           </li>
           <li>
