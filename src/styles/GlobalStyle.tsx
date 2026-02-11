@@ -1,73 +1,105 @@
 import { createGlobalStyle, css } from 'styled-components';
 
+import Coelacanth from '../assets/fonts/Coelacanth.otf';
+import Metamorphous from '../assets/fonts/Metamorphous-Regular.ttf';
+import ElderFuthark from '../assets/fonts/Rune.ttf';
+import { respond } from './Mixins';
+
 const styles = css`
-  :root {
-    font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-    line-height: 1.5;
-    font-weight: 400;
-
-    color-scheme: light dark;
-    color: rgba(255, 255, 255, 0.87);
-    background-color: #242424;
-
-    font-synthesis: none;
-    text-rendering: optimizeLegibility;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+  *,
+  *::after,
+  *::before {
+    padding: 0;
+    margin: 0;
+    box-sizing: inherit;
   }
 
-  a {
-    font-weight: 500;
-    color: #646cff;
-    text-decoration: inherit;
-  }
-  a:hover {
-    color: #535bf2;
+  html {
+    /* font-size: 10px; */
+    /* 10px / 16px = 0.625 = 62.5% */
+    /* Percentage of user's browser font-size settings */
+    font-size: 62.5%;
   }
 
   body {
-    margin: 0;
-    display: flex;
-    place-items: center;
-    min-width: 320px;
-    min-height: 100vh;
+    box-sizing: border-box;
+    overflow: hidden;
   }
 
-  h1 {
-    font-size: 3.2em;
-    line-height: 1.1;
+  @font-face {
+    font-family: 'Coelacanth', serif;
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(${Coelacanth}) format('opentype');
   }
 
-  button {
-    border-radius: 8px;
-    border: 1px solid transparent;
-    padding: 0.6em 1.2em;
-    font-size: 1em;
-    font-weight: 500;
-    font-family: inherit;
-    background-color: #1a1a1a;
-    cursor: pointer;
-    transition: border-color 0.25s;
-  }
-  button:hover {
-    border-color: #646cff;
-  }
-  button:focus,
-  button:focus-visible {
-    outline: 4px auto -webkit-focus-ring-color;
+  @font-face {
+    font-family: 'Metamorphous';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(${Metamorphous}) format('truetype');
   }
 
-  @media (prefers-color-scheme: light) {
-    :root {
-      color: #213547;
-      background-color: #ffffff;
-    }
-    a:hover {
-      color: #747bff;
-    }
-    button {
-      background-color: #f9f9f9;
-    }
+  @font-face {
+    font-family: 'Elder Futhark';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(${ElderFuthark}) format('truetype');
+  }
+
+  // Variables
+
+  :root {
+    // Colors
+    --primarly-color: #c52f21;
+    --secondary-color: #f59d39;
+    --tertiary-color: #fae5b3;
+    --grass-color: #657c4a;
+    --grass-bottom-ton: #354425;
+    --grass-middle-ton: #2a3b18;
+    --grass-top-ton: #253710;
+    --silver-color: #c0c0c0;
+    --white-color: #fff;
+    --grey-color: #4f4f4f;
+    --eye-color: #a18181;
+
+    // Background
+    --primarly-bg-color: #fbfbd4;
+    --secondary-bg-color: #211b1b;
+    --gold-bg-color: #98713a;
+
+    // Typography
+    --primarly-tp-color: #ff1100;
+    --secondary-tp-color: #000000;
+    --tertiary-tp-color: #808080;
+
+    // Font sizes
+    --h1: 3.2rem;
+    --h2: 2rem;
+    --h3: 1.6rem;
+    --h4: 1.8rem;
+    --p: 1.6rem;
+    --small: 1.2rem;
+
+    ${respond(
+      'tab-portrait',
+      css`
+        --h1: 2.6rem;
+      `
+    )}
+
+    ${respond(
+      'phone',
+      css`
+        --h1: 2rem;
+        --h2: 1.8rem;
+        --h4: 1.4rem;
+        --p: 1.4rem;
+      `
+    )}
   }
 `;
 
