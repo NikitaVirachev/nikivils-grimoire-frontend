@@ -1,10 +1,11 @@
 import { useEffect, useLayoutEffect, useRef, useCallback } from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import type { ReactNode } from 'react';
 
 import PictureFrame from '../styles/PictureFrame';
 import Skull from '../components/Icon/Skull';
 import FrameTitle from '../components/FrameTitle/FrameTitle';
+import { respond } from '../styles/Mixins';
 
 import chainLinkUrl from '../assets/img/icons/ChainLink.png';
 import mainBackgroundUrl from '../assets/img/backgrounds/main-background.jpg';
@@ -278,3 +279,14 @@ const MainContent = ({ title, className, children }: MainContentProps) => {
 };
 
 export default MainContent;
+
+export const PositionedMainContent = styled(MainContent)`
+  grid-column: col-start 1 / col-end 3;
+
+  ${respond(
+    'phone',
+    css`
+      grid-column: -1 / 1;
+    `
+  )}
+`;
