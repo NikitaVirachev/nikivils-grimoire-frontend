@@ -1,8 +1,9 @@
 import type { ReactNode } from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 import PictureFrame from '../../styles/PictureFrame';
 import FrameTitle from '../FrameTitle/FrameTitle';
+import { respond } from '../../styles/Mixins';
 
 import sidebarBackgroundUrl from '../../assets/img/backgrounds/sidebar-background.jpg';
 
@@ -53,3 +54,12 @@ const Sidebar = ({ title, className, children }: SidebarProps) => (
 );
 
 export default Sidebar;
+
+export const PositionedSidebar = styled(Sidebar)`
+  ${respond(
+    'phone',
+    css`
+      display: none;
+    `
+  )}
+`;

@@ -2,7 +2,7 @@ import { useState } from 'react';
 import styled, { css } from 'styled-components';
 
 import { PositionedMainContent } from '../layouts/MainContent';
-import Sidebar from '../components/Sidebar/Sidebar';
+import { PositionedSidebar } from '../components/Sidebar/Sidebar';
 import PostOverview from '../components/Post/PostOverview';
 import Chat from '../components/Chat/Chat';
 import Pagination from '../components/Sidebar/Pagination';
@@ -10,15 +10,6 @@ import Separator from '../components/Sidebar/Separator/Separator';
 import { SearchInput } from '../components/Form/Form';
 
 import { respond } from '../styles/Mixins';
-
-const StyledSidebar = styled(Sidebar)`
-  ${respond(
-    'phone',
-    css`
-      display: none;
-    `
-  )}
-`;
 
 const PostsExplore = styled.section`
   position: relative;
@@ -131,7 +122,7 @@ const HomePage = () => {
         ))}
         <PhonePagination />
       </PositionedMainContent>
-      <StyledSidebar title='Explore'>
+      <PositionedSidebar title='Explore'>
         <PostsExplore>
           <Pagination />
           <Separator title='Separator icon' />
@@ -144,7 +135,7 @@ const HomePage = () => {
           />
         </PostsExplore>
         <PositionedChat />
-      </StyledSidebar>
+      </PositionedSidebar>
     </>
   );
 };
