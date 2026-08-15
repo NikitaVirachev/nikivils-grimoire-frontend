@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 import GlobalStyle from './styles/GlobalStyle';
 
@@ -8,28 +8,25 @@ import Home from './pages/Home';
 import About from './pages/About';
 import Blog from './pages/Blog';
 
+const router = createBrowserRouter([
+  {
+    Component: MainLayout,
+
+    children: [
+      { index: true, Component: Home },
+      { path: 'about', Component: About },
+      { path: 'blog', Component: Blog },
+    ],
+  },
+]);
+
 function App() {
   return (
-    <Router>
+    <>
       <GlobalStyle />
 
-      <Routes>
-        <Route element={<MainLayout />}>
-          <Route
-            index
-            element={<Home />}
-          />
-          <Route
-            path='about'
-            element={<About />}
-          />
-          <Route
-            path='blog'
-            element={<Blog />}
-          />
-        </Route>
-      </Routes>
-    </Router>
+      <RouterProvider router={router} />
+    </>
   );
 }
 
