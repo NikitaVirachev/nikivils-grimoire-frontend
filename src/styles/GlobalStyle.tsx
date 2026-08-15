@@ -100,6 +100,9 @@ const styles = css`
         --p: 1.4rem;
       `
     )}
+
+    // animation
+    --basic-transition: all 0.3s ease-out;
   }
 `;
 
