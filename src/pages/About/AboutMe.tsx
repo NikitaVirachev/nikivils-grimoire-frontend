@@ -1,5 +1,7 @@
+import { PositionedMainContent } from '../../layouts/MainContent';
+
 const AboutMe = () => {
-  return <div>About me</div>;
+  return <PositionedMainContent title='About me'>About me</PositionedMainContent>;
 };
 
 export default AboutMe;

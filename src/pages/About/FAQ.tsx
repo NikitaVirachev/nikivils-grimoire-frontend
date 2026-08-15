@@ -1,5 +1,7 @@
+import { PositionedMainContent } from '../../layouts/MainContent';
+
 const FAQ = () => {
-  return <div>FAQ</div>;
+  return <PositionedMainContent title='FAQ'>FAQ</PositionedMainContent>;
 };
 
 export default FAQ;

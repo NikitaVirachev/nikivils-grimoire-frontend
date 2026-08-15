@@ -1,5 +1,7 @@
+import { PositionedMainContent } from '../../layouts/MainContent';
+
 const Favorite = () => {
-  return <div>Favorite</div>;
+  return <PositionedMainContent title='Favorite stuff'>Favorite</PositionedMainContent>;
 };
 
 export default Favorite;

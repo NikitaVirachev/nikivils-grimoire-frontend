@@ -1,7 +1,6 @@
 import { Outlet } from 'react-router-dom';
 import styled from 'styled-components';
 
-import { PositionedMainContent } from '../../layouts/MainContent';
 import { PositionedSidebar } from '../../components/Sidebar/Sidebar';
 import Contents from './Contents';
 
@@ -17,9 +16,7 @@ const AboutExplore = styled.section`
 
 const About = () => (
   <>
-    <PositionedMainContent title='About'>
-      <Outlet />
-    </PositionedMainContent>
+    <Outlet />
 
     <PositionedSidebar title='Explore'>
       <AboutExplore>
