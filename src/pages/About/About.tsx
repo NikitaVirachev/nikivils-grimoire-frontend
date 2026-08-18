@@ -5,7 +5,7 @@ import { PositionedSidebar } from '../../components/Sidebar/Sidebar';
 import Contents from './Contents';
 import Currently from './Currently';
 
-const AboutExplore = styled.section`
+const AboutExplore = styled.div`
   position: relative;
 
   align-self: start;
