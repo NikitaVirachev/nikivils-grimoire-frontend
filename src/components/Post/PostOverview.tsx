@@ -2,6 +2,7 @@ import styled, { css } from 'styled-components';
 
 import Bat from '../Icon/Bat';
 import SwordLink from './SwordLink';
+import { Border } from './Post';
 
 import { respond } from '../../styles/Mixins';
 
@@ -70,12 +71,6 @@ const PostBody = styled.p`
       padding: 0 1rem;
     `
   )}
-`;
-
-const Border = styled.footer`
-  font-family: 'Elder Futhark';
-  font-size: 0.8rem;
-  color: var(--primarly-color);
 `;
 
 const StyledBat = styled(Bat)`

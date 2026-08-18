@@ -1,10 +1,12 @@
 import { NavLink } from 'react-router-dom';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 import { SectionCard, SectionCardTitle } from '../../shared/components/SectionCard';
 
+import { respond } from '../../styles/Mixins';
+
 const Menu = styled.nav`
-  padding: 0 2px;
+  padding: 2px;
 `;
 
 const List = styled.ul`
@@ -18,6 +20,13 @@ const Link = styled(NavLink)`
   font-size: var(--small);
   font-weight: bold;
   text-decoration: none;
+
+  ${respond(
+    'phone',
+    css`
+      line-height: 1.8rem;
+    `
+  )}
 `;
 
 const MenuItem = styled.li`
@@ -44,15 +53,19 @@ const MenuItem = styled.li`
   }
 `;
 
-const Contents = () => (
-  <SectionCard>
+type ContentsProps = {
+  className?: string;
+};
+
+const Contents = ({ className }: ContentsProps) => (
+  <SectionCard className={className}>
     <SectionCardTitle>Contents</SectionCardTitle>
 
     <Menu>
       <List>
         <MenuItem>
           <Link
-            to='me'
+            to='/about/me'
             title='Thoughts about this site from its creator'
           >
             About me
@@ -60,7 +73,7 @@ const Contents = () => (
         </MenuItem>
         <MenuItem>
           <Link
-            to='faq'
+            to='/about/faq'
             title='Frequently Asked Questions'
           >
             FAQ
@@ -68,7 +81,7 @@ const Contents = () => (
         </MenuItem>
         <MenuItem>
           <Link
-            to='favorite'
+            to='/about/favorite'
             title='Things I like the most'
           >
             Favorite stuff
@@ -76,7 +89,7 @@ const Contents = () => (
         </MenuItem>
         <MenuItem>
           <Link
-            to='unfavorite'
+            to='/about/unfavorite'
             title="Things I don't like"
           >
             Stuff I don't like

@@ -68,6 +68,13 @@ const Column = styled.div`
     width: 0;
     height: 0; /* Chrome/Safari/Opera */
   }
+
+  ${respond(
+    'phone',
+    css`
+      gap: 1.5rem;
+    `
+  )}
 `;
 
 const RightChain = styled.div`

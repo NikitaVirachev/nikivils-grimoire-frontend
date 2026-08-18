@@ -1,6 +1,8 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 import { SectionCard, SectionCardTitle } from '../../shared/components/SectionCard';
+
+import { respond } from '../../styles/Mixins';
 
 const Content = styled.dl`
   display: flex;
@@ -19,14 +21,32 @@ const Topic = styled.div`
 const Name = styled.dt`
   font-size: var(--p);
   font-weight: bold;
+
+  ${respond(
+    'phone',
+    css`
+      line-height: 2rem;
+    `
+  )}
 `;
 
 const Value = styled.dd`
   font-size: var(--small);
+
+  ${respond(
+    'phone',
+    css`
+      line-height: 1.8rem;
+    `
+  )}
 `;
 
-const Currently = () => (
-  <SectionCard>
+type ContentsProps = {
+  className?: string;
+};
+
+const Currently = ({ className }: ContentsProps) => (
+  <SectionCard className={className}>
     <SectionCardTitle>Currently</SectionCardTitle>
 
     <Content>

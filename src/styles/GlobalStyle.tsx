@@ -99,8 +99,9 @@ const styles = css`
       css`
         --h1: 2rem;
         --h2: 1.8rem;
-        --h4: 1.4rem;
-        --p: 1.4rem;
+        --h4: 1.8rem;
+        --p: 1.6rem;
+        --small: 1.4rem;
       `
     )}
 
