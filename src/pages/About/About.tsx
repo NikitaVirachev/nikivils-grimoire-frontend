@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 import { PositionedSidebar } from '../../components/Sidebar/Sidebar';
 import Contents from './Contents';
+import Currently from './Currently';
 
 const AboutExplore = styled.section`
   position: relative;
@@ -21,6 +22,7 @@ const About = () => (
     <PositionedSidebar title='Explore'>
       <AboutExplore>
         <Contents />
+        <Currently />
       </AboutExplore>
     </PositionedSidebar>
   </>
