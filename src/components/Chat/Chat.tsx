@@ -4,6 +4,10 @@ import styled from 'styled-components';
 import { EnterInput } from '../Form/Form';
 import { SectionCard, SectionCardTitle } from '../../shared/components/SectionCard';
 
+const ChatCard = styled(SectionCard)`
+  height: 30rem;
+`;
+
 const Container = styled.div`
   display: flex;
   flex-direction: column;
@@ -90,7 +94,7 @@ const Chat = ({ className }: ChatProps) => {
   };
 
   return (
-    <SectionCard className={className}>
+    <ChatCard className={className}>
       <SectionCardTitle>Chat</SectionCardTitle>
       <Container>
         <Messages>
@@ -111,7 +115,7 @@ const Chat = ({ className }: ChatProps) => {
           onSubmitHandler={sendMessageHandler}
         />
       </Container>
-    </SectionCard>
+    </ChatCard>
   );
 };
 

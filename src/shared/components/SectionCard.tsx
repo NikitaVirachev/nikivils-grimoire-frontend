@@ -4,7 +4,7 @@ import { VelvetBackground } from '../../styles/Backgrounds';
 
 export const SectionCard = styled.section`
   padding: 0.5rem;
-  height: 30rem;
+  /* height: 30rem; */
   border-radius: 1rem;
 
   position: relative;
