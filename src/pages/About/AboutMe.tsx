@@ -1,6 +1,6 @@
 import { PositionedMainContent } from '../../layouts/MainContent';
 import { QuaternaryHeading, UnderlinedHeader } from '../../shared/typography/Headings';
-import { MainCanvasText as Paragraph } from '../../components/Post/Post';
+import { PostText as Paragraph } from '../../components/Post/Post';
 import { PostContent } from '../../components/Post/Post';
 
 const AboutMe = () => {

@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { SectionCard, SectionCardTitle } from '../../shared/components/SectionCard';
 
 const Menu = styled.nav`
-  padding: 2px;
+  padding: 0 2px;
 `;
 
 const List = styled.ul`

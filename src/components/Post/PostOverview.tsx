@@ -2,7 +2,6 @@ import styled, { css } from 'styled-components';
 
 import Bat from '../Icon/Bat';
 import SwordLink from './SwordLink';
-import { MainCanvasText as PostBody } from '../../components/Post/Post';
 
 import { respond } from '../../styles/Mixins';
 
@@ -51,6 +50,26 @@ const Title = styled.h4`
   font-size: var(--h4);
 
   flex-grow: 1;
+`;
+
+const PostBody = styled.p`
+  font-size: var(--p);
+  line-height: 2rem;
+  padding: 0 3rem;
+
+  ${respond(
+    'tab-portrait',
+    css`
+      padding: 0 1.5rem;
+    `
+  )}
+
+  ${respond(
+    'phone',
+    css`
+      padding: 0 1rem;
+    `
+  )}
 `;
 
 const Border = styled.footer`

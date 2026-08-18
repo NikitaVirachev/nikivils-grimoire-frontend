@@ -5,13 +5,13 @@ import { respond } from '../../styles/Mixins';
 export const PostContent = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 0.7rem;
 `;
 
-export const MainCanvasText = styled.p`
+export const PostText = styled.p`
   font-size: var(--p);
   line-height: 2rem;
-  padding: 0 3rem;
+  padding: 0 2rem;
 
   ${respond(
     'tab-portrait',

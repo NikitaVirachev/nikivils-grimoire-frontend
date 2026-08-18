@@ -13,7 +13,7 @@ export const QuaternaryHeading = styled.h4`
 const UnderlinedHeaderWrapper = styled.header`
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  gap: 2px;
   align-items: start;
 
   width: 27.6rem;

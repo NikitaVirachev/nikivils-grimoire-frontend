@@ -24,6 +24,7 @@ const styles = css`
   body {
     box-sizing: border-box;
     overflow: hidden;
+    font-family: 'Coelacanth', serif;
   }
 
   @font-face {
