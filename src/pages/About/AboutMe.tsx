@@ -32,14 +32,25 @@ const PhoneCurrently = styled(Currently)`
   )}
 `;
 
+const PhoneBorder = styled(Border)`
+  display: none;
+
+  ${respond(
+    'phone',
+    css`
+      display: block;
+    `
+  )}
+`;
+
 const AboutMe = () => {
   return (
     <PositionedMainContent title='About me'>
       <PhoneContents />
 
-      <Border>
+      <PhoneBorder>
         LoremipsumdolorsitametconsecteturSedrisuseuismodmalesuadaelementum.MaecenasincommodoametlacusantecursusFringillafelissemperenimv.UHKipsumdolorsitametconsecteturSedrisuseuismodmales
-      </Border>
+      </PhoneBorder>
 
       <PostContent>
         <UnderlinedHeader>
@@ -82,9 +93,9 @@ const AboutMe = () => {
         </Paragraphs>
       </PostContent>
 
-      <Border>
+      <PhoneBorder>
         LoremipsumdolorsitametconsecteturSedrisuseuismodmalesuadaelementum.MaecenasincommodoametlacusantecursusFringillafelissemperenimv.UHKipsumdolorsitametconsecteturSedrisuseuismodmales
-      </Border>
+      </PhoneBorder>
 
       <PhoneCurrently />
     </PositionedMainContent>
