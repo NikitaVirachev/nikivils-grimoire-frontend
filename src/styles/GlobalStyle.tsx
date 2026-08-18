@@ -89,6 +89,8 @@ const styles = css`
       'tab-portrait',
       css`
         --h1: 2.6rem;
+        --h4: 1.6rem;
+        --p: 1.4rem;
       `
     )}
 

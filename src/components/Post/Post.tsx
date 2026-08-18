@@ -16,7 +16,8 @@ export const PostText = styled.p`
   ${respond(
     'tab-portrait',
     css`
-      padding: 0 1.5rem;
+      padding: 0 2rem;
+      line-height: 1.8rem;
     `
   )}
 
