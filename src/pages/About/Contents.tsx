@@ -15,8 +15,8 @@ const List = styled.ul`
 
 const Link = styled(NavLink)`
   color: inherit;
-  font-size: var(--small);
-  line-height: var(--lh-small);
+  font-size: var(--p);
+  line-height: var(--lh-p);
   font-weight: bold;
   text-decoration: none;
 `;
