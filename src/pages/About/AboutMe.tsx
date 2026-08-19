@@ -1,47 +1,9 @@
-import styled, { css } from 'styled-components';
-
 import { PositionedMainContent } from '../../layouts/MainContent';
 import { QuaternaryHeading, UnderlinedHeader } from '../../shared/typography/Headings';
 import { PostText as Paragraph } from '../../components/Post/Post';
 import { Paragraphs } from '../../components/Post/Post';
-import Contents from './Contents';
-import Currently from './Currently';
-import { Border, PostContent } from '../../components/Post/Post';
-
-import { respond } from '../../styles/Mixins';
-
-const PhoneContents = styled(Contents)`
-  display: none;
-
-  ${respond(
-    'phone',
-    css`
-      display: block;
-    `
-  )}
-`;
-
-const PhoneCurrently = styled(Currently)`
-  display: none;
-
-  ${respond(
-    'phone',
-    css`
-      display: block;
-    `
-  )}
-`;
-
-const PhoneBorder = styled(Border)`
-  display: none;
-
-  ${respond(
-    'phone',
-    css`
-      display: block;
-    `
-  )}
-`;
+import { PostContent } from '../../components/Post/Post';
+import { PhoneContents, PhoneCurrently, PhoneBorder } from './About.styles';
 
 const AboutMe = () => {
   return (
