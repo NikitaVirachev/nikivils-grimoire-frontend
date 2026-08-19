@@ -17,14 +17,14 @@ const Topic = styled.div`
 `;
 
 const Name = styled.dt`
-  font-size: var(--p);
-  line-height: var(--lh-p);
+  font-size: var(--h4);
+  line-height: var(--lh4);
   font-weight: bold;
 `;
 
 const Value = styled.dd`
-  font-size: var(--small);
-  line-height: var(--lh-small);
+  font-size: var(--p);
+  line-height: var(--lh-p);
 `;
 
 type ContentsProps = {
