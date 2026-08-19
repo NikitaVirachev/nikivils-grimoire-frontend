@@ -55,6 +55,7 @@ const LeftChain = styled.div`
 const Column = styled.div`
   position: relative;
   overflow-y: auto;
+  overflow-x: hidden;
 
   display: flex;
   flex-direction: column;
