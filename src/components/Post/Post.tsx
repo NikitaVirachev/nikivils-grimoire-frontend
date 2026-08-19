@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components';
 
 import { respond } from '../../styles/Mixins';
 
-export const PostContent = styled.div`
+export const PostContent = styled.section`
   display: flex;
   flex-direction: column;
   gap: 1rem;
