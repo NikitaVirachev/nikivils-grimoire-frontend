@@ -19,17 +19,21 @@ const Link = styled(NavLink)`
   line-height: var(--lh-p);
   font-weight: bold;
   text-decoration: none;
+
+  flex: 1;
 `;
 
 const MenuItem = styled.li`
-  list-style-position: inside;
+  display: flex;
+  gap: 0.5rem;
 
   color: var(--secondary-tp-color);
 
   transition: var(--basic-transition);
 
-  &::marker {
+  &::before {
     content: '— ';
+    flex-shrink: 0;
   }
 
   &:hover {
