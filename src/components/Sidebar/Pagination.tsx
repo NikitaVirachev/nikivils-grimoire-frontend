@@ -43,7 +43,7 @@ const Pages = styled.p`
   font-family: 'Coelacanth', serif;
   font-size: var(--p);
   color: var(--secondary-tp-color);
-  line-height: 2rem;
+  line-height: var(--lh-p);
 `;
 
 const CurrentPage = styled.span``;

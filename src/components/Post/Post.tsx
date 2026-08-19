@@ -16,14 +16,13 @@ export const Paragraphs = styled.div`
 
 export const PostText = styled.p`
   font-size: var(--p);
-  line-height: 2rem;
+  line-height: var(--lh-p);
   padding: 0 2rem;
 
   ${respond(
     'tab-portrait',
     css`
       padding: 0 2rem;
-      line-height: 1.8rem;
     `
   )}
 
@@ -31,7 +30,6 @@ export const PostText = styled.p`
     'phone',
     css`
       padding: 0;
-      line-height: 2rem;
     `
   )}
 `;

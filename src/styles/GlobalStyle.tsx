@@ -85,14 +85,24 @@ const styles = css`
     --p: 1.6rem;
     --small: 1.2rem;
 
+    // Line-height sizes
+    --lh1: 4rem;
+    --lh2: 4rem;
+    --lh4: 2.3rem;
+    --lh-p: 2rem;
+    --lh-small: 1.5rem;
+
     ${respond(
       'tab-portrait',
       css`
         --h1: 2.6rem;
         --h4: 1.6rem;
         --p: 1.4rem;
+
+        --lh4: 2rem;
+        --lh-p: 1.8rem;
       `
-    )}
+    )};
 
     ${respond(
       'phone',
@@ -102,8 +112,13 @@ const styles = css`
         --h4: 1.8rem;
         --p: 1.6rem;
         --small: 1.4rem;
+
+        --lh2: 3rem;
+        --lh4: 2.3rem;
+        --lh-p: 2rem;
+        --lh-small: 1.8rem;
       `
-    )}
+    )};
 
     // animation
     --basic-transition: all 0.3s ease-out;

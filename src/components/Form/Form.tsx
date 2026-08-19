@@ -12,7 +12,7 @@ const Typography = css`
 
   font-family: 'Coelacanth', serif;
   font-size: var(--p);
-  line-height: 2rem;
+  line-height: var(--lh-p);
   color: var(--secondary-tp-color);
 
   &::placeholder {

@@ -1,9 +1,7 @@
 import { NavLink } from 'react-router-dom';
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 
 import { SectionCard, SectionCardTitle } from '../../shared/components/SectionCard';
-
-import { respond } from '../../styles/Mixins';
 
 const Menu = styled.nav`
   padding: 2px;
@@ -18,15 +16,9 @@ const List = styled.ul`
 const Link = styled(NavLink)`
   color: inherit;
   font-size: var(--small);
+  line-height: var(--lh-small);
   font-weight: bold;
   text-decoration: none;
-
-  ${respond(
-    'phone',
-    css`
-      line-height: 1.8rem;
-    `
-  )}
 `;
 
 const MenuItem = styled.li`

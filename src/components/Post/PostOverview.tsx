@@ -49,13 +49,14 @@ const Header = styled.header`
 
 const Title = styled.h4`
   font-size: var(--h4);
+  line-height: var(--lh4);
 
   flex-grow: 1;
 `;
 
 const PostBody = styled.p`
   font-size: var(--p);
-  line-height: 2rem;
+  line-height: var(--lh-p);
   padding: 0 3rem;
 
   ${respond(
