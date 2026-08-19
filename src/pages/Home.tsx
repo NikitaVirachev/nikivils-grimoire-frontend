@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import styled, { css } from 'styled-components';
 
-import MainContent from '../layouts/MainContent';
-import Sidebar from '../components/Sidebar/Sidebar';
+import { PositionedMainContent } from '../layouts/MainContent';
+import { PositionedSidebar } from '../components/Sidebar/Sidebar';
 import PostOverview from '../components/Post/PostOverview';
 import Chat from '../components/Chat/Chat';
 import Pagination from '../components/Sidebar/Pagination';
@@ -10,26 +10,6 @@ import Separator from '../components/Sidebar/Separator/Separator';
 import { SearchInput } from '../components/Form/Form';
 
 import { respond } from '../styles/Mixins';
-
-const StyledMainContent = styled(MainContent)`
-  grid-column: col-start 1 / col-end 3;
-
-  ${respond(
-    'phone',
-    css`
-      grid-column: -1 / 1;
-    `
-  )}
-`;
-
-const StyledSidebar = styled(Sidebar)`
-  ${respond(
-    'phone',
-    css`
-      display: none;
-    `
-  )}
-`;
 
 const PostsExplore = styled.section`
   position: relative;
@@ -124,7 +104,7 @@ const HomePage = () => {
 
   return (
     <>
-      <StyledMainContent title='News'>
+      <PositionedMainContent title='News'>
         <PhoneSearchInput
           name='news-search'
           placeholder='find something?'
@@ -141,8 +121,8 @@ const HomePage = () => {
           />
         ))}
         <PhonePagination />
-      </StyledMainContent>
-      <StyledSidebar title='Explore'>
+      </PositionedMainContent>
+      <PositionedSidebar title='Explore'>
         <PostsExplore>
           <Pagination />
           <Separator title='Separator icon' />
@@ -155,7 +135,7 @@ const HomePage = () => {
           />
         </PostsExplore>
         <PositionedChat />
-      </StyledSidebar>
+      </PositionedSidebar>
     </>
   );
 };

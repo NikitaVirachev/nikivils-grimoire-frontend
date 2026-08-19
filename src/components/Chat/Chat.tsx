@@ -1,52 +1,11 @@
 import { useState, useRef, useEffect } from 'react';
 import styled from 'styled-components';
 
-import { VelvetBackground } from '../../styles/Backgrounds';
 import { EnterInput } from '../Form/Form';
+import { SectionCard, SectionCardTitle } from '../../shared/components/SectionCard';
 
-const ChatSection = styled.section`
-  padding: 0.5rem;
+const ChatCard = styled(SectionCard)`
   height: 30rem;
-  border-radius: 1rem;
-
-  position: relative;
-
-  display: flex;
-  flex-direction: column;
-  gap: 0.2rem;
-
-  background: var(--primarly-bg-color);
-
-  &::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    padding: 0.5rem;
-    border-radius: 1rem;
-    pointer-events: none;
-
-    ${VelvetBackground};
-
-    mask:
-      linear-gradient(#000 0 0) content-box,
-      linear-gradient(#000 0 0);
-    -webkit-mask:
-      linear-gradient(#000 0 0) content-box,
-      linear-gradient(#000 0 0);
-    -webkit-mask-composite: xor;
-    mask-composite: exclude;
-  }
-`;
-
-const Title = styled.h3`
-  font-family: 'Uncial Antiqua', serif;
-  font-size: var(--h3);
-  color: var(--tertiary-color);
-  text-align: start;
-
-  ${VelvetBackground};
-
-  padding: 0 0.5rem;
 `;
 
 const Container = styled.div`
@@ -135,8 +94,8 @@ const Chat = ({ className }: ChatProps) => {
   };
 
   return (
-    <ChatSection className={className}>
-      <Title>Chat</Title>
+    <ChatCard className={className}>
+      <SectionCardTitle>Chat</SectionCardTitle>
       <Container>
         <Messages>
           {messages.map((message) => (
@@ -156,7 +115,7 @@ const Chat = ({ className }: ChatProps) => {
           onSubmitHandler={sendMessageHandler}
         />
       </Container>
-    </ChatSection>
+    </ChatCard>
   );
 };
 

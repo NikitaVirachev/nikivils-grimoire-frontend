@@ -2,6 +2,7 @@ import styled, { css } from 'styled-components';
 
 import Bat from '../Icon/Bat';
 import SwordLink from './SwordLink';
+import { Border } from './Post';
 
 import { respond } from '../../styles/Mixins';
 
@@ -48,13 +49,14 @@ const Header = styled.header`
 
 const Title = styled.h4`
   font-size: var(--h4);
+  line-height: var(--lh4);
 
   flex-grow: 1;
 `;
 
 const PostBody = styled.p`
   font-size: var(--p);
-  line-height: 2rem;
+  line-height: var(--lh-p);
   padding: 0 3rem;
 
   ${respond(
@@ -70,12 +72,6 @@ const PostBody = styled.p`
       padding: 0 1rem;
     `
   )}
-`;
-
-const Border = styled.footer`
-  font-family: 'Elder Futhark';
-  font-size: 0.8rem;
-  color: var(--primarly-color);
 `;
 
 const StyledBat = styled(Bat)`

@@ -26,7 +26,7 @@ const Container = styled.header`
 const Title = styled.span`
   font-family: 'Uncial Antiqua', serif;
   font-size: var(--h1);
-  line-height: 4rem;
+  line-height: var(--lh1);
   color: var(--white-color);
   filter: drop-shadow(0 3px 4px rgba(0, 0, 0, 0.25));
 `;

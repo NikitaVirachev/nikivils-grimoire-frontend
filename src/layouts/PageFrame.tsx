@@ -36,6 +36,7 @@ const Layout = styled.div`
     'phone',
     css`
       grid-template-columns: 1fr;
+      grid-template-rows: auto 1fr auto;
       column-gap: 0.5rem;
       row-gap: 0.5rem;
 

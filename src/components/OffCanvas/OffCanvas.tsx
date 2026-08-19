@@ -63,6 +63,10 @@ const CrossButton = styled.button`
   padding: 1rem;
 `;
 
+const OffCanvasChat = styled(Chat)`
+  background: var(--tertiary-color);
+`;
+
 type OffCanvas = {
   className?: string;
   toggle: () => void;
@@ -96,6 +100,7 @@ const OffCanvas = ({ className, toggle, isOpen }: OffCanvas) => {
             <NavItem
               to='/'
               $size='big'
+              onClick={() => toggle()}
             >
               Home
             </NavItem>
@@ -104,6 +109,7 @@ const OffCanvas = ({ className, toggle, isOpen }: OffCanvas) => {
             <NavItem
               to='/about'
               $size='big'
+              onClick={() => toggle()}
             >
               About
             </NavItem>
@@ -112,6 +118,7 @@ const OffCanvas = ({ className, toggle, isOpen }: OffCanvas) => {
             <NavItem
               to='/blog'
               $size='big'
+              onClick={() => toggle()}
             >
               Blog
             </NavItem>
@@ -120,13 +127,14 @@ const OffCanvas = ({ className, toggle, isOpen }: OffCanvas) => {
             <NavItem
               to='/gallery'
               $size='big'
+              onClick={() => toggle()}
             >
               Gallery
             </NavItem>
           </li>
         </List>
 
-        {isOpen && <Chat />}
+        {isOpen && <OffCanvasChat />}
       </Sidebar>
     </Container>
   );
