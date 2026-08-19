@@ -36,7 +36,9 @@ export const PostText = styled.p`
   )}
 `;
 
-export const Border = styled.footer`
+export const Border = styled.div.attrs({
+  role: 'separator',
+})`
   font-family: 'Elder Futhark';
   font-size: 0.8rem;
   color: var(--primarly-color);
