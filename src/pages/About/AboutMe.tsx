@@ -1,8 +1,6 @@
 import { PositionedMainContent } from '../../layouts/MainContent';
 import { QuaternaryHeading, UnderlinedHeader } from '../../shared/typography/Headings';
-import { PostText as Paragraph } from '../../components/Post/Post';
-import { Paragraphs } from '../../components/Post/Post';
-import { PostContent } from '../../components/Post/Post';
+import { PostText as Paragraph, Paragraphs, PostContent } from '../../components/Post/Post';
 import { PhoneContents, PhoneCurrently, PhoneBorder } from './About.styles';
 
 const AboutMe = () => {

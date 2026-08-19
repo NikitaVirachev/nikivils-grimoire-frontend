@@ -2,6 +2,12 @@ import styled, { css } from 'styled-components';
 
 import { respond } from '../../styles/Mixins';
 
+export const Posts = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+`;
+
 export const PostContent = styled.section`
   display: flex;
   flex-direction: column;
