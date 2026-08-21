@@ -112,6 +112,7 @@ const HomePage = () => {
           changeInputHandler={(e) => setNewsFilter(e.target.value)}
           onSubmitHandler={findNewsHandler}
         />
+
         {posts.map((post) => (
           <PostOverview
             key={post.id}
@@ -122,10 +123,13 @@ const HomePage = () => {
         ))}
         <PhonePagination />
       </PositionedMainContent>
+
       <PositionedSidebar title='Explore'>
         <PostsExplore>
           <Pagination />
+
           <Separator title='Separator icon' />
+
           <SearchInput
             name='news-search'
             placeholder='find something?'
