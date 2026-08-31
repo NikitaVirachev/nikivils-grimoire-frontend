@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import Wedge from '../Icon/Wedge';
-import { SecondaryFrame } from '../../styles/Frame';
+import { Wedge } from '../../shared/ui/icons';
+import { SecondaryFrame } from '../../shared/ui/frames';
 
 const SwitchPage = styled.button`
   background: inherit;
