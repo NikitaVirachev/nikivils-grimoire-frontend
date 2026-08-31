@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import horizonImgUrl from '../../assets/img/textures/horizon.png';
+import horizonImgUrl from '../../../assets/img/textures/horizon.png';
 
 const heightOfContent = 1024;
 const heightOfHorizon = 50;

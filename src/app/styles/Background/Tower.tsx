@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 
-import { respond } from '../../styles/Mixins';
+import { respond } from '../../../shared/lib/styles';
 
 const heightOfTower = 488;
 const heightOfContent = 1024;
