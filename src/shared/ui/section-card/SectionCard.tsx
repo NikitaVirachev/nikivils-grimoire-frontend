@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { VelvetBackground } from '../../styles/Backgrounds';
+import { VelvetBackground } from '../backgrounds';
 
 export const SectionCard = styled.section`
   padding: 0.5rem;
