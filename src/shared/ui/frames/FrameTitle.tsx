@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { MarbleBackground } from '../../styles/Backgrounds';
+import { MarbleBackground } from '../backgrounds';
 
 const FrameTitle = styled.h2`
   text-align: center;
