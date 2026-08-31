@@ -1,8 +1,10 @@
 import { useState, useRef, useEffect } from 'react';
 import styled from 'styled-components';
 
-import { EnterInput } from '../Form/Form';
-import { SectionCard, SectionCardTitle } from '../../shared/components/SectionCard';
+import { ActionInput } from '../../shared/ui/form/action-input';
+import { ActionButton } from '../../shared/ui/form/action-button';
+import { SectionCard, SectionCardTitle } from '../../shared/ui/section-card/SectionCard';
+import { Play } from '../../shared/ui/icons';
 
 const ChatCard = styled(SectionCard)`
   height: 30rem;
@@ -52,6 +54,11 @@ const Author = styled.p`
 
 const MessageText = styled.p`
   color: var(--secondary-tp-color);
+`;
+
+const StyledPlay = styled(Play)`
+  width: inherit;
+  height: inherit;
 `;
 
 interface ChatProps {
@@ -107,12 +114,21 @@ const Chat = ({ className }: ChatProps) => {
           <div ref={bottomRef} />
         </Messages>
 
-        <EnterInput
+        <ActionInput
           name='chat'
           placeholder='say something?'
           value={message}
           changeInputHandler={(e) => setMessage(e.target.value)}
           onSubmitHandler={sendMessageHandler}
+          action={
+            <ActionButton
+              type='submit'
+              disabled={message === ''}
+              aria-label='Submit'
+            >
+              <StyledPlay title='Play button icon' />
+            </ActionButton>
+          }
         />
       </Container>
     </ChatCard>

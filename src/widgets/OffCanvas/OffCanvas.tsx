@@ -1,10 +1,10 @@
 import styled from 'styled-components';
 
 import Overlay from '../Overlay/Overlay';
-import { MarbleBackground } from '../../styles/Backgrounds';
-import NavItem from '../Navbar/NavItem';
+import { MarbleBackground } from '../../shared/ui/backgrounds';
+import NavItem from '../navbar/NavItem';
 import BlackSun from '../Header/BlackSun';
-import Cross from '../Icon/Cross';
+import { Cross } from '../../shared/ui/icons';
 import Chat from '../Chat/Chat';
 
 const Container = styled.div<{ $isOpen: boolean }>`

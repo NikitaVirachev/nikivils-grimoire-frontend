@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 import NavItem from './NavItem';
-import { MarbleBackground } from '../../styles/Backgrounds';
+import { MarbleBackground } from '../../shared/ui/backgrounds';
 
 const border = 0.5;
 

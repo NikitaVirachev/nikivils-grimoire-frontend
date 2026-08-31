@@ -1,9 +1,8 @@
 import type { ReactNode } from 'react';
 import styled, { css } from 'styled-components';
 
-import PictureFrame from '../../styles/PictureFrame';
-import FrameTitle from '../FrameTitle/FrameTitle';
-import { respond } from '../../styles/Mixins';
+import { FrameTitle, PictureFrame } from '../../shared/ui/frames';
+import { respond } from '../../shared/lib/styles';
 
 import sidebarBackgroundUrl from '../../assets/img/backgrounds/sidebar-background.jpg';
 

@@ -3,8 +3,8 @@ import styled, { css } from 'styled-components';
 
 import Crescent from './Crescent';
 import BlackSun from './BlackSun';
-import Burger from '../Icon/Burger';
-import { respond } from '../../styles/Mixins';
+import { Burger } from '../../shared/ui/icons';
+import { respond } from '../../shared/lib/styles';
 
 const Container = styled.header`
   display: flex;
