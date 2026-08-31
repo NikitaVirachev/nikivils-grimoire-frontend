@@ -1,9 +1,9 @@
 import { createGlobalStyle, css } from 'styled-components';
 
-import Coelacanth from '../assets/fonts/Coelacanth.otf';
-import Metamorphous from '../assets/fonts/Metamorphous-Regular.ttf';
-import ElderFuthark from '../assets/fonts/Rune.ttf';
-import { respond } from './Mixins';
+import Coelacanth from '../../assets/fonts/Coelacanth.otf';
+import Metamorphous from '../../assets/fonts/Metamorphous-Regular.ttf';
+import ElderFuthark from '../../assets/fonts/Rune.ttf';
+import { respond } from '../../shared/lib/styles';
 
 const styles = css`
   *,
