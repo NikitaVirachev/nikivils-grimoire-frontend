@@ -1,7 +1,7 @@
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 
-import { SectionCard, SectionCardTitle } from '../../shared/components/SectionCard';
+import { SectionCard, SectionCardTitle } from '../../../../shared/ui/section-card/SectionCard';
 
 const Menu = styled.nav`
   padding: 2px;

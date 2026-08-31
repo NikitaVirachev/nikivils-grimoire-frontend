@@ -1,9 +1,10 @@
-import { PositionedMainContent } from '../../layouts/MainContent';
-import { QuaternaryHeading, UnderlinedHeader } from '../../shared/typography/Headings';
-import { PostText as Paragraph, Paragraphs, PostContent } from '../../components/Post/Post';
-import { PhoneContents, PhoneCurrently, PhoneBorder } from './About.styles';
+import { PositionedMainContent } from '../../../../layouts/MainContent';
+import { QuaternaryHeading, UnderlinedHeader } from '../../../../shared/ui/typography';
+import { ProseText as Paragraph } from '../../../../shared/ui/prose';
+import { PhoneContents, PhoneCurrently, PhoneBorder } from '../About.styles';
+import { ParagraphGroup as Paragraphs, ContentSection } from '../../../../shared/ui/content';
 
-const AboutMe = () => {
+export const AboutMe = () => {
   return (
     <PositionedMainContent title='About me'>
       <PhoneContents />
@@ -12,7 +13,7 @@ const AboutMe = () => {
         LoremipsumdolorsitametconsecteturSedrisuseuismodmalesuadaelementum.MaecenasincommodoametlacusantecursusFringillafelissemperenimv.UHKipsumdolorsitametconsecteturSedrisuseuismodmales
       </PhoneBorder>
 
-      <PostContent>
+      <ContentSection>
         <UnderlinedHeader>
           <QuaternaryHeading>My thoughts about this</QuaternaryHeading>
         </UnderlinedHeader>
@@ -51,7 +52,7 @@ const AboutMe = () => {
             to them in the near future, if I'm lucky.
           </Paragraph>
         </Paragraphs>
-      </PostContent>
+      </ContentSection>
 
       <PhoneBorder>
         LoremipsumdolorsitametconsecteturSedrisuseuismodmalesuadaelementum.MaecenasincommodoametlacusantecursusFringillafelissemperenimv.UHKipsumdolorsitametconsecteturSedrisuseuismodmales
@@ -61,5 +62,3 @@ const AboutMe = () => {
     </PositionedMainContent>
   );
 };
-
-export default AboutMe;

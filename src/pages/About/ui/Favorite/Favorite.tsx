@@ -1,9 +1,10 @@
-import { PositionedMainContent } from '../../layouts/MainContent';
-import { PostText, PostContent, Posts } from '../../components/Post/Post';
-import { PhoneContents, PhoneCurrently, PhoneBorder } from './About.styles';
-import { QuaternaryHeading, UnderlinedHeader } from '../../shared/typography/Headings';
+import { PositionedMainContent } from '../../../../layouts/MainContent';
+import { PhoneContents, PhoneCurrently, PhoneBorder } from '../About.styles';
+import { QuaternaryHeading, UnderlinedHeader } from '../../../../shared/ui/typography';
+import { ProseText as PostText } from '../../../../shared/ui/prose';
+import { ContentSection, ContentSectionGroup } from '../../../../shared/ui/content';
 
-const Favorite = () => {
+export const Favorite = () => {
   return (
     <PositionedMainContent title='Favorite stuff'>
       <PhoneContents />
@@ -12,17 +13,17 @@ const Favorite = () => {
         LoremipsumdolorsitametconsecteturSedrisuseuismodmalesuadaelementum.MaecenasincommodoametlacusantecursusFringillafelissemperenimv.UHKipsumdolorsitametconsecteturSedrisuseuismodmales
       </PhoneBorder>
 
-      <Posts>
-        <PostContent>
+      <ContentSectionGroup>
+        <ContentSection>
           <UnderlinedHeader>
             <QuaternaryHeading>Games</QuaternaryHeading>
           </UnderlinedHeader>
           <PostText>
             The Witcher 3: Wild Hunt, Life Is Strange, Crusader Kings, Mass Effect, Disco Elysium
           </PostText>
-        </PostContent>
+        </ContentSection>
 
-        <PostContent>
+        <ContentSection>
           <UnderlinedHeader>
             <QuaternaryHeading>Books</QuaternaryHeading>
           </UnderlinedHeader>
@@ -30,22 +31,22 @@ const Favorite = () => {
             The Wheel of Time, House of Leaves, Tales from Meekhanese Border, Worm (Parahumans) by
             John C. "Wildbow" McCrae
           </PostText>
-        </PostContent>
+        </ContentSection>
 
-        <PostContent>
+        <ContentSection>
           <UnderlinedHeader>
             <QuaternaryHeading>Manga</QuaternaryHeading>
           </UnderlinedHeader>
           <PostText>Goodnight Punpun by Inio Asan</PostText>
-        </PostContent>
+        </ContentSection>
 
-        <PostContent>
+        <ContentSection>
           <UnderlinedHeader>
             <QuaternaryHeading>Comics</QuaternaryHeading>
           </UnderlinedHeader>
           <PostText>Blankets by Craig Thompson</PostText>
-        </PostContent>
-      </Posts>
+        </ContentSection>
+      </ContentSectionGroup>
 
       <PhoneBorder>
         LoremipsumdolorsitametconsecteturSedrisuseuismodmalesuadaelementum.MaecenasincommodoametlacusantecursusFringillafelissemperenimv.UHKipsumdolorsitametconsecteturSedrisuseuismodmales
@@ -55,5 +56,3 @@ const Favorite = () => {
     </PositionedMainContent>
   );
 };
-
-export default Favorite;

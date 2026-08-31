@@ -1,10 +1,10 @@
 import styled, { css } from 'styled-components';
 
-import Contents from './Contents';
-import Currently from './Currently';
-import { Border } from '../../components/Post/Post';
+import Contents from './Contents/Contents';
+import Currently from './Currently/Currently';
+import { Border } from '../../../shared/ui/separators';
 
-import { respond } from '../../styles/Mixins';
+import { respond } from '../../../shared/lib/styles';
 
 export const PhoneContents = styled(Contents)`
   display: none;

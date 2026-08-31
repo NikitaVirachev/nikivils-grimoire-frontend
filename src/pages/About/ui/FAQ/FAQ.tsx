@@ -1,34 +1,8 @@
-import styled from 'styled-components';
+import { PositionedMainContent } from '../../../../layouts/MainContent';
+import { PhoneContents, PhoneCurrently, PhoneBorder } from '../About.styles';
+import { FAQSection, Question, FAQItem, QuestionSign, QuestionText, Answer } from './FAQ.styles';
 
-import { PositionedMainContent } from '../../layouts/MainContent';
-import { PhoneContents, PhoneCurrently, PhoneBorder } from './About.styles';
-import { PostContent } from '../../components/Post/Post';
-
-const FAQSection = styled(PostContent)`
-  font-size: var(--p);
-`;
-
-const FAQItem = styled.article`
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-`;
-
-const Question = styled.h3`
-  font-weight: normal;
-`;
-
-const QuestionSign = styled.span`
-  color: var(--primarly-tp-color);
-`;
-
-const QuestionText = styled.span`
-  text-decoration: underline;
-`;
-
-const Answer = styled.p``;
-
-const FAQ = () => {
+export const FAQ = () => {
   return (
     <PositionedMainContent title='FAQ'>
       <PhoneContents />
@@ -77,5 +51,3 @@ const FAQ = () => {
     </PositionedMainContent>
   );
 };
-
-export default FAQ;

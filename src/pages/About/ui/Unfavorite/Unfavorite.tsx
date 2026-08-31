@@ -1,9 +1,10 @@
-import { PositionedMainContent } from '../../layouts/MainContent';
-import { PostText, PostContent, Posts } from '../../components/Post/Post';
-import { PhoneContents, PhoneCurrently, PhoneBorder } from './About.styles';
-import { QuaternaryHeading, UnderlinedHeader } from '../../shared/typography/Headings';
+import { PositionedMainContent } from '../../../../layouts/MainContent';
+import { PhoneContents, PhoneCurrently, PhoneBorder } from '../About.styles';
+import { QuaternaryHeading, UnderlinedHeader } from '../../../../shared/ui/typography';
+import { ProseText as PostText } from '../../../../shared/ui';
+import { ContentSection, ContentSectionGroup } from '../../../../shared/ui/content';
 
-const Unfavorite = () => {
+export const Unfavorite = () => {
   return (
     <PositionedMainContent title="Stuff I don't like">
       <PhoneContents />
@@ -12,8 +13,8 @@ const Unfavorite = () => {
         LoremipsumdolorsitametconsecteturSedrisuseuismodmalesuadaelementum.MaecenasincommodoametlacusantecursusFringillafelissemperenimv.UHKipsumdolorsitametconsecteturSedrisuseuismodmales
       </PhoneBorder>
 
-      <Posts>
-        <PostContent>
+      <ContentSectionGroup>
+        <ContentSection>
           <UnderlinedHeader>
             <QuaternaryHeading>Games</QuaternaryHeading>
           </UnderlinedHeader>
@@ -21,8 +22,8 @@ const Unfavorite = () => {
             I don't like competitive online games like Dota 2, Counter-Strike. I respect real-time
             strategies, but they are too difficult for me, especially online.
           </PostText>
-        </PostContent>
-      </Posts>
+        </ContentSection>
+      </ContentSectionGroup>
 
       <PhoneBorder>
         LoremipsumdolorsitametconsecteturSedrisuseuismodmalesuadaelementum.MaecenasincommodoametlacusantecursusFringillafelissemperenimv.UHKipsumdolorsitametconsecteturSedrisuseuismodmales
@@ -32,5 +33,3 @@ const Unfavorite = () => {
     </PositionedMainContent>
   );
 };
-
-export default Unfavorite;
