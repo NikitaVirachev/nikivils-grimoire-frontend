@@ -1,7 +1,7 @@
 import { isJSendError, isJSendFail, isJSendSuccess } from './jsend';
 import type { ErrorWithCode, JSendError, JSendFail } from './jsend';
 
-const parseJSendResponse = async <T>(response: Response): Promise<T> => {
+export const parseJSendResponse = async <T>(response: Response): Promise<T> => {
   const ct = response.headers.get('content-type') || '';
 
   // nginx/прокси часто отдают text/html
@@ -47,5 +47,3 @@ const parseJSendResponse = async <T>(response: Response): Promise<T> => {
   // не JSend
   throw new Error('Неизвестный формат JSend-ответа');
 };
-
-export default parseJSendResponse;

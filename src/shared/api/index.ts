@@ -1,0 +1,1 @@
+export { parseJSendResponse } from './parseJSendResponse';
