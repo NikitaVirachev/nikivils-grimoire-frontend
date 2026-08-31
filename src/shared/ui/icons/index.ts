@@ -1,0 +1,9 @@
+export { default as Icon } from './Icon';
+export { default as Bat } from './Bat';
+export { default as Burger } from './Burger';
+export { default as Cross } from './Cross';
+export { default as Loupe } from './Loupe';
+export { default as Play } from './Play';
+export { default as Skull } from './Skull';
+export { default as Sword } from './Sword';
+export { default as Wedge } from './Wedge';
