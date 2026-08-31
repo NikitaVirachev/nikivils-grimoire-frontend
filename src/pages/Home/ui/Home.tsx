@@ -1,56 +1,23 @@
 import { useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
-import styled, { css } from 'styled-components';
 
-import { PositionedMainContent } from '../../layouts/MainContent';
-import { PositionedSidebar } from '../../components/Sidebar/Sidebar';
-import PostOverview from '../../components/Post/PostOverview';
-import Chat from '../../components/Chat/Chat';
-import Pagination from '../../components/Sidebar/Pagination';
-import Separator from '../../components/Sidebar/Separator/Separator';
-import { SearchInput } from '../../components/Form/Form';
-import { homeLoader } from './home.loader';
+import { PositionedMainContent } from '../../../layouts/MainContent';
+import { PositionedSidebar } from '../../../widgets/Sidebar/Sidebar';
+import PostOverview from '../../../entities/post/ui/PostOverview';
+import Pagination from '../../../widgets/Sidebar/Pagination';
+import { Separator } from '../../../shared/ui/separators';
+import { SearchInput } from '../../../shared/ui/form/Form';
+import { homeLoader } from '../api/loader';
+import {
+  PostsExplore,
+  PositionedChat,
+  PhoneSearchInput,
+  PhonePagination,
+  StyledLoupe,
+} from './Home.styles';
+import { ActionButton } from '../../../shared/ui/form/action-button';
 
-import { respond } from '../../styles/Mixins';
-
-const PostsExplore = styled.section`
-  position: relative;
-
-  align-self: start;
-
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-`;
-
-const PositionedChat = styled(Chat)`
-  align-self: end;
-`;
-
-const PhoneSearchInput = styled(SearchInput)`
-  display: none;
-  margin: 0.5rem 0.5rem 0 0.5rem;
-
-  ${respond(
-    'phone',
-    css`
-      display: grid;
-    `
-  )}
-`;
-
-const PhonePagination = styled(Pagination)`
-  display: none;
-
-  ${respond(
-    'phone',
-    css`
-      display: flex;
-    `
-  )}
-`;
-
-const HomePage = () => {
+export const Home = () => {
   const [newsFilter, setNewsFilter] = useState('');
 
   const posts = useLoaderData<typeof homeLoader>();
@@ -70,6 +37,14 @@ const HomePage = () => {
           value={newsFilter}
           changeInputHandler={(e) => setNewsFilter(e.target.value)}
           onSubmitHandler={findNewsHandler}
+          action={
+            <ActionButton
+              type='submit'
+              disabled={newsFilter === ''}
+            >
+              <StyledLoupe title='Magnifying glass icon' />
+            </ActionButton>
+          }
         />
 
         {posts.map((post) => (
@@ -102,5 +77,3 @@ const HomePage = () => {
     </>
   );
 };
-
-export default HomePage;
