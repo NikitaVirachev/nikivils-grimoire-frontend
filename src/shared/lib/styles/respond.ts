@@ -3,7 +3,7 @@ import { css } from 'styled-components';
 type Breakpoint = 'phone' | 'tab-landscape' | 'tab-square' | 'tab-portrait' | 'desktop';
 type CssBlock = ReturnType<typeof css>;
 
-export const respond = (breakpoint: Breakpoint, content: CssBlock) => {
+const respond = (breakpoint: Breakpoint, content: CssBlock) => {
   switch (breakpoint) {
     case 'phone':
       return css`
@@ -37,3 +37,5 @@ export const respond = (breakpoint: Breakpoint, content: CssBlock) => {
       `;
   }
 };
+
+export default respond;
