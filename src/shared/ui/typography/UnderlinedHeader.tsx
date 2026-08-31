@@ -1,15 +1,7 @@
 import { type ReactNode } from 'react';
 import styled from 'styled-components';
 
-import Separator from '../../components/Sidebar/Separator/Separator';
-
-export const QuaternaryHeading = styled.h4`
-  font-family: 'Metamorphous', serif;
-  font-size: var(--h4);
-  font-weight: 500;
-  line-height: var(--lh4);
-  color: var(--secondary-tp-color);
-`;
+import { Separator } from '../separators';
 
 const UnderlinedHeaderWrapper = styled.header`
   display: flex;
