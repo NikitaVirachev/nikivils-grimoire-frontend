@@ -1,6 +1,6 @@
 import { css } from 'styled-components';
 
-import { MarbleBackground } from './Backgrounds';
+import { MarbleBackground } from '../backgrounds';
 
 const PictureFrame = css`
   padding: 0 0.5rem 2rem 0.5rem;
