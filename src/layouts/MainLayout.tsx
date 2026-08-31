@@ -1,7 +1,7 @@
 import { Outlet } from 'react-router-dom';
 
-import Background from '../components/Background/Background';
-import PageFrame from './PageFrame';
+import Background from '../app/styles/Background/Background';
+import PageFrame from '../app/layouts/PageFrame';
 
 const MainLayout = () => (
   <>

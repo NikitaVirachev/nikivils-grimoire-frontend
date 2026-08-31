@@ -2,12 +2,12 @@ import type { PropsWithChildren } from 'react';
 import { useState } from 'react';
 import styled, { css } from 'styled-components';
 
-import Header from '../components/Header/Header';
-import Navbar from '../components/Navbar/Navbar';
-import Footer from '../components/Footer/Footer';
-import OffCanvas from '../components/OffCanvas/OffCanvas';
+import Header from '../../widgets/Header/Header';
+import Navbar from '../../widgets/navbar/Navbar';
+import Footer from '../../widgets/Footer/Footer';
+import OffCanvas from '../../widgets/OffCanvas/OffCanvas';
 
-import { respond } from '../styles/Mixins';
+import { respond } from '../../shared/lib/styles';
 
 const Layout = styled.div`
   display: grid;

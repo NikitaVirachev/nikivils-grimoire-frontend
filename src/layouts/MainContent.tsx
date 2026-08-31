@@ -2,10 +2,10 @@ import { useEffect, useLayoutEffect, useRef, useCallback } from 'react';
 import styled, { css } from 'styled-components';
 import type { ReactNode } from 'react';
 
-import PictureFrame from '../styles/PictureFrame';
-import Skull from '../components/Icon/Skull';
-import FrameTitle from '../components/FrameTitle/FrameTitle';
-import { respond } from '../styles/Mixins';
+import PictureFrame from '../shared/ui/frames/PictureFrame';
+import { Skull } from '../shared/ui/icons';
+import { FrameTitle } from '../shared/ui/frames';
+import { respond } from '../shared/lib/styles';
 
 import chainLinkUrl from '../assets/img/icons/ChainLink.png';
 import mainBackgroundUrl from '../assets/img/backgrounds/main-background.jpg';
