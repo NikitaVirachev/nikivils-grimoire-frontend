@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 import Overlay from '../Overlay/Overlay';
 import { MarbleBackground } from '../../shared/ui/backgrounds';
-import NavItem from '../navbar/NavItem';
+import NavigationLink from '../../app/layouts/page-frame/ui/NavigationLink/NavigationLink';
 import BlackSun from '../../app/layouts/page-frame/ui/Header/BlackSun';
 import { Cross } from '../../shared/ui/icons';
 import { Chat } from '../Chat';
@@ -97,40 +97,40 @@ const OffCanvas = ({ className, toggle, isOpen }: OffCanvas) => {
             </Header>
           </li>
           <li>
-            <NavItem
+            <NavigationLink
               to='/'
               $size='big'
               onClick={() => toggle()}
             >
               Home
-            </NavItem>
+            </NavigationLink>
           </li>
           <li>
-            <NavItem
+            <NavigationLink
               to='/about'
               $size='big'
               onClick={() => toggle()}
             >
               About
-            </NavItem>
+            </NavigationLink>
           </li>
           <li>
-            <NavItem
+            <NavigationLink
               to='/blog'
               $size='big'
               onClick={() => toggle()}
             >
               Blog
-            </NavItem>
+            </NavigationLink>
           </li>
           <li>
-            <NavItem
+            <NavigationLink
               to='/gallery'
               $size='big'
               onClick={() => toggle()}
             >
               Gallery
-            </NavItem>
+            </NavigationLink>
           </li>
         </List>
 

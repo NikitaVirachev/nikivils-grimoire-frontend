@@ -1,4 +1,4 @@
-import NavItem from '../../../../../widgets/navbar/NavItem';
+import NavigationLink from '../NavigationLink/NavigationLink';
 
 import { Wrapper, List } from './Navbar.styles';
 
@@ -10,16 +10,16 @@ const Navbar = ({ className }: NavbarProps) => (
   <Wrapper className={className}>
     <List>
       <li>
-        <NavItem to='/'>Home</NavItem>
+        <NavigationLink to='/'>Home</NavigationLink>
       </li>
       <li>
-        <NavItem to='/about'>About</NavItem>
+        <NavigationLink to='/about'>About</NavigationLink>
       </li>
       <li>
-        <NavItem to='/blog'>Blog</NavItem>
+        <NavigationLink to='/blog'>Blog</NavigationLink>
       </li>
       <li>
-        <NavItem to='/gallery'>Gallery</NavItem>
+        <NavigationLink to='/gallery'>Gallery</NavigationLink>
       </li>
     </List>
   </Wrapper>

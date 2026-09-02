@@ -1,9 +1,9 @@
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 
-import { PrimarlyFrame, SecondaryFrame } from '../../shared/ui/frames';
+import { PrimarlyFrame, SecondaryFrame } from '../../../../../shared/ui/frames';
 
-const NavItem = styled(NavLink)<{ $size?: string }>`
+const NavigationLink = styled(NavLink)<{ $size?: string }>`
   font-family: 'Metamorphous', serif;
   font-size: var(--small);
   font-size: ${(props) => (props.$size === 'big' ? 'var(--p)' : 'var(--small)')};
@@ -50,4 +50,4 @@ const NavItem = styled(NavLink)<{ $size?: string }>`
   }
 `;
 
-export default NavItem;
+export default NavigationLink;
