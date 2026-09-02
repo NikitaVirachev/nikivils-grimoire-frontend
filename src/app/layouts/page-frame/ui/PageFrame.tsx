@@ -2,7 +2,7 @@ import type { PropsWithChildren } from 'react';
 import { useState } from 'react';
 
 import Footer from './Footer/Footer';
-import { Layout, StyledHeader, StyledNavbar, StyledOffCanvas } from './PageFrame.styles';
+import { Layout, StyledHeader, StyledNavbar, StyledMobileNavigation } from './PageFrame.styles';
 
 const PageFrame = ({ children }: PropsWithChildren) => {
   const [offcanvasvVisibility, setOffcanvasVisibility] = useState(false);
@@ -17,7 +17,7 @@ const PageFrame = ({ children }: PropsWithChildren) => {
       <StyledNavbar />
       {children}
       <Footer />
-      <StyledOffCanvas
+      <StyledMobileNavigation
         toggle={toggleOffCanvas}
         isOpen={offcanvasvVisibility}
       />

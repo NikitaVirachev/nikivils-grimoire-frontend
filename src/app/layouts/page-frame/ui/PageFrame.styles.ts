@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components';
 
 import Header from './Header/Header';
 import Navbar from './Navbar/Navbar';
-import OffCanvas from '../../../../widgets/OffCanvas/OffCanvas';
+import MobileNavigation from './MobileNavigation/MobileNavigation';
 
 import { respond } from '../../../../shared/lib/styles';
 
@@ -57,7 +57,7 @@ export const StyledNavbar = styled(Navbar)`
   )}
 `;
 
-export const StyledOffCanvas = styled(OffCanvas)`
+export const StyledMobileNavigation = styled(MobileNavigation)`
   display: none;
 
   ${respond(
