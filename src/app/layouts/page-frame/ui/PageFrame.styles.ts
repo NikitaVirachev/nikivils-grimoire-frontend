@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 
-import Header from '../../../../widgets/Header/Header';
+import Header from './Header/Header';
 import Navbar from '../../../../widgets/navbar/Navbar';
 import OffCanvas from '../../../../widgets/OffCanvas/OffCanvas';
 
