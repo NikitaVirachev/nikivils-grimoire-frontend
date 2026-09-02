@@ -1,4 +1,4 @@
-import { PositionedMainContent } from '../../../../layouts/MainContent';
+import { PositionedMainContent } from '../../../../app/layouts/page-frame/ui/MainContent/MainContent';
 import { PhoneContents, PhoneCurrently, PhoneBorder } from '../About.styles';
 import { QuaternaryHeading, UnderlinedHeader } from '../../../../shared/ui/typography';
 import { ProseText as PostText } from '../../../../shared/ui';

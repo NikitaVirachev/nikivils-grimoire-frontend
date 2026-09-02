@@ -1,4 +1,4 @@
-import { PositionedMainContent } from '../../../../layouts/MainContent';
+import { PositionedMainContent } from '../../../../app/layouts/page-frame/ui/MainContent/MainContent';
 import { PhoneContents, PhoneCurrently, PhoneBorder } from '../About.styles';
 import { FAQSection, Question, FAQItem, QuestionSign, QuestionText, Answer } from './FAQ.styles';
 

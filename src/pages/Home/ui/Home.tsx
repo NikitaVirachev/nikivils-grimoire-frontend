@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 
-import { PositionedMainContent } from '../../../layouts/MainContent';
+import { PositionedMainContent } from '../../../app/layouts/page-frame/ui/MainContent/MainContent';
 import { DesktopSidebar } from '../../../shared/ui/sidebar';
 import PostOverview from '../../../entities/post/ui/PostOverview';
 import { Pagination } from '../../../shared/ui/pagination';
