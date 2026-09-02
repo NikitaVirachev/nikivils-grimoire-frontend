@@ -1,7 +1,7 @@
 import type { PropsWithChildren } from 'react';
 import { useState } from 'react';
 
-import Footer from '../../../../widgets/Footer/Footer';
+import Footer from './Footer/Footer';
 import { Layout, StyledHeader, StyledNavbar, StyledOffCanvas } from './PageFrame.styles';
 
 const PageFrame = ({ children }: PropsWithChildren) => {
