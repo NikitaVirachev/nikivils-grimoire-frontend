@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 
-import Chat from '../../../widgets/Chat/Chat';
+import { Chat } from '../../../widgets/Chat';
 import { ActionInput } from '../../../shared/ui/form/action-input';
 import Pagination from '../../../widgets/Sidebar/Pagination';
 import { Loupe } from '../../../shared/ui/icons';

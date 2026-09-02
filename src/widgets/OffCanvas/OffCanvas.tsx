@@ -5,7 +5,7 @@ import { MarbleBackground } from '../../shared/ui/backgrounds';
 import NavItem from '../navbar/NavItem';
 import BlackSun from '../Header/BlackSun';
 import { Cross } from '../../shared/ui/icons';
-import Chat from '../Chat/Chat';
+import { Chat } from '../Chat';
 
 const Container = styled.div<{ $isOpen: boolean }>`
   position: absolute;
