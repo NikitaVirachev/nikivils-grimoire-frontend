@@ -1,6 +1,6 @@
 import { createBrowserRouter, replace } from 'react-router-dom';
 
-import MainLayout from '../../layouts/MainLayout';
+import { MainLayout } from '../layouts/main-layout';
 import { homeLoader, Home } from '../../pages/home';
 import { AboutLayout, AboutMe, FAQ, Favorite, Unfavorite } from '../../pages/about';
 import Blog from '../../pages/blog/ui/Blog';
