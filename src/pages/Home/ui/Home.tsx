@@ -6,7 +6,7 @@ import { PositionedSidebar } from '../../../widgets/Sidebar/Sidebar';
 import PostOverview from '../../../entities/post/ui/PostOverview';
 import { Pagination } from '../../../shared/ui/pagination';
 import { Separator } from '../../../shared/ui/separators';
-import { SearchInput } from '../../../shared/ui/form/Form';
+import { ActionInput } from '../../../shared/ui/form/action-input';
 import { homeLoader } from '../api/loader';
 import {
   PostsExplore,
@@ -64,12 +64,20 @@ export const Home = () => {
 
           <Separator title='Separator icon' />
 
-          <SearchInput
+          <ActionInput
             name='news-search'
             placeholder='find something?'
             value={newsFilter}
             changeInputHandler={(e) => setNewsFilter(e.target.value)}
             onSubmitHandler={findNewsHandler}
+            action={
+              <ActionButton
+                type='submit'
+                disabled={newsFilter === ''}
+              >
+                <StyledLoupe title='Magnifying glass icon' />
+              </ActionButton>
+            }
           />
         </PostsExplore>
         <PositionedChat />
