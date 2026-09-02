@@ -6,7 +6,7 @@ interface ActionButtonProps extends ComponentPropsWithRef<'button'> {
   children: ReactNode;
 }
 
-export const ActionButton = ({ children, type = 'button', ...props }: ActionButtonProps) => {
+const ActionButton = ({ children, type = 'button', ...props }: ActionButtonProps) => {
   return (
     <Button
       type={type}
@@ -16,3 +16,5 @@ export const ActionButton = ({ children, type = 'button', ...props }: ActionButt
     </Button>
   );
 };
+
+export default ActionButton;
