@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 
 import { PositionedMainContent } from '../../../layouts/MainContent';
-import { PositionedSidebar } from '../../../widgets/Sidebar/Sidebar';
+import { DesktopSidebar } from '../../../shared/ui/sidebar';
 import PostOverview from '../../../entities/post/ui/PostOverview';
 import { Pagination } from '../../../shared/ui/pagination';
 import { Separator } from '../../../shared/ui/separators';
@@ -58,7 +58,7 @@ export const Home = () => {
         <PhonePagination />
       </PositionedMainContent>
 
-      <PositionedSidebar title='Explore'>
+      <DesktopSidebar title='Explore'>
         <PostsExplore>
           <Pagination />
 
@@ -81,7 +81,7 @@ export const Home = () => {
           />
         </PostsExplore>
         <PositionedChat />
-      </PositionedSidebar>
+      </DesktopSidebar>
     </>
   );
 };
