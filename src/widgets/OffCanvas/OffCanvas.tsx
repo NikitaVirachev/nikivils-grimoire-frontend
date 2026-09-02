@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import Overlay from '../Overlay/Overlay';
 import { MarbleBackground } from '../../shared/ui/backgrounds';
 import NavItem from '../navbar/NavItem';
-import BlackSun from '../Header/BlackSun';
+import BlackSun from '../../app/layouts/page-frame/ui/Header/BlackSun';
 import { Cross } from '../../shared/ui/icons';
 import { Chat } from '../Chat';
 

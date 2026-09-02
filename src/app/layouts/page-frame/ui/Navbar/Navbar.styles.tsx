@@ -1,11 +1,10 @@
 import styled from 'styled-components';
 
-import NavItem from './NavItem';
-import { MarbleBackground } from '../../shared/ui/backgrounds';
+import { MarbleBackground } from '../../../../../shared/ui/backgrounds';
 
 const border = 0.5;
 
-const Wrapper = styled.nav`
+export const Wrapper = styled.nav`
   position: relative;
   padding: ${border + 0.2}rem;
 
@@ -31,34 +30,9 @@ const Wrapper = styled.nav`
   }
 `;
 
-const List = styled.ul`
+export const List = styled.ul`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 0.5rem;
   list-style-type: none;
 `;
-
-type NavbarProps = {
-  className?: string;
-};
-
-const Navbar = ({ className }: NavbarProps) => (
-  <Wrapper className={className}>
-    <List>
-      <li>
-        <NavItem to='/'>Home</NavItem>
-      </li>
-      <li>
-        <NavItem to='/about'>About</NavItem>
-      </li>
-      <li>
-        <NavItem to='/blog'>Blog</NavItem>
-      </li>
-      <li>
-        <NavItem to='/gallery'>Gallery</NavItem>
-      </li>
-    </List>
-  </Wrapper>
-);
-
-export default Navbar;
