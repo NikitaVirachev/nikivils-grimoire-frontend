@@ -7,3 +7,4 @@ export { default as Play } from './Play';
 export { default as Skull } from './Skull';
 export { default as Sword } from './Sword';
 export { default as Wedge } from './Wedge';
+export { default as Crescent } from './Crescent';
