@@ -4,7 +4,7 @@ import { useLoaderData } from 'react-router-dom';
 import { PositionedMainContent } from '../../../layouts/MainContent';
 import { PositionedSidebar } from '../../../widgets/Sidebar/Sidebar';
 import PostOverview from '../../../entities/post/ui/PostOverview';
-import Pagination from '../../../widgets/Sidebar/Pagination';
+import { Pagination } from '../../../shared/ui/pagination';
 import { Separator } from '../../../shared/ui/separators';
 import { SearchInput } from '../../../shared/ui/form/Form';
 import { homeLoader } from '../api/loader';
