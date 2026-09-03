@@ -1,4 +1,4 @@
-import Overlay from '../../../../../widgets/Overlay/Overlay';
+import { Overlay } from '../../../../../shared/ui/overlay';
 
 import NavigationLink from '../NavigationLink/NavigationLink';
 import BlackSun from '../Header/BlackSun';
