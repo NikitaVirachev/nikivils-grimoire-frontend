@@ -12,13 +12,13 @@ import {
   MobileChat,
 } from './MobileNavigation.styles';
 
-type OffCanvas = {
+type MobileNavigationProps = {
   className?: string;
   toggle: () => void;
   isOpen: boolean;
 };
 
-const MobileNavigation = ({ className, toggle, isOpen }: OffCanvas) => {
+const MobileNavigation = ({ className, toggle, isOpen }: MobileNavigationProps) => {
   const clickCrossButtonHandler: React.MouseEventHandler<HTMLButtonElement> = (event) => {
     event.preventDefault();
     toggle();
