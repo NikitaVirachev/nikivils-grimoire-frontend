@@ -1,9 +1,9 @@
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 
-import blackSunPng from '../../assets/img/icons/BlackSun.png';
-import concretePng from '../../assets/img/textures/concrete.png';
-import whiteCracks from '../../assets/img/textures/whiteCracks.png';
+import blackSunPng from './assets/BlackSun.png';
+import concretePng from './assets/concrete.png';
+import whiteCracks from './assets/whiteCracks.png';
 
 const Wrapper = styled(NavLink)<{ $isOpen?: boolean }>`
   width: 4rem;

@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
 
-import chainLinkUrl from '../assets/img/icons/ChainLink.png';
-import mainBackgroundUrl from '../assets/img/backgrounds/main-background.jpg';
+import chainLinkUrl from './assets/ChainLink.png';
+import mainBackgroundUrl from './assets/main-background.jpg';
 
 import { PictureFrame } from '../../../../../shared/ui/frames';
 import { Skull } from '../../../../../shared/ui/icons';

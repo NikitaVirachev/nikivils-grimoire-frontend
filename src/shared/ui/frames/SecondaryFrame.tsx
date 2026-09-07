@@ -1,6 +1,6 @@
 import { css } from 'styled-components';
 
-import secondaryFrameUrl from '../../../assets/img/frame-seconadry.svg';
+import secondaryFrameUrl from './assets/frame-seconadry.svg';
 
 const SecondaryFrame = css`
   border-image-source: url(${secondaryFrameUrl});

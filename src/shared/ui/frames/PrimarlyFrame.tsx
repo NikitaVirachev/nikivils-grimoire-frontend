@@ -1,6 +1,6 @@
 import { css } from 'styled-components';
 
-import primarlyFrameUrl from '../../../assets/img/frame-primarly.svg';
+import primarlyFrameUrl from './assets/frame-primarly.svg';
 
 const PrimarlyFrame = css`
   border-image-source: url(${primarlyFrameUrl});

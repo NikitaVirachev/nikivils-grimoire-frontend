@@ -1,6 +1,6 @@
 import { css } from 'styled-components';
 
-import velvetTexture from '../../../assets/img/textures/velvet.jpg';
+import velvetTexture from './assets/velvet.jpg';
 
 const VelvetBackground = css`
   background: url(${velvetTexture}) 0 0 / 2.1rem 2.1rem repeat;

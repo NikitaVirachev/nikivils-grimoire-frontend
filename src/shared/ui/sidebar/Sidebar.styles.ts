@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 import { PictureFrame } from '../frames';
-import sidebarBackgroundUrl from '../../assets/img/backgrounds/sidebar-background.jpg';
+import sidebarBackgroundUrl from './sidebar-background.jpg';
 
 export const SidebarLayout = styled.aside`
   position: relative;
