@@ -1,4 +1,4 @@
-import { DesktopMainContent } from '@/shared/ui/MainContent';
+import { DesktopMainContent } from '@/shared/ui/main-content';
 import { PhoneContents, PhoneCurrently, PhoneBorder } from '../About.styles';
 import { FAQSection, Question, FAQItem, QuestionSign, QuestionText, Answer } from './FAQ.styles';
 

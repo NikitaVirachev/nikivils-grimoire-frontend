@@ -1,4 +1,4 @@
-import { DesktopMainContent } from '@/shared/ui/MainContent';
+import { DesktopMainContent } from '@/shared/ui/main-content';
 import { PhoneContents, PhoneCurrently, PhoneBorder } from '../About.styles';
 import { QuaternaryHeading, UnderlinedHeader } from '@/shared/ui/typography';
 import { ProseText as PostText } from '@/shared/ui/prose';

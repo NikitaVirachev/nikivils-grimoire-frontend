@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 
-import { DesktopMainContent } from '@/shared/ui/MainContent';
+import { DesktopMainContent } from '@/shared/ui/main-content';
 import { DesktopSidebar } from '@/shared/ui/sidebar';
 import PostOverview from '@/entities/post/ui/PostOverview';
 import { Pagination } from '@/shared/ui/pagination';
