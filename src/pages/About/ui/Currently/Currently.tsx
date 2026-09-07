@@ -1,31 +1,6 @@
-import styled from 'styled-components';
-
 import { SectionCard, SectionCardTitle } from '../../../../shared/ui/section-card/SectionCard';
 
-const Content = styled.dl`
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-
-  padding: 0.2rem;
-`;
-
-const Topic = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-`;
-
-const Name = styled.dt`
-  font-size: var(--h4);
-  line-height: var(--lh4);
-  font-weight: bold;
-`;
-
-const Value = styled.dd`
-  font-size: var(--p);
-  line-height: var(--lh-p);
-`;
+import { Content, Topic, Name, Value } from './Currently.styles';
 
 type ContentsProps = {
   className?: string;
