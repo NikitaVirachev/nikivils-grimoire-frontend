@@ -1,4 +1,4 @@
-import { PositionedMainContent } from '../../../../app/layouts/page-frame/ui/MainContent/MainContent';
+import { DesktopMainContent } from '../../../../shared/ui/MainContent';
 import { QuaternaryHeading, UnderlinedHeader } from '../../../../shared/ui/typography';
 import { ProseText as Paragraph } from '../../../../shared/ui/prose';
 import { PhoneContents, PhoneCurrently, PhoneBorder } from '../About.styles';
@@ -6,7 +6,7 @@ import { ParagraphGroup as Paragraphs, ContentSection } from '../../../../shared
 
 export const AboutMe = () => {
   return (
-    <PositionedMainContent title='About me'>
+    <DesktopMainContent title='About me'>
       <PhoneContents />
 
       <PhoneBorder>
@@ -59,6 +59,6 @@ export const AboutMe = () => {
       </PhoneBorder>
 
       <PhoneCurrently />
-    </PositionedMainContent>
+    </DesktopMainContent>
   );
 };

@@ -1,9 +1,7 @@
 import { useEffect, useLayoutEffect, useRef, useCallback } from 'react';
-import styled, { css } from 'styled-components';
 import type { ReactNode } from 'react';
 
-import { FrameTitle } from '../../../../../shared/ui/frames';
-import { respond } from '../../../../../shared/lib/styles';
+import { FrameTitle } from '../frames';
 
 import {
   MainContentLayout,
@@ -182,14 +180,3 @@ const MainContent = ({ title, className, children }: MainContentProps) => {
 };
 
 export default MainContent;
-
-export const PositionedMainContent = styled(MainContent)`
-  grid-column: col-start 1 / col-end 3;
-
-  ${respond(
-    'phone',
-    css`
-      grid-column: -1 / 1;
-    `
-  )}
-`;

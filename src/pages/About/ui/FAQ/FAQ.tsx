@@ -1,10 +1,10 @@
-import { PositionedMainContent } from '../../../../app/layouts/page-frame/ui/MainContent/MainContent';
+import { DesktopMainContent } from '../../../../shared/ui/MainContent';
 import { PhoneContents, PhoneCurrently, PhoneBorder } from '../About.styles';
 import { FAQSection, Question, FAQItem, QuestionSign, QuestionText, Answer } from './FAQ.styles';
 
 export const FAQ = () => {
   return (
-    <PositionedMainContent title='FAQ'>
+    <DesktopMainContent title='FAQ'>
       <PhoneContents />
 
       <PhoneBorder>
@@ -48,6 +48,6 @@ export const FAQ = () => {
       </PhoneBorder>
 
       <PhoneCurrently />
-    </PositionedMainContent>
+    </DesktopMainContent>
   );
 };

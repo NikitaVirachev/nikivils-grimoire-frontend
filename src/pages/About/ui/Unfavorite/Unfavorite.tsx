@@ -1,4 +1,4 @@
-import { PositionedMainContent } from '../../../../app/layouts/page-frame/ui/MainContent/MainContent';
+import { DesktopMainContent } from '../../../../shared/ui/MainContent';
 import { PhoneContents, PhoneCurrently, PhoneBorder } from '../About.styles';
 import { QuaternaryHeading, UnderlinedHeader } from '../../../../shared/ui/typography';
 import { ProseText as PostText } from '../../../../shared/ui/prose';
@@ -6,7 +6,7 @@ import { ContentSection, ContentSectionGroup } from '../../../../shared/ui/conte
 
 export const Unfavorite = () => {
   return (
-    <PositionedMainContent title="Stuff I don't like">
+    <DesktopMainContent title="Stuff I don't like">
       <PhoneContents />
 
       <PhoneBorder>
@@ -30,6 +30,6 @@ export const Unfavorite = () => {
       </PhoneBorder>
 
       <PhoneCurrently />
-    </PositionedMainContent>
+    </DesktopMainContent>
   );
 };

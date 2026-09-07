@@ -3,10 +3,10 @@ import styled, { css } from 'styled-components';
 import chainLinkUrl from './assets/ChainLink.png';
 import mainBackgroundUrl from './assets/main-background.jpg';
 
-import { PictureFrame } from '../../../../../shared/ui/frames';
-import { Skull } from '../../../../../shared/ui/icons';
+import { PictureFrame } from '../frames';
+import { Skull } from '../icons';
 
-import { respond } from '../../../../../shared/lib/styles';
+import { respond } from '../../lib/styles';
 
 export const MainContentLayout = styled.main`
   position: relative;

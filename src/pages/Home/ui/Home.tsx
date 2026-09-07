@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 
-import { PositionedMainContent } from '../../../app/layouts/page-frame/ui/MainContent/MainContent';
+import { DesktopMainContent } from '../../../shared/ui/MainContent';
 import { DesktopSidebar } from '../../../shared/ui/sidebar';
 import PostOverview from '../../../entities/post/ui/PostOverview';
 import { Pagination } from '../../../shared/ui/pagination';
@@ -30,7 +30,7 @@ export const Home = () => {
 
   return (
     <>
-      <PositionedMainContent title='News'>
+      <DesktopMainContent title='News'>
         <PhoneSearchInput
           name='news-search'
           placeholder='find something?'
@@ -56,7 +56,7 @@ export const Home = () => {
           />
         ))}
         <PhonePagination />
-      </PositionedMainContent>
+      </DesktopMainContent>
 
       <DesktopSidebar title='Explore'>
         <PostsExplore>
