@@ -1,8 +1,7 @@
-import { Overlay } from '../../../../../shared/ui/overlay';
-
 import NavigationLink from '../NavigationLink/NavigationLink';
 import BlackSun from '../Header/BlackSun';
-import { Cross } from '../../../../../shared/ui/icons';
+import { Overlay } from '@/shared/ui/overlay';
+import { Cross } from '@/shared/ui/icons';
 import {
   Container,
   Sidebar,

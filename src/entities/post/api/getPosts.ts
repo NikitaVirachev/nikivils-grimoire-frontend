@@ -1,4 +1,4 @@
-import { parseJSendResponse } from '../../../shared/api';
+import { parseJSendResponse } from '@/shared/api';
 import { type Post } from '../model/types';
 
 type PostsResponse = {

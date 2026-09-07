@@ -4,7 +4,7 @@ import Header from './Header/Header';
 import Navbar from './Navbar/Navbar';
 import MobileNavigation from './MobileNavigation/MobileNavigation';
 
-import { respond } from '../../../../shared/lib/styles';
+import { respond } from '@/shared/lib/styles';
 
 export const Layout = styled.div`
   display: grid;

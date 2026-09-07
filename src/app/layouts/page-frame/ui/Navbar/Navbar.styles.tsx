@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { MarbleBackground } from '../../../../../shared/ui/backgrounds';
+import { MarbleBackground } from '@/shared/ui/backgrounds';
 
 const border = 0.5;
 

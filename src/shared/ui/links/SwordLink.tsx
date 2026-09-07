@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
 import { Link } from 'react-router-dom';
 
-import { Sword } from '../../../shared/ui/icons';
+import { Sword } from '@/shared/ui/icons';
 import { respond } from '../../lib/styles';
 
 const StyledLink = styled(Link)`

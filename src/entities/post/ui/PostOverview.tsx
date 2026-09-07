@@ -1,5 +1,5 @@
-import { SwordLink } from '../../../shared/ui/links';
-import { Border } from '../../../shared/ui/separators';
+import { SwordLink } from '@/shared/ui/links';
+import { Border } from '@/shared/ui/separators';
 import { Post, Content, Header, StyledBat, Title, PostBody } from './PostOverview.styles';
 
 interface PostOverviewProps {

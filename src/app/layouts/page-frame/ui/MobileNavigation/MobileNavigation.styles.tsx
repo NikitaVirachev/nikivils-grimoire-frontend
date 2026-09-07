@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
-import { Chat } from '../../../../../widgets/Chat';
-import { MarbleBackground } from '../../../../../shared/ui/backgrounds';
+import { Chat } from '@/widgets/Chat';
+import { MarbleBackground } from '@/shared/ui/backgrounds';
 
 export const Container = styled.div<{ $isOpen: boolean }>`
   position: absolute;

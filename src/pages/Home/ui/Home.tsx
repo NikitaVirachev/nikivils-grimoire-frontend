@@ -1,12 +1,12 @@
 import { useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 
-import { DesktopMainContent } from '../../../shared/ui/MainContent';
-import { DesktopSidebar } from '../../../shared/ui/sidebar';
-import PostOverview from '../../../entities/post/ui/PostOverview';
-import { Pagination } from '../../../shared/ui/pagination';
-import { Separator } from '../../../shared/ui/separators';
-import { ActionInput } from '../../../shared/ui/form/action-input';
+import { DesktopMainContent } from '@/shared/ui/MainContent';
+import { DesktopSidebar } from '@/shared/ui/sidebar';
+import PostOverview from '@/entities/post/ui/PostOverview';
+import { Pagination } from '@/shared/ui/pagination';
+import { Separator } from '@/shared/ui/separators';
+import { ActionInput } from '@/shared/ui/form/action-input';
 import { homeLoader } from '../api/loader';
 import {
   PostsExplore,
@@ -15,7 +15,7 @@ import {
   PhonePagination,
   StyledLoupe,
 } from './Home.styles';
-import { ActionButton } from '../../../shared/ui/form/action-button';
+import { ActionButton } from '@/shared/ui/form/action-button';
 
 export const Home = () => {
   const [newsFilter, setNewsFilter] = useState('');

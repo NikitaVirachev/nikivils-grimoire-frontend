@@ -1,8 +1,8 @@
-import { DesktopMainContent } from '../../../../shared/ui/MainContent';
-import { QuaternaryHeading, UnderlinedHeader } from '../../../../shared/ui/typography';
-import { ProseText as Paragraph } from '../../../../shared/ui/prose';
+import { DesktopMainContent } from '@/shared/ui/MainContent';
+import { QuaternaryHeading, UnderlinedHeader } from '@/shared/ui/typography';
+import { ProseText as Paragraph } from '@/shared/ui/prose';
 import { PhoneContents, PhoneCurrently, PhoneBorder } from '../About.styles';
-import { ParagraphGroup as Paragraphs, ContentSection } from '../../../../shared/ui/content';
+import { ParagraphGroup as Paragraphs, ContentSection } from '@/shared/ui/content';
 
 export const AboutMe = () => {
   return (

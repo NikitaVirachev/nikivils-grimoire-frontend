@@ -1,8 +1,8 @@
 import styled, { css } from 'styled-components';
 
-import { Bat } from '../../../shared/ui/icons';
+import { Bat } from '@/shared/ui/icons';
 
-import { respond } from '../../../shared/lib/styles';
+import { respond } from '@/shared/lib/styles';
 
 export const Post = styled.article`
   font-family: 'Coelacanth', serif;

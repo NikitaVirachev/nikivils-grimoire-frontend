@@ -1,9 +1,9 @@
 import styled, { css } from 'styled-components';
 
-import { Crescent } from '../../../../../shared/ui/icons';
+import { Crescent } from '@/shared/ui/icons';
 import BlackSun from './BlackSun';
-import { Burger } from '../../../../../shared/ui/icons';
-import { respond } from '../../../../../shared/lib/styles';
+import { Burger } from '@/shared/ui/icons';
+import { respond } from '@/shared/lib/styles';
 
 export const Container = styled.header`
   display: flex;

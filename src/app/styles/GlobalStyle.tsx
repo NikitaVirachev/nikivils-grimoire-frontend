@@ -3,7 +3,7 @@ import { createGlobalStyle, css } from 'styled-components';
 import Coelacanth from '../fonts/Coelacanth.otf';
 import Metamorphous from '../fonts/Metamorphous-Regular.ttf';
 import ElderFuthark from '../fonts/Rune.ttf';
-import { respond } from '../../shared/lib/styles';
+import { respond } from '@/shared/lib/styles';
 
 const styles = css`
   *,

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { ContentSection } from '../../../../shared/ui/content';
+import { ContentSection } from '@/shared/ui/content';
 
 export const FAQSection = styled(ContentSection)`
   font-size: var(--p);

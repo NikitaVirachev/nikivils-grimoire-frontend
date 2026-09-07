@@ -1,8 +1,8 @@
-import { DesktopMainContent } from '../../../../shared/ui/MainContent';
+import { DesktopMainContent } from '@/shared/ui/MainContent';
 import { PhoneContents, PhoneCurrently, PhoneBorder } from '../About.styles';
-import { QuaternaryHeading, UnderlinedHeader } from '../../../../shared/ui/typography';
-import { ProseText as PostText } from '../../../../shared/ui/prose';
-import { ContentSection, ContentSectionGroup } from '../../../../shared/ui/content';
+import { QuaternaryHeading, UnderlinedHeader } from '@/shared/ui/typography';
+import { ProseText as PostText } from '@/shared/ui/prose';
+import { ContentSection, ContentSectionGroup } from '@/shared/ui/content';
 
 export const Unfavorite = () => {
   return (
