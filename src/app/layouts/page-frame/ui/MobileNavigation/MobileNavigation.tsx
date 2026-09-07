@@ -18,7 +18,7 @@ type OffCanvas = {
   isOpen: boolean;
 };
 
-const OffCanvas = ({ className, toggle, isOpen }: OffCanvas) => {
+const MobileNavigation = ({ className, toggle, isOpen }: OffCanvas) => {
   const clickCrossButtonHandler: React.MouseEventHandler<HTMLButtonElement> = (event) => {
     event.preventDefault();
     toggle();
@@ -85,4 +85,4 @@ const OffCanvas = ({ className, toggle, isOpen }: OffCanvas) => {
   );
 };
 
-export default OffCanvas;
+export default MobileNavigation;
