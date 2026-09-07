@@ -2,11 +2,11 @@ import { SectionCard, SectionCardTitle } from '../../../../shared/ui/section-car
 
 import { Content, Topic, Name, Value } from './Currently.styles';
 
-type ContentsProps = {
+type CurrentlyProps = {
   className?: string;
 };
 
-const Currently = ({ className }: ContentsProps) => (
+const Currently = ({ className }: CurrentlyProps) => (
   <SectionCard className={className}>
     <SectionCardTitle>Currently</SectionCardTitle>
 
