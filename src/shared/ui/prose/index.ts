@@ -1,0 +1,1 @@
+export { ProseText } from './ProseText';
