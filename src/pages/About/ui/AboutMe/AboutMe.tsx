@@ -1,12 +1,18 @@
+import { useMatches } from 'react-router-dom';
+
 import { DesktopMainContent } from '@/shared/ui/main-content';
 import { QuaternaryHeading, UnderlinedHeader } from '@/shared/ui/typography';
 import { ProseText as Paragraph } from '@/shared/ui/prose';
 import { PhoneContents, PhoneCurrently, PhoneBorder } from '../About.styles';
 import { ParagraphGroup as Paragraphs, ContentSection } from '@/shared/ui/content';
+import { getPageTitle } from '@/shared/lib';
 
 export const AboutMe = () => {
+  const matches = useMatches();
+  const title = getPageTitle(matches);
+
   return (
-    <DesktopMainContent title='About me'>
+    <DesktopMainContent title={title}>
       <PhoneContents />
 
       <PhoneBorder>

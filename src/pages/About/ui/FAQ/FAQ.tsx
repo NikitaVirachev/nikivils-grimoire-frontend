@@ -1,10 +1,16 @@
+import { useMatches } from 'react-router-dom';
+
 import { DesktopMainContent } from '@/shared/ui/main-content';
 import { PhoneContents, PhoneCurrently, PhoneBorder } from '../About.styles';
 import { FAQSection, Question, FAQItem, QuestionSign, QuestionText, Answer } from './FAQ.styles';
+import { getPageTitle } from '@/shared/lib';
 
 export const FAQ = () => {
+  const matches = useMatches();
+  const title = getPageTitle(matches);
+
   return (
-    <DesktopMainContent title='FAQ'>
+    <DesktopMainContent title={title}>
       <PhoneContents />
 
       <PhoneBorder>

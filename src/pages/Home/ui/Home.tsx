@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
+import { useMatches } from 'react-router-dom';
 
 import { DesktopMainContent } from '@/shared/ui/main-content';
 import { DesktopSidebar } from '@/shared/ui/sidebar';
@@ -16,9 +17,13 @@ import {
   StyledLoupe,
 } from './Home.styles';
 import { ActionButton } from '@/shared/ui/form/action-button';
+import { getPageTitle } from '@/shared/lib';
 
 export const Home = () => {
   const [newsFilter, setNewsFilter] = useState('');
+
+  const matches = useMatches();
+  const title = getPageTitle(matches);
 
   const posts = useLoaderData<typeof homeLoader>();
 
@@ -30,7 +35,7 @@ export const Home = () => {
 
   return (
     <>
-      <DesktopMainContent title='News'>
+      <DesktopMainContent title={title}>
         <PhoneSearchInput
           name='news-search'
           placeholder='find something?'

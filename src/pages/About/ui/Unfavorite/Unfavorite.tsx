@@ -1,12 +1,19 @@
+import { useMatches } from 'react-router-dom';
+
 import { DesktopMainContent } from '@/shared/ui/main-content';
 import { PhoneContents, PhoneCurrently, PhoneBorder } from '../About.styles';
 import { QuaternaryHeading, UnderlinedHeader } from '@/shared/ui/typography';
 import { ProseText as PostText } from '@/shared/ui/prose';
 import { ContentSection, ContentSectionGroup } from '@/shared/ui/content';
 
+import { getPageTitle } from '@/shared/lib';
+
 export const Unfavorite = () => {
+  const matches = useMatches();
+  const title = getPageTitle(matches);
+
   return (
-    <DesktopMainContent title="Stuff I don't like">
+    <DesktopMainContent title={title}>
       <PhoneContents />
 
       <PhoneBorder>

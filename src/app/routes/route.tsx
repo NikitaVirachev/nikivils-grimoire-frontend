@@ -10,16 +10,47 @@ const router = createBrowserRouter([
     Component: MainLayout,
 
     children: [
-      { index: true, Component: Home, loader: homeLoader },
+      {
+        index: true,
+        Component: Home,
+        loader: homeLoader,
+        handle: {
+          title: 'News',
+        },
+      },
       {
         path: 'about',
         Component: AboutLayout,
         children: [
           { index: true, loader: () => replace('me') },
-          { path: 'me', Component: AboutMe },
-          { path: 'faq', Component: FAQ },
-          { path: 'favorite', Component: Favorite },
-          { path: 'unfavorite', Component: Unfavorite },
+          {
+            path: 'me',
+            Component: AboutMe,
+            handle: {
+              title: 'About me',
+            },
+          },
+          {
+            path: 'faq',
+            Component: FAQ,
+            handle: {
+              title: 'FAQ',
+            },
+          },
+          {
+            path: 'favorite',
+            Component: Favorite,
+            handle: {
+              title: 'Favorite stuff',
+            },
+          },
+          {
+            path: 'unfavorite',
+            Component: Unfavorite,
+            handle: {
+              title: "Stuff I don't like",
+            },
+          },
         ],
       },
       { path: 'blog', Component: Blog },
