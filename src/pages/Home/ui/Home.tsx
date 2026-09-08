@@ -1,6 +1,5 @@
 import { useState } from 'react';
-import { useLoaderData } from 'react-router-dom';
-import { useMatches } from 'react-router-dom';
+import { useLoaderData, useMatches } from 'react-router-dom';
 
 import { DesktopMainContent } from '@/shared/ui/main-content';
 import { DesktopSidebar } from '@/shared/ui/sidebar';
