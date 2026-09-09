@@ -6,7 +6,7 @@ const StyledFooter = styled.footer`
   color: var(--tertiary-color);
   text-align: center;
 
-  grid-column: -1 / 1;
+  grid-area: footer;
 `;
 
 const Footer = () => <StyledFooter>Website made by me. Last update 18.12.2025</StyledFooter>;
