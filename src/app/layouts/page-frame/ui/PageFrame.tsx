@@ -1,11 +1,14 @@
-import type { PropsWithChildren } from 'react';
 import { useState } from 'react';
+import { useNavigation, Outlet } from 'react-router-dom';
 
 import Footer from './Footer/Footer';
 import { Layout, StyledHeader, StyledNavbar, StyledMobileNavigation } from './PageFrame.styles';
 
-const PageFrame = ({ children }: PropsWithChildren) => {
+const PageFrame = () => {
   const [offcanvasvVisibility, setOffcanvasVisibility] = useState(false);
+
+  const navigation = useNavigation();
+  const loading = navigation.state === 'loading';
 
   const toggleOffCanvas = () => {
     setOffcanvasVisibility((prev) => !prev);
@@ -15,7 +18,9 @@ const PageFrame = ({ children }: PropsWithChildren) => {
     <Layout>
       <StyledHeader toggleSidebar={toggleOffCanvas} />
       <StyledNavbar />
-      {children}
+
+      {loading ? <div>Загрузка...</div> : <Outlet />}
+
       <Footer />
       <StyledMobileNavigation
         toggle={toggleOffCanvas}
