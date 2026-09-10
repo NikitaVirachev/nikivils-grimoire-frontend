@@ -15,11 +15,11 @@ const PageFrame = () => {
   };
 
   return (
-    <Layout>
+    <Layout $loading={loading}>
       <StyledHeader toggleSidebar={toggleOffCanvas} />
       <StyledNavbar />
 
-      {loading ? <div>Загрузка...</div> : <Outlet />}
+      <Outlet />
 
       <Footer />
       <StyledMobileNavigation

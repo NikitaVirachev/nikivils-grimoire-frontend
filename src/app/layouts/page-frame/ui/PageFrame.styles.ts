@@ -6,7 +6,7 @@ import MobileNavigation from './MobileNavigation/MobileNavigation';
 
 import { respond } from '@/shared/lib/styles';
 
-export const Layout = styled.div`
+export const Layout = styled.div<{ $loading: boolean }>`
   display: grid;
 
   grid-template-areas:
@@ -27,6 +27,12 @@ export const Layout = styled.div`
 
   position: relative;
   z-index: 5;
+
+  ${({ $loading }) =>
+    $loading &&
+    css`
+      --content-opacity: 0.5;
+    `};
 
   ${respond(
     'tab-portrait',
