@@ -4,9 +4,11 @@ export type ApiErrorType = Error & {
 
 class ApiError extends Error {
   code?: string;
-  constructor(message: string, code?: number) {
+  cause?: unknown;
+  constructor(message: string, code?: number, cause?: unknown) {
     super(message);
     this.code = String(code);
+    this.cause = cause;
   }
 }
 
