@@ -4,10 +4,12 @@ import { MainLayout } from '../layouts/main-layout';
 import { homeLoader, Home } from '../../pages/home';
 import { AboutLayout, AboutMe, FAQ, Favorite, Unfavorite } from '../../pages/about';
 import Blog from '../../pages/blog/ui/Blog';
+import RootErrorBoundary from './RootErrorBoundary';
 
 const router = createBrowserRouter([
   {
     Component: MainLayout,
+    ErrorBoundary: RootErrorBoundary,
 
     children: [
       {
