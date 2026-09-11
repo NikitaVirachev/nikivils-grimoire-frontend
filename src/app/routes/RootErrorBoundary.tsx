@@ -1,6 +1,6 @@
 import { useRouteError } from 'react-router-dom';
 
-import { isApiError } from '@/shared/api/errors/ApiError';
+import { isApiError } from '@/shared/api';
 
 const RootErrorBoundary = () => {
   const error = useRouteError();
