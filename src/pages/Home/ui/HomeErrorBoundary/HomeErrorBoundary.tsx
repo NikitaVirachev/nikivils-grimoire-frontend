@@ -1,7 +1,7 @@
 import { useRouteError } from 'react-router-dom';
 
 import { isApiError } from '@/shared/api';
-import HomeLayout from './HomeLayout';
+import HomeLayout from '../HomeLayout';
 import { StyledHeader } from './HomeErrorBoundary.styles';
 
 const HomeErrorBoundary = () => {
