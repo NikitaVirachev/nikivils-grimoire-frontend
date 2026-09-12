@@ -22,6 +22,8 @@ export const Content = styled.section`
   flex-grow: 1;
   min-height: 0;
 
+  opacity: var(--content-opacity, 1);
+
   display: grid;
   grid-template-columns: auto 1fr auto;
   gap: 1rem;

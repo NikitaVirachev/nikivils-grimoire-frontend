@@ -16,6 +16,8 @@ export const Column = styled.div`
   flex-grow: 1;
   padding: 0.2rem 0.2rem 0.2rem 0.2rem;
 
+  opacity: var(--content-opacity, 1);
+
   position: relative;
 
   display: grid;

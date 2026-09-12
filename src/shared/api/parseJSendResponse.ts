@@ -1,19 +1,19 @@
 import { isJSendError, isJSendFail, isJSendSuccess } from './jsend';
-import type { ErrorWithCode, JSendError, JSendFail } from './jsend';
+import type { JSendError, JSendFail } from './jsend';
+import ApiError from './errors/ApiError';
 
 export const parseJSendResponse = async <T>(response: Response): Promise<T> => {
   const ct = response.headers.get('content-type') || '';
 
-  // nginx/прокси часто отдают text/html
   if (!ct.includes('application/json')) {
-    throw new Error('Некорректный ответ сервера');
+    throw new ApiError('Invalid server response');
   }
 
   let json: unknown;
   try {
     json = await response.json();
   } catch {
-    throw new Error('Некорректный JSON в ответе сервера');
+    throw new ApiError('Invalid JSON in server response');
   }
 
   if (isJSendSuccess<T>(json)) {
@@ -25,10 +25,9 @@ export const parseJSendResponse = async <T>(response: Response): Promise<T> => {
     const msg =
       typeof fail.data.message === 'string' && fail.data.message.trim()
         ? fail.data.message
-        : 'Некорректные данные. Проверьте введённую информацию.';
+        : 'Invalid data. Check the entered information.';
 
-    const err: ErrorWithCode = new Error(msg);
-    err.code = String(response.status || 400);
+    const err = new ApiError(msg, response.status || 400);
     throw err;
   }
 
@@ -37,13 +36,12 @@ export const parseJSendResponse = async <T>(response: Response): Promise<T> => {
     const msg =
       typeof e.message === 'string' && e.message.trim()
         ? e.message
-        : 'Сервер временно недоступен. Повторите попытку позже.';
+        : 'The server is temporarily unavailable. Please try again later.';
 
-    const err: ErrorWithCode = new Error(msg);
-    err.code = String(response.status || 500);
+    const err = new ApiError(msg, response.status || 500);
     throw err;
   }
 
   // не JSend
-  throw new Error('Неизвестный формат JSend-ответа');
+  throw new ApiError('Unknown JSend response format.');
 };

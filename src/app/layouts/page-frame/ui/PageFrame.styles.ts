@@ -6,10 +6,18 @@ import MobileNavigation from './MobileNavigation/MobileNavigation';
 
 import { respond } from '@/shared/lib/styles';
 
-export const Layout = styled.div`
+export const Layout = styled.div<{ $loading: boolean }>`
   display: grid;
+
+  grid-template-areas:
+    'header header header header'
+    'navbar navbar navbar navbar'
+    'main main main sidebar'
+    'footer footer footer footer';
+
   grid-template-columns: repeat(4, [col-start] 20rem [col-end]);
-  grid-template-rows: auto auto 1fr;
+  grid-template-rows: auto auto 1fr auto;
+
   column-gap: 2rem;
   row-gap: 1rem;
   align-content: start;
@@ -19,6 +27,12 @@ export const Layout = styled.div`
 
   position: relative;
   z-index: 5;
+
+  ${({ $loading }) =>
+    $loading &&
+    css`
+      --content-opacity: 0.5;
+    `};
 
   ${respond(
     'tab-portrait',
@@ -32,8 +46,14 @@ export const Layout = styled.div`
   ${respond(
     'phone',
     css`
+      grid-template-areas:
+        'header'
+        'main'
+        'footer';
+
       grid-template-columns: 1fr;
       grid-template-rows: auto 1fr auto;
+
       column-gap: 0.5rem;
       row-gap: 0.5rem;
 
@@ -43,11 +63,11 @@ export const Layout = styled.div`
 `;
 
 export const StyledHeader = styled(Header)`
-  grid-column: -1 / 1;
+  grid-area: header;
 `;
 
 export const StyledNavbar = styled(Navbar)`
-  grid-column: -1 / 1;
+  grid-column: navbar;
 
   ${respond(
     'phone',

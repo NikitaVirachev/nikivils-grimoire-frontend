@@ -1,13 +1,15 @@
 import { createBrowserRouter, replace } from 'react-router-dom';
 
 import { MainLayout } from '../layouts/main-layout';
-import { homeLoader, Home } from '../../pages/home';
+import { homeLoader, Home, HomeErrorBoundary } from '../../pages/home';
 import { AboutLayout, AboutMe, FAQ, Favorite, Unfavorite } from '../../pages/about';
 import Blog from '../../pages/blog/ui/Blog';
+import RootErrorBoundary from './RootErrorBoundary';
 
 const router = createBrowserRouter([
   {
     Component: MainLayout,
+    ErrorBoundary: RootErrorBoundary,
 
     children: [
       {
@@ -17,6 +19,7 @@ const router = createBrowserRouter([
         handle: {
           title: 'News',
         },
+        ErrorBoundary: HomeErrorBoundary,
       },
       {
         path: 'about',
