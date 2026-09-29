@@ -1,6 +1,6 @@
 import { useLoaderData } from 'react-router-dom';
 
-import { homeLoader } from '../api/loader';
+import { homeLoader } from '@/pages/home';
 import HomeLayout from './HomeLayout';
 import PostOverview from '@/entities/post/ui/PostOverview';
 
