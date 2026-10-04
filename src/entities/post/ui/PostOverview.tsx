@@ -1,14 +1,11 @@
+import type { PostSummaryDto } from '@nikivils/grimoire-contracts';
+
 import { SwordLink } from '@/shared/ui/links';
 import { Border } from '@/shared/ui/separators';
 import { Post, Content, Header, StyledBat, Title, PostBody } from './PostOverview.styles';
 
-interface PostOverviewProps {
-  title: string;
-  overview: string;
-  linkToPost: string;
-}
+const PostOverview = ({ title, overview, tags }: PostSummaryDto) => {
 
-const PostOverview = ({ title, overview, linkToPost }: PostOverviewProps) => (
   <Post>
     <Content>
       <Header>
@@ -18,11 +15,13 @@ const PostOverview = ({ title, overview, linkToPost }: PostOverviewProps) => (
       </Header>
       <PostBody>{overview}</PostBody>
     </Content>
+  return (
 
     <Border>
       LoremipsumdolorsitametconsecteturSedrisuseuismodmalesuadaelementum.MaecenasincommodoametlacusantecursusFringillafelissemperenimv.UHKipsumdolorsitametconsecteturSedrisuseuismodmales
     </Border>
   </Post>
-);
+  );
+};
 
 export default PostOverview;

@@ -1,9 +1,10 @@
+import type { PostSummaryDto } from '@nikivils/grimoire-contracts';
+
 import { parseJSendResponse } from '@/shared/api';
-import { type Post } from '../model/types';
 import { request } from '@/shared/lib/request';
 
 type PostsResponse = {
-  posts: Post[];
+  posts: PostSummaryDto[];
 };
 
 export async function getPosts() {

@@ -10,12 +10,7 @@ export const Home = () => {
   return (
     <HomeLayout>
       {posts.map((post) => (
-        <PostOverview
-          key={post._id}
-          title={post.title}
-          linkToPost={''}
-          overview={post.overview}
-        />
+        <PostOverview {...post} />
       ))}
     </HomeLayout>
   );
