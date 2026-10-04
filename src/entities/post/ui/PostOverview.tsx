@@ -16,7 +16,9 @@ const PostOverview = ({ title, overview, tags }: PostSummaryDto) => {
           <Title>{title}</Title>
           <SwordLink to={linkToPost}>Read</SwordLink>
         </Header>
+
         <PostBody>{overview}</PostBody>
+
         {tags?.length > 0 && (
           <Tags>
             <TagsLabel>Tagged as: </TagsLabel>
