@@ -5,16 +5,14 @@ import { Border } from '@/shared/ui/separators';
 import { Post, Content, Header, StyledBat, Title, PostBody } from './PostOverview.styles';
 import { Tags, TagList, TagItem, Tag, TagsLabel } from '@/entities/post/ui/Tag.style.tsx';
 
-const PostOverview = ({ title, overview, tags }: PostSummaryDto) => {
-  const linkToPost = '';
-
+const PostOverview = ({ _id, title, overview, tags }: PostSummaryDto) => {
   return (
     <Post>
       <Content>
         <Header>
           <StyledBat title='Bat' />
           <Title>{title}</Title>
-          <SwordLink to={linkToPost}>Read</SwordLink>
+          <SwordLink to={`post/${_id}`}>Read</SwordLink>
         </Header>
 
         <PostBody>{overview}</PostBody>
