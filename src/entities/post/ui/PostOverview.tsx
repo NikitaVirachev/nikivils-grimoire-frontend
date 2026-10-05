@@ -12,7 +12,7 @@ const PostOverview = ({ _id, title, overview, tags }: PostSummaryDto) => {
         <Header>
           <StyledBat title='Bat' />
           <Title>{title}</Title>
-          <SwordLink to={`post/${_id}`}>Read</SwordLink>
+          <SwordLink to={`blog/${_id}`}>Read</SwordLink>
         </Header>
 
         <PostBody>{overview}</PostBody>
