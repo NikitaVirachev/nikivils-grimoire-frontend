@@ -11,7 +11,7 @@ const postLoader = async ({ params }: LoaderFunctionArgs) => {
     });
   }
 
-  await getPost(postId);
+  return await getPost(postId);
 };
 
 export default postLoader;
