@@ -4,7 +4,7 @@ import { MainLayout } from '../layouts/main-layout';
 import { homeLoader, Home, HomeErrorBoundary } from '../../pages/home';
 import { AboutLayout, AboutMe, FAQ, Favorite, Unfavorite } from '@/pages/about';
 import Blog from '../../pages/blog/ui/Blog';
-import { PostPage } from '@/pages/post';
+import { PostPage, postLoader } from '@/pages/post';
 import RootErrorBoundary from './RootErrorBoundary';
 
 const router = createBrowserRouter([
@@ -61,6 +61,7 @@ const router = createBrowserRouter([
       {
         path: 'blog/:postId',
         Component: PostPage,
+        loader: postLoader,
         handle: {
           title: 'Post',
         },
