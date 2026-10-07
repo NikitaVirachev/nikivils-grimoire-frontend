@@ -1,26 +1,49 @@
 import { useLoaderData } from 'react-router-dom';
 
 import PostPageLayout from '@/pages/post/ui/PostPageLayout';
-import { PostLayout, PostSubtitle, Tag, TagItem, TagList, TagsLabel } from '@/entities/post';
+import {
+  PostLayout,
+  PostSubtitle,
+  Tag,
+  TagItem,
+  TagList,
+  TagsLabel,
+  PostedOn,
+  PublishDate,
+} from '@/entities/post';
 import { UnderlinedHeader, QuaternaryHeading } from '@/shared/ui/typography';
 import { postLoader } from '@/pages/post';
 import { Tags } from '@/pages/post/ui/PostPage.styles';
 
 const PostPage = () => {
-  const post = useLoaderData<typeof postLoader>();
+  const { publishedAt, title, tags } = useLoaderData<typeof postLoader>();
+
+  const publishDate = new Date(publishedAt || '');
+
+  const displayDate = publishDate.toLocaleDateString('en-GB', {
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric',
+  });
+
+  const datetimeDate = publishDate.toISOString().slice(0, 10);
 
   return (
     <PostPageLayout>
       <PostLayout>
         <UnderlinedHeader>
-          <QuaternaryHeading>{post.title}</QuaternaryHeading>
+          <QuaternaryHeading>{title}</QuaternaryHeading>
         </UnderlinedHeader>
 
         <PostSubtitle>
+          <PostedOn>
+            Posted on <PublishDate dateTime={datetimeDate}>{displayDate}</PublishDate>
+          </PostedOn>
+
           <Tags>
             <TagsLabel>Tagged as: </TagsLabel>
             <TagList>
-              {post.tags.map((tag) => (
+              {tags.map((tag) => (
                 <TagItem key={tag}>
                   <Tag>{tag}</Tag>
                 </TagItem>
