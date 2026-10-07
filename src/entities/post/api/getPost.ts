@@ -8,7 +8,7 @@ type PostResponse = {
 };
 
 const getPost = async (postId: string) => {
-  const response = await request(`api/v1/posts/${postId}`);
+  const response = await request(`/api/v1/posts/${postId}`);
 
   const data = await parseJSendResponse<PostResponse>(response);
 
