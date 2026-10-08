@@ -10,13 +10,16 @@ import {
   TagsLabel,
   PostedOn,
   PublishDate,
+  PostBlockView,
+  PostContent,
 } from '@/entities/post';
 import { UnderlinedHeader, QuaternaryHeading } from '@/shared/ui/typography';
 import { postLoader } from '@/pages/post';
 import { Tags } from '@/pages/post/ui/PostPage.styles';
 
 const PostPage = () => {
-  const { publishedAt, title, tags } = useLoaderData<typeof postLoader>();
+  const { publishedAt, title, tags, content } = useLoaderData<typeof postLoader>();
+  const blocks = content.blocks;
 
   const publishDate = new Date(publishedAt || '');
 
@@ -51,6 +54,12 @@ const PostPage = () => {
             </TagList>
           </Tags>
         </PostSubtitle>
+
+        <PostContent>
+          {blocks.map((block) => (
+            <PostBlockView block={block} />
+          ))}
+        </PostContent>
       </PostLayout>
     </PostPageLayout>
   );
