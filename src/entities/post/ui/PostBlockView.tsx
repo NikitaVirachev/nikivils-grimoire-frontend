@@ -3,6 +3,7 @@ import type { PostBlock } from '@nikivils/grimoire-contracts';
 import Heading from './PostHeading';
 import PostParagraph from './PostParagraph';
 import PostImage, { Caption, ImageFigure } from './PostImage';
+import PostQuote from '@/entities/post/ui/PostQuote';
 
 type PostBlockViewProps = {
   block: PostBlock;
@@ -28,10 +29,10 @@ const PostBlockView = ({ block }: PostBlockViewProps) => {
 
     case 'quote':
       return (
-        <blockquote>
+        <PostQuote>
           <p>{block.text}</p>
           {block.author && <cite>{block.author}</cite>}
-        </blockquote>
+        </PostQuote>
       );
 
     case 'image':
