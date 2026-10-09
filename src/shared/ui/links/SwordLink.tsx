@@ -1,12 +1,12 @@
+import type { ComponentProps } from 'react';
+import { Link } from 'react-router-dom';
+
 import { SwordLinkWrapper, LinkSword } from './SwordLink.styles';
 
-interface LinkProps {
-  children: string;
-  to: string;
-}
+type LinkProps = ComponentProps<typeof Link>;
 
-const SwordLink = ({ children, to }: LinkProps) => (
-  <SwordLinkWrapper to={to}>
+const SwordLink = ({ children, ...props }: LinkProps) => (
+  <SwordLinkWrapper {...props}>
     <LinkSword title='Indicate in the form of a sword' />
     {children}
   </SwordLinkWrapper>

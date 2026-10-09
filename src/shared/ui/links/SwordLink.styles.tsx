@@ -43,3 +43,7 @@ export const LinkSword = styled(Sword)`
     `
   )}
 `;
+
+export const RotatedLinkSword = styled(LinkSword)`
+  transform: rotateY(180deg);
+`;
