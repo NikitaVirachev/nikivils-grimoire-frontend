@@ -1,12 +1,11 @@
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 
 import { typography } from './typography.ts';
 
 const Heading = styled.h2<{
   $level: 1 | 2 | 3 | 4 | 5 | 6;
 }>`
-  font-family: ${({ $level }) =>
-    $level === 2 ? css`'Metamorphous', serif` : css`'Coelacanth', serif`};
+  font-family: 'Coelacanth', serif;
 
   font-size: ${({ $level }) => {
     switch ($level) {
