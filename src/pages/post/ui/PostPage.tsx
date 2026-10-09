@@ -12,13 +12,15 @@ import {
   PublishDate,
   PostBlockView,
   PostContent,
+  PostImage,
+  ImageFigure,
 } from '@/entities/post';
 import { UnderlinedHeader, QuaternaryHeading } from '@/shared/ui/typography';
 import { postLoader } from '@/pages/post';
 import { Tags } from '@/pages/post/ui/PostPage.styles';
 
 const PostPage = () => {
-  const { publishedAt, title, tags, content } = useLoaderData<typeof postLoader>();
+  const { publishedAt, title, tags, content, cover } = useLoaderData<typeof postLoader>();
   const blocks = content.blocks;
 
   const publishDate = new Date(publishedAt || '');
@@ -54,6 +56,15 @@ const PostPage = () => {
             </TagList>
           </Tags>
         </PostSubtitle>
+
+        {cover && (
+          <ImageFigure>
+            <PostImage
+              src={`/api/v1/media/${cover.imageId}`}
+              alt={cover.alt}
+            />
+          </ImageFigure>
+        )}
 
         <PostContent>
           {blocks.map((block) => (

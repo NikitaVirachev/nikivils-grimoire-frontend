@@ -7,3 +7,4 @@ export { default as PostLayout } from '@/entities/post/ui/PostLayout.tsx';
 export { default as PostSubtitle } from './ui/PostSubtitle.styles';
 export { TagsLabel, TagList, TagItem, Tag } from './ui/Tag.style';
 export { PostedOn, PublishDate } from './ui/PostedOn.styles.tsx';
+export { ImageFigure, default as PostImage } from './ui/PostImage';
