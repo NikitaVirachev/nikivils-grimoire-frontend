@@ -33,14 +33,14 @@ export const Header = styled.header`
   ${respond(
     'tab-portrait',
     css`
-      padding-left: 0 1.5rem;
+      padding-left: 1.5rem;
     `
   )}
 
   ${respond(
     'phone',
     css`
-      padding: 0 1rem;
+      padding-left: 1rem;
     `
   )}
 `;
