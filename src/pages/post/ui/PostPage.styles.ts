@@ -1,6 +1,7 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 import { BackLink } from '@/shared/ui/links';
+import { respond } from '@/shared/lib/styles';
 
 export const Tags = styled.div``;
 
@@ -11,5 +12,13 @@ export const PostExplore = styled.div`
 `;
 
 export const ToBack = styled(BackLink)`
+  display: none;
   align-self: center;
+
+  ${respond(
+    'phone',
+    css`
+      display: block;
+    `
+  )};
 `;
