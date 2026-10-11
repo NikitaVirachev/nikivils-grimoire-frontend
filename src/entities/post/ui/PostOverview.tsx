@@ -1,8 +1,7 @@
 import type { PostSummaryDto } from '@nikivils/grimoire-contracts';
 
-import { SwordLink } from '@/shared/ui/links';
 import { Border } from '@/shared/ui/separators';
-import { Post, Content, Header, StyledBat, Title, PostBody } from './PostOverview.styles';
+import { Post, Content, Header, StyledBat, Title, PostBody, PostLink } from './PostOverview.styles';
 import { Tags, TagList, TagItem, Tag, TagsLabel } from '@/entities/post/ui/Tag.style.tsx';
 
 const PostOverview = ({ _id, title, overview, tags }: PostSummaryDto) => {
@@ -12,12 +11,12 @@ const PostOverview = ({ _id, title, overview, tags }: PostSummaryDto) => {
         <Header>
           <StyledBat title='Bat' />
           <Title>{title}</Title>
-          <SwordLink
+          <PostLink
             to={`blog/${_id}`}
             state={{ from: location.pathname + location.search }}
           >
             Read
-          </SwordLink>
+          </PostLink>
         </Header>
 
         <PostBody>{overview}</PostBody>

@@ -1,6 +1,7 @@
 import styled, { css } from 'styled-components';
 
 import { Bat } from '@/shared/ui/icons';
+import { SwordLink, LinkSword } from '@/shared/ui/links';
 
 import { respond } from '@/shared/lib/styles';
 
@@ -80,4 +81,15 @@ export const StyledBat = styled(Bat)`
       height: 1.8rem;
     `
   )}
+`;
+
+export const PostLink = styled(SwordLink)`
+  ${LinkSword} {
+    ${respond(
+      'phone',
+      css`
+        display: none;
+      `
+    )}
+  }
 `;

@@ -1,8 +1,7 @@
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
 import { Sword } from '@/shared/ui/icons';
-import { respond } from '../../lib/styles';
 
 export const SwordLinkWrapper = styled(Link)`
   display: flex;
@@ -35,13 +34,6 @@ export const SwordLinkWrapper = styled(Link)`
 
 export const LinkSword = styled(Sword)`
   width: 8.7rem;
-
-  ${respond(
-    'phone',
-    css`
-      display: none;
-    `
-  )}
 `;
 
 export const RotatedLinkSword = styled(LinkSword)`
