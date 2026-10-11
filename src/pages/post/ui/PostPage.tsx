@@ -19,6 +19,7 @@ import {
 import { UnderlinedHeader } from '@/shared/ui/typography';
 import { postLoader } from '@/pages/post';
 import { Tags, ToBack } from '@/pages/post/ui/PostPage.styles';
+import { Border } from '@/shared/ui/separators';
 
 const PostPage = () => {
   const { publishedAt, title, tags, content, cover } = useLoaderData<typeof postLoader>();
@@ -82,6 +83,8 @@ const PostPage = () => {
             />
           ))}
         </PostContent>
+
+        <Border />
 
         <ToBack to={location.state?.from ?? '/'} />
       </PostLayout>
