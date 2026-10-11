@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const PostContent = styled.article`
+const PostContent = styled.section`
   & > * {
     margin: 0;
   }

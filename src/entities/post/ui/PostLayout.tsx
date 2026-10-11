@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const PostLayout = styled.section`
+const PostLayout = styled.article`
   display: flex;
   flex-direction: column;
   gap: 1rem;
