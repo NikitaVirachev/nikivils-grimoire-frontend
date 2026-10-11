@@ -1,4 +1,4 @@
-import { useLoaderData } from 'react-router-dom';
+import { useLoaderData, useLocation } from 'react-router-dom';
 
 import PostPageLayout from '@/pages/post/ui/PostPageLayout';
 import {
@@ -18,7 +18,7 @@ import {
 } from '@/entities/post';
 import { UnderlinedHeader } from '@/shared/ui/typography';
 import { postLoader } from '@/pages/post';
-import { Tags } from '@/pages/post/ui/PostPage.styles';
+import { Tags, ToBack } from '@/pages/post/ui/PostPage.styles';
 
 const PostPage = () => {
   const { publishedAt, title, tags, content, cover } = useLoaderData<typeof postLoader>();
@@ -33,6 +33,8 @@ const PostPage = () => {
   });
 
   const datetimeDate = publishDate.toISOString().slice(0, 10);
+
+  const location = useLocation();
 
   return (
     <PostPageLayout>
@@ -80,6 +82,8 @@ const PostPage = () => {
             />
           ))}
         </PostContent>
+
+        <ToBack to={location.state?.from ?? '/'} />
       </PostLayout>
     </PostPageLayout>
   );
