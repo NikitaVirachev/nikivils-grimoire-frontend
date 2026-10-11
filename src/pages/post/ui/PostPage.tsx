@@ -14,8 +14,9 @@ import {
   PostContent,
   PostImage,
   ImageFigure,
+  PostHeading,
 } from '@/entities/post';
-import { UnderlinedHeader, QuaternaryHeading } from '@/shared/ui/typography';
+import { UnderlinedHeader } from '@/shared/ui/typography';
 import { postLoader } from '@/pages/post';
 import { Tags } from '@/pages/post/ui/PostPage.styles';
 
@@ -37,7 +38,12 @@ const PostPage = () => {
     <PostPageLayout>
       <PostLayout>
         <UnderlinedHeader>
-          <QuaternaryHeading>{title}</QuaternaryHeading>
+          <PostHeading
+            as='h1'
+            $level={1}
+          >
+            {title}
+          </PostHeading>
         </UnderlinedHeader>
 
         <PostSubtitle>

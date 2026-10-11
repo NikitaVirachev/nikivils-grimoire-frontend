@@ -9,6 +9,9 @@ const Heading = styled.h2<{
 
   font-size: ${({ $level }) => {
     switch ($level) {
+      case 1:
+        return typography.h1;
+
       case 2:
         return typography.h2;
 

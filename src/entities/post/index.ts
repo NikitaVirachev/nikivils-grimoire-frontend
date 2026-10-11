@@ -8,3 +8,4 @@ export { default as PostSubtitle } from './ui/PostSubtitle.styles';
 export { TagsLabel, TagList, TagItem, Tag } from './ui/Tag.style';
 export { PostedOn, PublishDate } from './ui/PostedOn.styles.tsx';
 export { ImageFigure, default as PostImage } from './ui/PostImage';
+export { default as PostHeading } from './ui/PostHeading';
