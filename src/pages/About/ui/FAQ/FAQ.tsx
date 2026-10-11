@@ -13,9 +13,7 @@ export const FAQ = () => {
     <DesktopMainContent title={title}>
       <PhoneContents />
 
-      <PhoneBorder>
-        LoremipsumdolorsitametconsecteturSedrisuseuismodmalesuadaelementum.MaecenasincommodoametlacusantecursusFringillafelissemperenimv.UHKipsumdolorsitametconsecteturSedrisuseuismodmales
-      </PhoneBorder>
+      <PhoneBorder />
 
       <FAQSection>
         <FAQItem>
@@ -49,9 +47,7 @@ export const FAQ = () => {
         </FAQItem>
       </FAQSection>
 
-      <PhoneBorder>
-        LoremipsumdolorsitametconsecteturSedrisuseuismodmalesuadaelementum.MaecenasincommodoametlacusantecursusFringillafelissemperenimv.UHKipsumdolorsitametconsecteturSedrisuseuismodmales
-      </PhoneBorder>
+      <PhoneBorder />
 
       <PhoneCurrently />
     </DesktopMainContent>

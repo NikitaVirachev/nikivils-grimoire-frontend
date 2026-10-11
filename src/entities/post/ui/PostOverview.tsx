@@ -35,9 +35,7 @@ const PostOverview = ({ _id, title, overview, tags }: PostSummaryDto) => {
         )}
       </Content>
 
-      <Border>
-        LoremipsumdolorsitametconsecteturSedrisuseuismodmalesuadaelementum.MaecenasincommodoametlacusantecursusFringillafelissemperenimv.UHKipsumdolorsitametconsecteturSedrisuseuismodmales
-      </Border>
+      <Border />
     </Post>
   );
 };

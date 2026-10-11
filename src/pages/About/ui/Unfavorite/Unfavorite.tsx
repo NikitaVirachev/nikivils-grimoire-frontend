@@ -16,9 +16,7 @@ export const Unfavorite = () => {
     <DesktopMainContent title={title}>
       <PhoneContents />
 
-      <PhoneBorder>
-        LoremipsumdolorsitametconsecteturSedrisuseuismodmalesuadaelementum.MaecenasincommodoametlacusantecursusFringillafelissemperenimv.UHKipsumdolorsitametconsecteturSedrisuseuismodmales
-      </PhoneBorder>
+      <PhoneBorder />
 
       <ContentSectionGroup>
         <ContentSection>
@@ -32,9 +30,7 @@ export const Unfavorite = () => {
         </ContentSection>
       </ContentSectionGroup>
 
-      <PhoneBorder>
-        LoremipsumdolorsitametconsecteturSedrisuseuismodmalesuadaelementum.MaecenasincommodoametlacusantecursusFringillafelissemperenimv.UHKipsumdolorsitametconsecteturSedrisuseuismodmales
-      </PhoneBorder>
+      <PhoneBorder />
 
       <PhoneCurrently />
     </DesktopMainContent>
