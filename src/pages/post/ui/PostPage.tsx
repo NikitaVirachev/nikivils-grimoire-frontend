@@ -74,7 +74,10 @@ const PostPage = () => {
 
         <PostContent>
           {blocks.map((block) => (
-            <PostBlockView block={block} />
+            <PostBlockView
+              key={block.id}
+              block={block}
+            />
           ))}
         </PostContent>
       </PostLayout>
