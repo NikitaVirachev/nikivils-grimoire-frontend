@@ -18,7 +18,7 @@ export const ToBack = styled(BackLink)`
   ${respond(
     'phone',
     css`
-      display: block;
+      display: flex;
     `
   )};
 `;
