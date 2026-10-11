@@ -120,3 +120,21 @@ export const StyledSkull = styled(Skull)`
   touch-action: none;
   user-select: none;
 `;
+
+export const MainContentPadding = css`
+  padding: 0 2rem;
+
+  ${respond(
+    'tab-portrait',
+    css`
+      padding: 0 2rem;
+    `
+  )}
+
+  ${respond(
+    'phone',
+    css`
+      padding: 0;
+    `
+  )}
+`;

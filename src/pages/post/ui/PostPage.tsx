@@ -13,12 +13,11 @@ import {
   PostBlockView,
   PostContent,
   PostImage,
-  ImageFigure,
   PostHeading,
 } from '@/entities/post';
 import { UnderlinedHeader } from '@/shared/ui/typography';
 import { postLoader } from '@/pages/post';
-import { Tags, ToBack } from '@/pages/post/ui/PostPage.styles';
+import { Tags, ToBack, CoverFigure } from '@/pages/post/ui/PostPage.styles';
 import { Border } from '@/shared/ui/separators';
 
 const PostPage = () => {
@@ -67,12 +66,12 @@ const PostPage = () => {
         </PostSubtitle>
 
         {cover && (
-          <ImageFigure>
+          <CoverFigure>
             <PostImage
               src={`/api/v1/media/${cover.imageId}`}
               alt={cover.alt}
             />
-          </ImageFigure>
+          </CoverFigure>
         )}
 
         <PostContent>

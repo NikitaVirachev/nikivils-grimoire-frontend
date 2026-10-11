@@ -2,6 +2,8 @@ import styled, { css } from 'styled-components';
 
 import { BackLink } from '@/shared/ui/links';
 import { respond } from '@/shared/lib/styles';
+import { ImageFigure } from '@/entities/post';
+import { MainContentPadding } from '@/shared/ui/main-content';
 
 export const Tags = styled.div``;
 
@@ -21,4 +23,8 @@ export const ToBack = styled(BackLink)`
       display: flex;
     `
   )};
+`;
+
+export const CoverFigure = styled(ImageFigure)`
+  ${MainContentPadding};
 `;

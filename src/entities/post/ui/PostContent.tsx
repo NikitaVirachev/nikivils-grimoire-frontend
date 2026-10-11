@@ -1,6 +1,10 @@
 import styled from 'styled-components';
 
+import { MainContentPadding } from '@/shared/ui/main-content';
+
 const PostContent = styled.section`
+  ${MainContentPadding};
+
   & > * {
     margin: 0;
   }

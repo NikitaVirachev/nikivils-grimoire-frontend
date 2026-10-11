@@ -1,24 +1,9 @@
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 
 import { BodyText } from '../typography';
-
-import { respond } from '../../lib/styles';
+import { MainContentPadding } from '@/shared/ui/main-content';
 
 export const ProseText = styled.p`
   ${BodyText};
-  padding: 0 2rem;
-
-  ${respond(
-    'tab-portrait',
-    css`
-      padding: 0 2rem;
-    `
-  )}
-
-  ${respond(
-    'phone',
-    css`
-      padding: 0;
-    `
-  )}
+  ${MainContentPadding};
 `;
