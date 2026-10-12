@@ -3,7 +3,7 @@ import { createBrowserRouter, replace } from 'react-router-dom';
 import { MainLayout } from '../layouts/main-layout';
 import { homeLoader, Home, HomeErrorBoundary } from '../../pages/home';
 import { AboutLayout, AboutMe, FAQ, Favorite, Unfavorite } from '@/pages/about';
-import Blog from '../../pages/blog/ui/Blog';
+import { Blog, blogLoader } from '@/pages/blog';
 import { PostPage, postLoader } from '@/pages/post';
 import RootErrorBoundary from './RootErrorBoundary';
 
@@ -57,7 +57,14 @@ const router = createBrowserRouter([
           },
         ],
       },
-      { path: 'blog', Component: Blog },
+      {
+        path: 'blog',
+        Component: Blog,
+        loader: blogLoader,
+        handle: {
+          title: 'Posts',
+        },
+      },
       {
         path: 'blog/:postId',
         Component: PostPage,
