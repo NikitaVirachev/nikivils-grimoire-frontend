@@ -12,7 +12,7 @@ const PostOverview = ({ _id, title, overview, tags }: PostSummaryDto) => {
           <StyledBat title='Bat' />
           <Title>{title}</Title>
           <PostLink
-            to={`blog/${_id}`}
+            to={`/blog/${_id}`}
             state={{ from: location.pathname + location.search }}
           >
             Read
