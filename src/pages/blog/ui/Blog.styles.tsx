@@ -9,3 +9,5 @@ export const BlogExplore = styled.section`
   flex-direction: column;
   gap: 1rem;
 `;
+
+export const Tags = styled.div``;

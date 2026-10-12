@@ -6,16 +6,19 @@ import { DesktopMainContent } from '@/shared/ui/main-content';
 import { DesktopSidebar } from '@/shared/ui/sidebar';
 import { Pagination } from '@/shared/ui/pagination';
 import { Separator } from '@/shared/ui/separators';
-import { BlogExplore } from '@/pages/blog/ui/Blog.styles';
+import { BlogExplore, Tags } from '@/pages/blog/ui/Blog.styles';
 import { ActionInput } from '@/shared/ui/form/action-input';
 import { ActionButton } from '@/shared/ui/form/action-button';
 import { StyledLoupe } from '@/pages/home/ui/Home.styles';
 import { PhoneSearchInput } from '@/shared/ui/search';
 import { PhonePagination } from '@/shared/ui/pagination';
+import { TagList, TagItem, TagsLabel, Tag } from '@/entities/post/ui/Tag.style';
 
 interface BlogLayoutProps {
   children: ReactNode;
 }
+
+const tags = ['developing', 'books', 'cinema', 'cartoons', 'diary'];
 
 const BlogLayout = ({ children }: BlogLayoutProps) => {
   const [postsFilter, setPostsFilter] = useState('');
@@ -74,6 +77,21 @@ const BlogLayout = ({ children }: BlogLayoutProps) => {
               </ActionButton>
             }
           />
+
+          <Separator title='Separator icon' />
+
+          {tags?.length > 0 && (
+            <Tags>
+              <TagsLabel>Tags: </TagsLabel>
+              <TagList>
+                {tags.map((tag) => (
+                  <TagItem key={tag}>
+                    <Tag>{tag}</Tag>
+                  </TagItem>
+                ))}
+              </TagList>
+            </Tags>
+          )}
         </BlogExplore>
       </DesktopSidebar>
     </>
