@@ -1,4 +1,4 @@
-import { useState, type ReactNode } from 'react';
+import React, { useState, type ReactNode } from 'react';
 import { useMatches } from 'react-router-dom';
 
 import { DesktopMainContent } from '@/shared/ui/main-content';
@@ -6,15 +6,11 @@ import { DesktopSidebar } from '@/shared/ui/sidebar';
 import { Pagination } from '@/shared/ui/pagination';
 import { Separator } from '@/shared/ui/separators';
 import { ActionInput } from '@/shared/ui/form/action-input';
-import {
-  PostsExplore,
-  PositionedChat,
-  PhoneSearchInput,
-  PhonePagination,
-  StyledLoupe,
-} from './Home.styles';
+import { PostsExplore, PositionedChat, StyledLoupe } from './Home.styles';
 import { ActionButton } from '@/shared/ui/form/action-button';
 import { getPageTitle } from '@/shared/lib';
+import { PhoneSearchInput } from '@/shared/ui/search';
+import { PhonePagination } from '@/shared/ui/pagination';
 
 interface HomeLayoutProps {
   children: ReactNode;

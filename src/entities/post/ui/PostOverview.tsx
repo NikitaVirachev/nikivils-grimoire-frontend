@@ -1,28 +1,43 @@
-import { SwordLink } from '@/shared/ui/links';
+import type { PostSummaryDto } from '@nikivils/grimoire-contracts';
+
 import { Border } from '@/shared/ui/separators';
-import { Post, Content, Header, StyledBat, Title, PostBody } from './PostOverview.styles';
+import { Post, Content, Header, StyledBat, Title, PostBody, PostLink } from './PostOverview.styles';
+import { Tags, TagList, TagItem, Tag, TagsLabel } from '@/entities/post/ui/Tag.style.tsx';
 
-interface PostOverviewProps {
-  title: string;
-  overview: string;
-  linkToPost: string;
-}
+const PostOverview = ({ _id, title, overview, tags }: PostSummaryDto) => {
+  return (
+    <Post>
+      <Content>
+        <Header>
+          <StyledBat title='Bat' />
+          <Title>{title}</Title>
+          <PostLink
+            to={`/blog/${_id}`}
+            state={{ from: location.pathname + location.search }}
+          >
+            Read
+          </PostLink>
+        </Header>
 
-const PostOverview = ({ title, overview, linkToPost }: PostOverviewProps) => (
-  <Post>
-    <Content>
-      <Header>
-        <StyledBat title='Bat' />
-        <Title>{title}</Title>
-        <SwordLink to={linkToPost}>Read</SwordLink>
-      </Header>
-      <PostBody>{overview}</PostBody>
-    </Content>
+        <PostBody>{overview}</PostBody>
 
-    <Border>
-      LoremipsumdolorsitametconsecteturSedrisuseuismodmalesuadaelementum.MaecenasincommodoametlacusantecursusFringillafelissemperenimv.UHKipsumdolorsitametconsecteturSedrisuseuismodmales
-    </Border>
-  </Post>
-);
+        {tags?.length > 0 && (
+          <Tags>
+            <TagsLabel>Tagged as: </TagsLabel>
+            <TagList>
+              {tags.map((tag) => (
+                <TagItem key={tag}>
+                  <Tag>{tag}</Tag>
+                </TagItem>
+              ))}
+            </TagList>
+          </Tags>
+        )}
+      </Content>
+
+      <Border />
+    </Post>
+  );
+};
 
 export default PostOverview;

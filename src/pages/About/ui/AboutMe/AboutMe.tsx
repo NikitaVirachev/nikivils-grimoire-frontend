@@ -15,9 +15,7 @@ export const AboutMe = () => {
     <DesktopMainContent title={title}>
       <PhoneContents />
 
-      <PhoneBorder>
-        LoremipsumdolorsitametconsecteturSedrisuseuismodmalesuadaelementum.MaecenasincommodoametlacusantecursusFringillafelissemperenimv.UHKipsumdolorsitametconsecteturSedrisuseuismodmales
-      </PhoneBorder>
+      <PhoneBorder />
 
       <ContentSection>
         <UnderlinedHeader>
@@ -60,9 +58,7 @@ export const AboutMe = () => {
         </Paragraphs>
       </ContentSection>
 
-      <PhoneBorder>
-        LoremipsumdolorsitametconsecteturSedrisuseuismodmalesuadaelementum.MaecenasincommodoametlacusantecursusFringillafelissemperenimv.UHKipsumdolorsitametconsecteturSedrisuseuismodmales
-      </PhoneBorder>
+      <PhoneBorder />
 
       <PhoneCurrently />
     </DesktopMainContent>

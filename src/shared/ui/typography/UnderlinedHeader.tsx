@@ -9,7 +9,7 @@ const UnderlinedHeaderWrapper = styled.header`
   gap: 2px;
   align-items: start;
 
-  width: 27.6rem;
+  //width: 27.6rem;
 `;
 
 type UnderlinedHeaderProps = {

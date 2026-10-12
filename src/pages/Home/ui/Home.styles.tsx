@@ -1,11 +1,7 @@
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 
 import { Chat } from '@/widgets/Chat';
-import { ActionInput } from '@/shared/ui/form/action-input';
-import { Pagination } from '@/shared/ui/pagination';
 import { Loupe } from '@/shared/ui/icons';
-
-import { respond } from '@/shared/lib/styles';
 
 export const PostsExplore = styled.section`
   position: relative;
@@ -19,29 +15,6 @@ export const PostsExplore = styled.section`
 
 export const PositionedChat = styled(Chat)`
   align-self: end;
-`;
-
-export const PhoneSearchInput = styled(ActionInput)`
-  display: none;
-  margin: 0.5rem 0.5rem 0 0.5rem;
-
-  ${respond(
-    'phone',
-    css`
-      display: grid;
-    `
-  )}
-`;
-
-export const PhonePagination = styled(Pagination)`
-  display: none;
-
-  ${respond(
-    'phone',
-    css`
-      display: flex;
-    `
-  )}
 `;
 
 export const StyledLoupe = styled(Loupe)`

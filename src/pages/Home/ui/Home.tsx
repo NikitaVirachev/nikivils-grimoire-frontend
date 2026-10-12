@@ -1,8 +1,8 @@
 import { useLoaderData } from 'react-router-dom';
 
-import { homeLoader } from '../api/loader';
+import { homeLoader } from '@/pages/home';
 import HomeLayout from './HomeLayout';
-import PostOverview from '@/entities/post/ui/PostOverview';
+import { PostOverview } from '@/entities/post';
 
 export const Home = () => {
   const posts = useLoaderData<typeof homeLoader>();
@@ -10,12 +10,7 @@ export const Home = () => {
   return (
     <HomeLayout>
       {posts.map((post) => (
-        <PostOverview
-          key={post._id}
-          title={post.title}
-          linkToPost={''}
-          overview={post.overview}
-        />
+        <PostOverview {...post} />
       ))}
     </HomeLayout>
   );

@@ -1,6 +1,7 @@
 import styled, { css } from 'styled-components';
 
 import { Bat } from '@/shared/ui/icons';
+import { SwordLink, LinkSword } from '@/shared/ui/links';
 
 import { respond } from '@/shared/lib/styles';
 
@@ -33,14 +34,14 @@ export const Header = styled.header`
   ${respond(
     'tab-portrait',
     css`
-      padding-left: 0 1.5rem;
+      padding-left: 1.5rem;
     `
   )}
 
   ${respond(
     'phone',
     css`
-      padding: 0 1rem;
+      padding-left: 1rem;
     `
   )}
 `;
@@ -80,4 +81,15 @@ export const StyledBat = styled(Bat)`
       height: 1.8rem;
     `
   )}
+`;
+
+export const PostLink = styled(SwordLink)`
+  ${LinkSword} {
+    ${respond(
+      'phone',
+      css`
+        display: none;
+      `
+    )}
+  }
 `;
